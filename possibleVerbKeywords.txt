@@ -1,0 +1,1121 @@
+3434,-1,stack running ActiveRecord set fails run Placing seems 
+4103,-1,action_controller checks follows have installed meets seem requires want manage check requiring introspecting 
+1178,-1,encountered fixing realized 're has found fixes 
+2837,-1,filename Having starting image_tag throw auto-create attempting alt basename -RRB- 
+stack running ActiveRecord set fails run Placing seems 
+action_controller checks follows have installed meets seem requires want manage check requiring introspecting 
+encountered fixing realized 're has found fixes 
+filename Having starting image_tag throw auto-create attempting alt basename -RRB- 
+Converting takes simplifies avoiding is 
+needed return allow fix returns converted is distinguish adds break parsing set continues work to_xml works 
+works ignores respected believe has do -RRB- event passed Does seems traverse find 
+removes leading trailing adds calls cleaning rebased 
+used tested moves validated get try use turned includes see patched fix 
+realized have asks run know making waiting created add 
+loaded 's expected included ran deployed includes depend installed want install rails honor \/ say looks understand need bootstrap get load bootstrapped given worked adding deletes works considered doing prefer svn have 
+skip_types included &gt; @@@ return 
+See missed sumbitting 
+found read splitting 
+Getting running attached fixing 
+render created using want starts_at parsing put do time_select = 
+wrapped begin rescue means loading require fails usr\/local\/sybase suppressed got specifies Removing give install -RRB- gives prints attached 
+using rendered forms break was breaks selected sent parsed creates received processing processes sees replaces references applies receive thinks has is check let 
+addresses used refers resulting missing using match require scanning is having preferred 
+stack running ActiveRecord set fails run Placing seems 
+action_controller checks follows have installed meets seem requires want manage check requiring introspecting 
+encountered fixing realized 're has found fixes 
+filename Having starting image_tag throw auto-create attempting alt basename -RRB- 
+Converting takes simplifies avoiding is 
+needed return allow fix returns converted is distinguish adds break parsing set continues work to_xml works 
+works ignores respected believe has do -RRB- event passed Does seems traverse find 
+removes leading trailing adds calls cleaning rebased 
+used tested moves validated get try use turned includes see patched fix 
+realized have asks run know making waiting created add 
+loaded 's expected included ran deployed includes depend installed want install rails honor \/ say looks understand need bootstrap get load bootstrapped given worked adding deletes works considered doing prefer svn have 
+skip_types included &gt; @@@ return 
+See missed sumbitting 
+found read splitting 
+Getting running attached fixing 
+render created using want starts_at parsing put do time_select = 
+wrapped begin rescue means loading require fails usr\/local\/sybase suppressed got specifies Removing give install -RRB- gives prints attached 
+using rendered forms break was breaks selected sent parsed creates received processing processes sees replaces references applies receive thinks has is check let 
+addresses used refers resulting missing using match require scanning is having preferred 
+returns object parse means do beginning_of_day return have 
+fail confirm is sent required throw found confusing 
+using recorded uses identified fixed removing applied 
+have setup do works made rolled ensures 
+actions_test required is require pass requiring 
+iterate want makes works joined 
+say access turns use returns leading doing is be prevent warn seems 's handle 
+escape displays doing have post has 
+generating created attached does 
+blows given Attaching passes fails 
+running represented working has gives generate failed &gt; Using works converted affected Note rely find 
+happened reproduce have used uses runs starts use goes admin_controller sessions_controller log 
+add 
+using plugin mailer setting deliver fails sets \/ sends SMTP missing fixed mail sender enable doing set adds require 
+adds create update allows call set cool patched included 
+
+using provide implementing extends does upgraded stopped &gt; is evaluated created fixed used uses match results set works use fails try attached put fail find 
+using is returning contain used believe 
+attributes set 
+generated tracked checks ActiveRecord is change remove 
+take give do asserts make work is blank used revertted encounter run saved added zero-ing have adds going happens reverted provides knows validations record execute reset repair Errors called supply 
+serailize initialize retreive get gems\/activerecord lib\/active 
+warns use find named using leads attempt Create create persist creates save renamed happen 
+script\/generate think 's does 
+uses proceeds say defined read fixes 
+add do renders Based adds guess fixed 
+returns passed default is fail follows 
+provided exclude consider corrects excluding 
+supported make 
+considered ActionRecord picked replace ActiveRecord using seems have 
+sets ActiveRecord leads screwed log disabled think Add monkey-patch is protected 
+'s annoys annoy fixed 
+use end seems have repeat making test allows define written suggest defined call avoid defining get provided does override provide add reseted put spread is like do make works 
+occurs are ends averaging does noticed showing 
+need reload know attribute do performing implementing adds ending does use get fetch 
+show _ \/ rb 
+ext\/blank redefined warning discarding 
+loaded fix causing uninitialized 
+is move calls run assigns setting template_root checking fixed changing 
+prevents highlighting featured ex 
+placed have goes think use override do browsed see @ replace underscore 
+calls have means went stops responding 
+upgraded started generating calculating noticed caused fails defines applying select specify tries do baz remove combined counting fetching adds changes contains break broken included 
+are crossfading work line Fix works please 
+generates used ignore rendering 
+is get 
+noticed mentions making freeze commit based get fix create 
+have has Parking expected is transferring 
+send_file is 
+misunderstood is supposed return returned makes checks see infinitely responds calls to_s 
+look notice update attr_name get working say seems -RRB- having 
+allows have cache_store mem_cache_store rb calls 
+adding parse updated pass object includes streaming 
+discontinue See starting fails highlight returned non-persisted do ensure working created persisted described refresh object attempt 
+listing attached 
+stated be is 
+\/ rb using causes is appear attaching launches resolves list works had force executed run like 
+remove use class estabish solves 
+applied 
+Helpers options_for_select support ignores recommend supporting calling containing used designed run added contains ensure 
+is sending commenting specify does work conflicts provides 
+discussed has expressed needs counter stored modified is following supported work 
+fail installed adds restore 
+adding AS _ use_workaround generated solved prints needs use accounts left -LRB- added developed intended comes find visit get 
+described return used continuing use returning think has define continue thrown sense need render file want get losing try make 
+calls found render_to_string rendering is view named did 
+ActionMailer deprecated is ActionView exist 
+have get mysql removed install try is telling known change suggest creating installing gives look overwrite know remove uninstalling does work 
+install installed looked is depends thinking create got start patching 
+calling Person modify allows i.e. remain integer use do have = proposing sent mentioned is defined doing brought checking come like expect appear 
+found have saved running 's enable 
+renamed name bundled preview Attached enables work 
+use care dealing specified solve need apps accept translate be calls \* output containing tried worked INSERT\/UPDATE like patched force calling is add let call 
+create using found recreated following listed edited match worked tested creating be -LRB- used please update need handle helps 
+wanted change declared dryed creating fixed added changed pass 
+reproduce 
+do 's realized want work ported get 
+put be called feels set declared 
+run pimped think act \/ attached implement 
+reduce fix getting create See introduced 
+stack running ActiveRecord set fails run Placing seems 
+action_controller checks follows have installed meets seem requires want manage check requiring introspecting 
+encountered fixing realized 're has found fixes 
+filename Having starting image_tag throw auto-create attempting alt basename -RRB- 
+Converting takes simplifies avoiding is 
+needed return allow fix returns converted is distinguish adds break parsing set continues work to_xml works 
+works ignores respected believe has do -RRB- event passed Does seems traverse find 
+removes leading trailing adds calls cleaning rebased 
+used tested moves validated get try use turned includes see patched fix 
+realized have asks run know making waiting created add 
+loaded 's expected included ran deployed includes depend installed want install rails honor \/ say looks understand need bootstrap get load bootstrapped given worked adding deletes works considered doing prefer svn have 
+skip_types included &gt; @@@ return 
+See missed sumbitting 
+found read splitting 
+Getting running attached fixing 
+render created using want starts_at parsing put do time_select = 
+wrapped begin rescue means loading require fails usr\/local\/sybase suppressed got specifies Removing give install -RRB- gives prints attached 
+using rendered forms break was breaks selected sent parsed creates received processing processes sees replaces references applies receive thinks has is check let 
+addresses used refers resulting missing using match require scanning is having preferred 
+returns object parse means do beginning_of_day return have 
+fail confirm is sent required throw found confusing 
+using recorded uses identified fixed removing applied 
+have setup do works made rolled ensures 
+actions_test required is require pass requiring 
+iterate want makes works joined 
+say access turns use returns leading doing is be prevent warn seems 's handle 
+escape displays doing have post has 
+generating created attached does 
+blows given Attaching passes fails 
+running represented working has gives generate failed &gt; Using works converted affected Note rely find 
+happened reproduce have used uses runs starts use goes admin_controller sessions_controller log 
+add 
+using plugin mailer setting deliver fails sets \/ sends SMTP missing fixed mail sender enable doing set adds require 
+adds create update allows call set cool patched included 
+
+using provide implementing extends does upgraded stopped &gt; is evaluated created fixed used uses match results set works use fails try attached put fail find 
+using is returning contain used believe 
+attributes set 
+generated tracked checks ActiveRecord is change remove 
+take give do asserts make work is blank used revertted encounter run saved added zero-ing have adds going happens reverted provides knows validations record execute reset repair Errors called supply 
+serailize initialize retreive get gems\/activerecord lib\/active 
+warns use find named using leads attempt Create create persist creates save renamed happen 
+script\/generate think 's does 
+uses proceeds say defined read fixes 
+add do renders Based adds guess fixed 
+returns passed default is fail follows 
+provided exclude consider corrects excluding 
+supported make 
+considered ActionRecord picked replace ActiveRecord using seems have 
+sets ActiveRecord leads screwed log disabled think Add monkey-patch is protected 
+'s annoys annoy fixed 
+use end seems have repeat making test allows define written suggest defined call avoid defining get provided does override provide add reseted put spread is like do make works 
+occurs are ends averaging does noticed showing 
+need reload know attribute do performing implementing adds ending does use get fetch 
+show _ \/ rb 
+ext\/blank redefined warning discarding 
+loaded fix causing uninitialized 
+is move calls run assigns setting template_root checking fixed changing 
+prevents highlighting featured ex 
+placed have goes think use override do browsed see @ replace underscore 
+calls have means went stops responding 
+upgraded started generating calculating noticed caused fails defines applying select specify tries do baz remove combined counting fetching adds changes contains break broken included 
+are crossfading work line Fix works please 
+generates used ignore rendering 
+is get 
+noticed mentions making freeze commit based get fix create 
+have has Parking expected is transferring 
+send_file is 
+misunderstood is supposed return returned makes checks see infinitely responds calls to_s 
+look notice update attr_name get working say seems -RRB- having 
+allows have cache_store mem_cache_store rb calls 
+adding parse updated pass object includes streaming 
+discontinue See starting fails highlight returned non-persisted do ensure working created persisted described refresh object attempt 
+listing attached 
+stated be is 
+\/ rb using causes is appear attaching launches resolves list works had force executed run like 
+remove use class estabish solves 
+applied 
+Helpers options_for_select support ignores recommend supporting calling containing used designed run added contains ensure 
+is sending commenting specify does work conflicts provides 
+discussed has expressed needs counter stored modified is following supported work 
+fail installed adds restore 
+adding AS _ use_workaround generated solved prints needs use accounts left -LRB- added developed intended comes find visit get 
+described return used continuing use returning think has define continue thrown sense need render file want get losing try make 
+calls found render_to_string rendering is view named did 
+ActionMailer deprecated is ActionView exist 
+have get mysql removed install try is telling known change suggest creating installing gives look overwrite know remove uninstalling does work 
+install installed looked is depends thinking create got start patching 
+calling Person modify allows i.e. remain integer use do have = proposing sent mentioned is defined doing brought checking come like expect appear 
+found have saved running 's enable 
+renamed name bundled preview Attached enables work 
+use care dealing specified solve need apps accept translate be calls \* output containing tried worked INSERT\/UPDATE like patched force calling is add let call 
+create using found recreated following listed edited match worked tested creating be -LRB- used please update need handle helps 
+wanted change declared dryed creating fixed added changed pass 
+reproduce 
+do 's realized want work ported get 
+put be called feels set declared 
+run pimped think act \/ attached implement 
+reduce fix getting create See introduced 
+playing find were modify update using think = -LRB- make conditionals use generating realize achieve storing call 
+think allow does makes construct select_tag &gt; options_for_select % attached 
+has adding scoping added returned 
+is exist generate using make use attached 
+provides relies access timeout control sets means adhered resolves 's respond set Modifying resolve 
+attempt get create uses trying use happens calls owner_quoted_id quote_value is defined needs called tries send calling ends creating implements going 
+using contain recognized 
+generated executed Missing install update installed do use performed inspected tells persists 
+encoding object breaks fails tries instantiate required changes work change 
+return item causing fixed sets included 
+is differs specified used returned created accessed broken happens 
+adding used merged merge do select allows &gt; find end -RRB- # SELECT generate LIMIT id 
+rb been &gt; method post cast url_for use sending form_tag 
+Rack &gt; See running 
+wraps Returns using Sample 
+
+checked breaks open \/ encounter defined inremove_const go action_view do const_defined end seems work saw 
+pre went creating used create launched came going receive pre\/lib\/active \/ record\/base gems\/activerecord 
+allow see run routes 
+defined Got uniq trying do \/ create\/write file happens include find having 
+namespace Includes using 
+support documented allows do adds left give 
+executes build object2 
+
+.3.0 defined exclude use create need output fixes made attribute_condition support passing mentioned 
+define 
+have deleted = works needed change has_many making 
+supports poses APIs expect provide supported allows specify self default falls included 
+destroy Upon destroying object trigger returning destroyed dependent prevents seeing needs determine called see executed rolled makes 
+upgraded delivers worked returns pass believe ommit do split works deliver knew Thx 
+provides allow introducing move including adding mess 
+found fails happens passes exceptions does track makes handle 
+accept representing returns object adds see added 
+wondering include used replace found allows identified like resulting write run help delivering 
+have_rjs hide error returned is replaces inserts match leads think 
+upgraded generates extracted Watch generated mapped Yikes go attached Invalid 
+specify surprised defined realized cared is selected &gt; thought tryed translate changed 's 
+find copying do checking use digged found matches added 
+have install run mean using installed 
+guess worded feel rephrase working is Take \/ reach expecting 
+encountered writing 's used fails uses described defined 
+produce work 
+found returns specified Steps class_name 
+fixes use check_box_tag cleaned radio_button_tag 
+pass help find see confused clarifies 
+evolved breaking using introduced is tried 
+
+specified HTML-escape passed escaped causes using applies adds 
+
+submitting escaped containing received contain related welcomed disable 
+run use 
+generated processing file has creates bracketed find looks rendered 
+looks got preserve using works breaks allows set work sets uses achieve cloneNode attached See attribute called 
+WEBbrick image_tag Generates lies appending return appends nil seem fails 
+get upgraded removed \/ reproduce use is occurs happen request updated 
+Say file contains renders render 
+returned happens rendered 
+
+do yielded reckoned hide used 
+cleans removes fixes found 
+seem have generating found seems take be sounds added submit 
+matches have say returns is blame working 
+have stores has mapped do console Does knows 
+wrote called try guess set goes bake provides becomes supports 
+
+create using done handle ignore 
+AssociationCollection skip exists has set seems take convinced implemented were seemed prevent created claiming 
+is addresses verifies created pushed called project assert save introduced developer &lt; seems says supposed behave result Calling 
+makes merge going does UTC meddle 
+had assign manipulate using changed generate include PeriodicalExecuter news_block -RRB- 
+attempted use setup rb depends setting backs using perform failing run loaded evaluated fulfill 
+do named reproduce generate malformed generates needs whitespace has 
+contains include executing throws running find attached containing reproduce go file 
+Use Assuming ruby created attribute have set interrogate add creating 
+Got fail pass 
+rewriting generated feeds want preserve aswell avoid getting upgrade allows 
+related used work is fallback default provided 
+
+action_view check used find be -RCB- end building 
+changed sending used match required send allows assigning assign 
+finds addresses 
+Migrating Creating Rails 
+has do assumes strip get override made mentioned untangle generating appear needs 
+has allows passing CamelCase &gt; = works override setting want are make applied from_xml get work needed figured 's need know let missing think 
+AR Calling generate LIMIT WHERE game_id 
+lacks adds 
+allow pass does says behaves makes hash adds 
+tried install get updating find executing clear rf 
+have called named decide use falling customers exist reported load cause fail html do Tested 
+seems references URI install called Escape attached file running 
+Setting load run contains set added see was db prepending handle 
+specified Allow required Sept generates selecting begins ends 
+updated pass 
+sets giving created exposed have want put get is guess 
+finds set Preloading abbreviated supported leaves loaded_member_type fixes includes give call trying 
+makes changes creates created 
+raise described emits trace 's rescues 
+expected installed 
+reproduce script\/generate binary migrate see replaced destroying did found are happens involved offer 's going converts came % comes makes is supposed have used went create uses distinguish needs type_cast results seems convert spot eliminating upcast active_record binary_to_string lead down\/upcasting 
+including attached are know tell updating marked let invoked comes Hmm want is 
+like grouping -LRB- mswin needed replaced \/ 
+adds 
+have work expected fail attached 
+emits does deals 
+fixed initialized return 
+checks \/ determine make have encoded gives upload try store encounter convert &lt; gems\/activerecord record\/attribute create 's fails write fail interpret causes raise binary_to_string be use 255 match happens 
+know scans looking creates show Thank 
+uploading eat release stalling occur mongrel_rails do start upload using 
+installing find include relative_url_root 
+commit fixes restructures kept separate prefer leave grab 
+make use takes expect have do works clauses is seen occurred using 
+think hit is call get \/ lib\/memcache change ----------------- remove tested memcached curious 
+had handle code implement Getting called 
+believe using rb followed introducing allow get sending username\/password trying exposed protect effected patch change included provide type password enter shouldn gotten did do based found pass means lets access stems comes going return cause fail isn happens returned match sent succeeds matched contains recommend happen changed states returns attempted contact taken resolve felt alerted 
+number_to_human_size separator precision leaving returns using 
+map Given configured 
+ActiveResource avoids parse parsing builds starting happens has tries set shows fails 
+work expected lost assigns using attached 
+brought light demonstrate meant return provided 
+Added to_url 
+made attached work does is ! 
+gems\/railties \/ nested has makes See adds 
+fixed corrected loaded handled hope help find prevent add 
+raises Running appears required follows 
+use include e.g. do select return changed lies works 
+deprecated executing output halt return means fail read notice execute changes abort halted receives 
+
+regenerated are update 're know use want 
+ignores trailing adds wrote 
+rendering raising catch running attached 
+overrides define breaks called intended ActiveSupport pass 
+have Assume has posted indicating want find expected works alter do post is access created arises work need done suggest patch used applies 
+caching have loaded like load speed makes cause Having happen seeking expecting 
+generated making update updated 
+is 
+failing upgrading works run call branch nil fails expects -LCB- attached 
+set retrieved try access 
+fails executed fixes requiring 
+contributed fails used read sorts 
+noticed intended quoted 's called encode follows attached = address see checking adds 
+has seems fix are wanted get work 's changes improves done pardon made found is 18th changed overlaps namespace use guess have tried stick using seemed chose handle be provide naming did had has_many contain needed check please err ugly gave happen depend working organize find yml keep organized pass console testing supporting scaffolding generate was improve namespaced look let help 
+having is comes tries load diagnose tried requiring make missing need seems create narrowed RAILS_ROOT see turned called works delete want ship deletes seem cause have 
+described Using generates remove place 
+pass 
+create called tables_controller try issuing resolve supposing get script\/console start @ 
+coding stuck model marked_for_destruction 
+require causes use required comment barf think say exist ignore rb continue 
+'s merge appeared apply resolving fix Patch broken see is stack accounted merging named eliminates 
+Looking Says implies added supplied use remove add_index remove_index column 
+run passes railties causing test_helper 
+generated was flip use threw do granted vary force environment rb 
+clean have 
+create remove quoted 
+found generates chicken_id heads WHERE SELECT id &lt; make 
+draws routes is AppName need changed seems call work 's Assuming do 
+have named suppose is expect return using clobbers get matching seems breaks restrict 
+have passed has enters apply see modifies is doubt think expect written illustrate 
+users\/wiktor \/ found 
+want create called rb view have do is propose appended created See does 
+deprecated be remove creating replaced are need 
+have deal serializing evaluate exist made fetch define defined used 
+Declaring trying have validated e.g. resulting 
+seems test encountered demonstrates invoke have assuming stems having checks has 's causes broken run call happen called agree like hear begin working 
+
+seems seem storing want show chosen Changing affect column_name call does 
+checks breaks accessing sets bug has resolve 
+require overridden defined happens object drops expects 
+includes exercise 
+see attached running notice throw found indicating appear picking specified rb has 
+testing set ignored 
+noticed testing works produce mysql uses removes need Note 
+try treat do works \/ fixed modifying went attatched made 
+does applied migrate followed 
+set render 's delete get going freeze passing verify passed see 
+folder split do 
+getting using search have looks missing WHERE &gt; 
+myproj generate install string generates try edit fails 
+have uses passed calls restarts causing shown content_tag displayed expected fails 
+created Using extend use run works included see calling be think setting 
+has fails running adds require fix removed fixed 
+trying run appear broken get is provides getting 
+rails do preferred include missing seems pass referring thinking mean hash meant jive share turns limited need exclude provide appreciate improved 
+take found applying processed -RRB- cause fail load exists 
+associations\/has catched run shows Changing failing think are supposed generated ActiveRecord record\/associations removes pass 
+occurs used follows 
+connecting specified calling change let g rewrote using purge call assuming set test 
+move having discussed does run finds duplicate has know are fail working thought post get 
+databases using returns lead adds 
+migrating looked find is like live opening doing think need made writing Thank 
+is use generated caused type solve regards 
+moving needing put had interpreted 
+refactored use 
+linked 
+determine Have think 
+ran tried set removed create using Attached failing 
+looks getting loaded resulting seen See 
+having Hey find ActiveRecord stated \* changed is want do include Takes used joins found had add get think state feel correct 
+looks customize makes localize end sounding addressing pass did do change accept add are making object prefix work yield 
+failing tries require exists load using tested 
+run have has belongs working tried use set broken routing work using access shows took GET precedence takes = &gt; seems interpreted remove get works expected user_id \/ end Looking shortened becoming kill causing beginner is supposed seem 
+introduced 
+Goodbye commit Broken 
+find creating return designed means get want feels adding attached adds named_scope looks think is add define 
+set requires makes appear intended 
+running ran require modifying made lose was got found fail execute Refering is suggest create Try called succeed tmp\/sqlite disallow adding 2008-05-14 end leaving scratching understand lies 
+Introduced trigger used be contains sent trace panic client_min_messages notice 2009-08-06 \/ gems\/actionpack gems\/activerecord gems\/rack controller\/params gems\/rails lib\/rails\/rack webrick 
+trying get work help run encoding 
+experimenting started got get seemed work generated working figured @ find params questions discovered forgot put give Putting locks have kill go console abort was seem do happened saw postgres seen starts &gt; start support\/callbacks fault attached 
+developing is act sending receiving 'm proved provide like contribute providing 
+u. find nullify sound deleting assigned do set dependent does 
+contain prepended leads contains detect 
+Using noticed posted ie 
+render makes knows using 
+add Define avoiding improving define INDEX by_name_surname = name generates CREATE accounts 
+Hi start get server using forgot set have restart script\/rails working 
+returns wrote use ordered generate 
+created have create sorry marked seems figure get has 
+meant commented looks works 
+had called run ran guess generated repaired Changing 
+Err mean get are about want allow overwrite need run happening is has 
+caused sending treating translate leading tried using 
+hitting working Rails occurs tries generate calling tell works is memberships adds condition start see narrow 
+mentions activerecord\/RUNNING imported are files building mentioned 
+discussed created raise given appears work changes suggests introduces using update leverage rework are think thought highlighting added have reads writing describes confusing got do put agreed save stood Thank 
+misusing added Added declared outputting like Adding tried putting yield got reworked thought pass render see was 
+return using encode 
+gives sanitize save growing 
+is bear have used running linked started released upgraded remember ran install experimenting s worked uncommented include tried s. start unicorn gave followed commented get confirm run says found seem exist 
+invoking test handling sending Status think needs send put help get 
+rails has returns Accessing matches found make debugging look suggesting 
+_ cast string seem do 
+see 
+handle use is hardcoded moves changing enables generate 
+added Marshaling affected match object set removed Marshal use know modified attached expected n Failure was 
+have named located require loaded rb occurs loading \/ 
+has decode disscussed affect wrote backport fixed 
+specify fail get executed diagnose know is accept converts adding included see 
+rails provided 
+store converted read solves using used behaves caching stores 
+failing uses depends assumes Hash guarantee generated get Fixes assert 
+allows passed 
+mix SQL lies generates takes used overwrites comes qualified means depends resulting is ensure achieves don overwrite 
+added maps 
+have convetion Routes rb add engrave chisel go reloaded 
+rails chdir fails dies mentioned \/ running uses daemonized attached mentions need make 
+returns active_support defined inherits is Included inherited check removes requiring requires using ensure rb 
+pass called removes included 
+had spelled 
+have like run respect find fails TEST Tested describes uses generate 
+Create say define Call raise 's trying is add 
+Given 
+applied passing made know Let help QA 
+moves used allows include use requiring 
+allows take run want put results 
+adds mimics is perform STEP 
+Fix deprecate 
+setting received starting coming find_or_create_by_name using appreciated 
+work uses operate raises 's named shows attach opening resolves doubles added fail fixed adds form end transformed want see packaged is 
+generate trying save Steps removing have backtrace 
+needed alter began return broke displaying test fail 
+ignores try set uses is generates file encoding treat defined Valid 
+migrated surprised find do think found included needed get going added behaves occurred implemented make have need are require installed works tried passing 
+provided check rendered given work checks matches are is checked encountered cause fail make attached fixes resetting called render_to_string address 
+fail Given 
+used #### start ok load 
+occors 'm make try surprised trying update called have using fix create want get getting understand help tell is 
+logs rendering begin end need suppose add seems moving submitting 
+understood says know answer be believe return raise violates 
+replaced attached 
+having know is start occur removed installed Note disabled 
+using felt hash specify endowed took raised shot sorted take allows pass sorting do &gt; find want passing 
+deploy causes fail trigger \/ _ 
+rails visit = get NoMethodError found comment 
+select is add regexp included 
+to_cart get broken lost 
+using dump guaranteed changes appear makes sorted dumped 
+Hi using found plurals handled 
+helps fix load 
+
+using submit leaving handle is made throws assigning means submits date = &gt; validate return 
+get trying render is copied hello_world hidden 
+
+commit migrate add cache_classe failed block use populate are want create is have made know update file 
+posted post creating seem tell use set , recognize block data_mapper run says \/ &gt; found get pass orm assuming doing please disregard working find refers tried looking know look like continue stuck playing 
+uses 
+implements match Mime text\/javascript MIME application\/javascript 
+seems is happens uses host_with_string calling 
+enabled got thrown 's is confirmed appears try take have fix patched use ActionView end return 
+doing escape exists view have find quotes 
+create discover running restarted think built cleared does update 
+ActiveRecord acts_as_mappable geocode_address Using 
+compare see figure has put does add 
+rails has Run update running have work take installed is broke had confirmed Koz use sending stopped uses failed sounds appreciate looked be hope let know reported Thank 
+hanging called waiting tests review posted use 
+declares returns causes needs generate want have affected set called allow_forgery_protection exchange misplaced means make breaking declare enable affecting 
+include changes file renders 
+called have calls generate invoking 's appreciated 
+inspect returns surprised expected makes 
+use check 
+believe set saved work expected move Given setting make account seams expect is has wanted see have pass supposed think given attached fail express describing hack like had Assigning came do 
+makes use callbacks allows using add 
+dispatch\/dispatcher dispatch\/middlewares related want \/ break 
+commit seems Move work config executed copied\/inherited tried fix failed help 
+gets recognized interpreted is prepends recognizes fixes Adding changing appears configured have = find fixed 
+tries setting silence_spec_warnings loaded moves takes 
+exist raise Admin tries do get constantize want caught fall hit Had worked fix 
+make ignored be whould work 
+found does joins includes works have has called let imagine want fetch attend invited be expect is happens generated see created selected specify leave noticed work 
+sanitizing having = &gt; used come sanitizes 
+Consider ignore included depends 
+trying get reload embedded changed tell please correct checked reloaded detect file restart reloading getting working stack is start try 've look affected add 
+run makes generate called is intended prefer see tell happens 
+working generates using think related attached fixes do 
+saw remove clean did know Let think 
+included happens creates changes set setting keeping wiping\/reloading used misses = 
+edit 
+shows show used 
+
+adds found specify preloading include are see referenced retrieved Adding allows optimize joined preloaded affect loaded do using set 's 
+said passing wrote solve 
+decided go install copy needs seem take recognize run is following Running execute 
+adds has ordering opposed RAND develop test need include want do selects exist have makes work hash abstracts delegate ActiveRecord handled passed 
+using raised prefix checks value set raising matches look 
+getting attempt require 
+fails is failing relies gives decompose listed attach resolves filing removing relying invokes rescue deletes allows added put have avoid performs think makes uses use tries using modified ensure work used handled offer 
+getting Took attempted do using open create = db\/development exists Seems chalk has Turns reported run start file specifying get Editing \/ dropped looks returns dug guessing annotating utilizing 
+fall want validate do &lt; p p. amount_confirmation : appears match is cast Adding 
+like adding gem 1.1.2 environment fails &lt; 
+generates are gets webrick caught remove does think generate Changing 
+set falls include state_machine do change 
+is supports like pass named involves emulate are pushing default_scoping used have convert browsed found search has fixing 
+removes uses 
+is turned discussed allows See add decorating has composed_of confusing return def end specified used validates_decorator &gt; attribute_decorator do supports 
+found 
+fixes Reapplied 
+Using test create app\/controllers\/posts rb says object have expect occurred evaluating 
+reported tried reproduce provide got 
+have trying do fails use occurs using 
+adds allows create adding found using think makes push Let say have render 
+looking found fixing are \/ passes guess overlooked 
+retuns think 
+kills implements _ method_missing mixing consider propagate handle attached reproduce Add 
+follows HTTP does attached affect Note 
+think renamed looks assume replaces merges 
+generates Given like be happens suspect 
+have break require found gems\/facets \/ lib\/core\/facets do html = fetch 
+3.0 opened assume Problems 
+contains = mistake tries understand mentioned executed make depend cause fail provide tests fixes seems reported fixed improving 
+adds code is including 'd makes ruby 
+does check wildcard includes used @ changed exclude added ensure joined join benefits 
+introduce specified map put action_path end _ # -RCB- tries mark_messages_path 
+communicated Starting stored using prevents is start pwd\/tmp\/pids do have script\/server posted regarding 
+use using assert make attached 
+
+
+makes using uses allows see passing Rails fetch takes storing adds tests modified 
+script\/console calling defined @@ is 
+set rendering chews is doing know watch go 
+abstract_store implemented work loaded is implement 
+differ use added dugg whip has start 
+contains resolved used installed comes have commit submitting look use remove return loads has 
+reproduce 
+add use workaround is wrok had added quote_value owner send @ end work 
+OrderedHash h. makes found 
+works merge ordered respond run pos neg comes is put be using love help tell start solve 
+use get label_tag fix 
+rely defined processed 
+destroy dependent leaves using deletes believe is use attached destroyed person_address_id id Example 
+building use reformatting instantiating = 
+
+find nil passed contradicts presents have configure using accessing appear expects get save act destroy like contribute done extending require making supports 
+checked find decided relating open come reporting using working ask add 
+worked reproduce mog ~ scaffold 
+respond catch failed croconize\/vendor\/rails public\/dispatch fcgi 
+DWIM getting treated wrapped checks responds to_ary returns 
+rails 
+supported implemented &gt; had patched seemed triggering do add tracking fail working getting done thinking having 
+interfere parse provide does 's says removing adding 
+see opened marked resolved watched Logger fails causes fail 
+failed execute set hit occurred failing delete created was replace clear delete_all Using misunderstand order_item issued hitting 
+declared has create try do get is creates supplied define think figure 
+going used prevent client etag has sending fail changed 
+Consider fail considers saved finished raises return leads generate think fix is remember revert done 
+contains put becames undersand encounter routing processed think have is fix 
+adds specified default assume attached 
+assigning get is use work create have works 
+
+has comes have reports behave 
+
+creating noticed work called 'm See reproduce causing 
+work 191 expected fail works escape using chr \/ = 218 -LRB- ^ rails &gt; 
+pulled got running fails reproduce run 
+-LRB- Using include reproduce object set add print ' contain included demonstrates start 
+submitted generate called include comments getting attached using works cause fix Tested 
+added allow overwrite creating decided seems ease entering 
+has 
+get 
+described adds mimics accepts moves permissions attributes keeps specified assign acts accept upgraded created pushed 
+discovered file uploading working accessing differentiating checking testing report respond_to handled runs matches yielding see 
+exists clear attached illustrates view occurs happens simulates is account replicate go fill input run raise simulating forcing rolled contain resulting rendered submitted @ result executed attribute specified note contact_info reproduce Make restored rollback -RRB- 
+ease configurable hardcoded implements making respect makes keeping lives 
+add \/ blow traced rb defines includes used contain using 
+used existed happens using works 
+creating needed generate use uses stands parse allow represented was monkeypatch accept rb changing read \/ missing allows 
+have working try make modifying updating use put using reproduce rails is extending drop create migrate script\/runner Have US UPDATE SET setting updated_at updated set 
+called create generate get file run remove runs tried seems occur handled fixed attached rails goes 
+use fails validate Topic find = alter make 
+generates has have working support overriding 
+see supported &gt; raises specified seems be change include does 
+load exist replicate adds shows loaded used _ rb @@ TestCase 
+escaped got wondered submit update submitted comment expect outlined map Given connect = controller is be note globbing 
+need send sends encoded prefer send\/receive accept treat use support treats think is know occur 
+want specify do assigns expect pass fails treat means has see used think be attributes -RRB- make admit seem changing pose made passes affects imagine behave thinking found 
+type have &gt; gems\/actionpack starting detach start controller\/base default_render params Try 
+is hosted calling want use call lives &gt; changing illustrate have 
+build work expected populates Given returns building Using 
+says use define created using does 's allows having exists 
+used using provides turn allows set &gt; 
+return called class_name = ActiveRecord set_table_name 
+Using ActiveRecord end result foos bars WHERE attached proves 
+Try shows leads using ruby 
+scopes results pick defined find 
+hooks ActiveRecord registering calls result is uses implements returns saved say 
+destroy has hits saved expect hit parent_id seeing looks applies hooks called changed 's 
+display ie find want go were suggest grep\/less\/scroll looking 
+slice worry flatten pass use includes have applied 
+is causes work loading reveal exists elaborate occurs obtained return fix Accessing seem exist use accesses wrote worked find -RRB- be executed WHERE SELECT expected 
+Rack depends 
+trying got install happens exist fixed think creating generate \/ solved getting have redirected fail forgot find &gt; 
+came dependencies crash calling handles includes 
+map upgraded stopped Rails finding match is does connect \/ seems breaking breaks give alter 
+failed declare resources_tags WHERE invoked approved calling declared default_scope select true 
+found Migrating uses start stop passing ended running realized debugging go calculate gone illustrated get using understand is handle had determine patch reproduce configured 
+_ 
+
+required used string\/starts need spotted working 
+find changed update use related Rails 
+try use get located installed adds review committing 
+attached adds enables Allows configure setting make fall found default_locale passes get trying run got don related think modify significant_params 
+railties\/lib\/rails templates\/README looked log synced made replaced 's uppercased deleted 
+do writting runs 
+shadow have run resulting fixes realize apply tweak including investigate write 
+\/ calling deprecated rubygems producing 
+use come make connected Using Consider fails stored Thread returns fixed adding \/ used pass works have add query_cache calling initialises associated 
+makes use making have 
+been discussed agreed branched fixed looks added is 
+return fixed factroing checks builds working affecting found 
+work preload added fixed accepts used going find change setting rb find_target reflection include make took having removing updating included 
+run find is fails recognize running know add file shows happens modify fix puts &gt; Check try sqlite terminated was exit 
+found work do Show wish use required toggled fails 
+found Hey testing checked accepted 
+passes raises appear needed 's triggering 
+
+check see read retry detects fakes 
+rb delete # namespace \/ &gt; file does suppose deleted causing used do lib\/active _ support\/core set 
+created take handling method_defined know supposed keep reported ActiveRecord 
+using used ActiveRecord use doing retrieve come 
+allows used work stands content_tag_for called end getting makes content_tag using prevent included 
+broken made upgrading performs include has detected ran 
+experienced like confirm start working using works 
+think ran have want create generates arche-online marks change fails creating found know be appreciate 
+expect work seems requires attached verify 
+causes is let do scanning module 
+pass 
+u find &gt; encoding try Change changed 
+Switch use 
+trying do clear created\/updated seems does expect works have get called 
+restarting lost write happens confirm posted contain occur lose submit restarted coded expect throw is blame 
+
+bundled prints mysql removed install try changes make work verified reapplying 
+contains be walked find updated 
+looks work uses 
+generates be happening is created apply applied went gives Turns wraps forwards ends storing say fixes tested wrap works 
+need come handling include uses structured specification files 's using see 
+executes making E.g. adding reallocates reallocating batch execute requested allow optimize 
+used customize Is tested copy\/paste frozen read seems work think test make 
+writing noticed updating misspelled solve 
+use login changing using works based 
+is Knowing have resort access considering scanning returns called affect manipulating attached 
+included have got override 
+escaped gives contains Changing fix execute 
+using dump span preserved 
+Backend documented opened &gt; actual is removes makes conform 
+2 x 
+used shebang run \/ called worked merged understand call follows works rb want use work tells have needed execute re-write calls fix re-introduce 
+wrote suggested called showing be debugging figure done want go writing bounced having thinks 
+uses causes have obscure leading changes use 
+Consider ActiveRecord end find stack method_missing _ vendor\/rails\/railties \/ require script\/server happens running detect 
+relies access timeout allows declare ActiveResource sets recommended set allow using see cause incapacitate library make is 
+broken are handling Fixing 
+returned returns nil causes 
+throw ActiveRecord added 
+found missing with_scope 
+adds include application_include rb get running 
+created using lost 
+causes force have file call returns 
+add have runs doing based adds allow specifying running seems used specify 
+happens try save ActionController matches css &gt; \/ gif NAMES SHOW _ fault adapters\/mysql lib\/active gems\/activerecord support\/callbacks game\/app\/controllers controller\/filters gems\/actionpack support\/core ext\/benchmark set pool rack\/head controller\/vendor\/rack controller\/params controller\/rewindable lib\/rails\/rack 0x48d9ff rb_bug lib\/libpthread encounter 
+trying get work is have built required pass operating &gt; hash looks checking throwing figured hurt working wondering experienced got happen try signup appreciated share 
+designed chained join selects fails alias leads Build allow passed joins uniqued converted solve aliasing assoc 
+is reads modified producing altered read seemed fix 
+Given create observe get considered assume overwriting resulting 
+call derive ensures called use Calling See 
+ran using run handle converting balk convert do expected began fell fix trying refactoring works have organized does fixes supporting allowing define coerced build showing work think introduced test maintains returns expecting converted know returned is makes behave customize respond XML provided implemented getting started patching working grew thought get provide wanted are documenting 
+want named singleton specified are generates notice \* using stay fix have 
+allow specify generate want use write generated have do active_record find 
+uses returns create ignores generated reproduce 
+take expect attributes being working cover appears implement modifies waiting send return using used realize is break like know think write\/update 
+fastthread raised activerecord 
+have look use kill 
+resolved have solve Use file switched changed sending pointing define maps ending works redirect fails is picking has change pick testing 
+installed using duplicated access do create build have change ResourceController interfere need inherit support Thank like evaluate includes get tell - ! 
+runs upgrading made tracked come solve regression played did appreciate tracking guess affect attached call read ConnectionHandler have take 
+accept messages shows reproduce using fine is 
+'d occurs fixes 
+REXML define checks defined applied 
+users end do first_name attaching 
+supply passed attribute build raise ignored delete 
+requires set ignores creates tries use fails is include used be 
+allows assign citibank create id taken rears passing works validations end make 
+using update assigning mark loaded save reload say have belongs_to expect returned attached 
+catch lets resource match work used 
+allows add passed are column_name contains applies appreciated 
+
+object make cast given manage inherited allow insert causing calls defined makes plays find casts accept overridden perform 
+do like output happen is guess fixing form_tag block needed use using take calls happens seem notice 
+noticed allow use do pass causes inserted cause working 
+have adds using look based submit create exists used 
+using has attr_accessible added mention 
+loading complains ru is reproduce Steps Create &gt; $ Library\/Ruby\/Gems starting railties\/lib\/commands assumes has 
+assumed respond start adds returns 
+include prompt is selects using use need included pass 
+flashed check rails having stored do Doing work seem missed 
+like was added reworked include included find 
+contains renders 
+using noticed going unpack trying deploy install having vendor have do work Seems uninstall run found works does know loaded doing looked code contains defines defined try returns define 
+have install using ruby tried generates \/ initialized rubygems\/config lib\/rack\/handler 
+packed set read-only causes unpack fix having 
+inherit Hi have displayed rendered 
+get Using running please see 
+generate using attribute generated suggest take value1 refactored is generates 
+run Given containing given db created attempts remove named fails def end idxR_sessions_updated_at occurred DROP exist lowercase enclosed 
+set created is assumes are assuming Setting give setting fixes ensuring passing apply 
+broke updating ran supposed turns changing tried trace found returned rewrite wondering seen using disabled 
+add including adds prove works 
+followed exist assuming is see be skip loading loaded exists \/ 
+looks has listed find include see have assuming ActiveRecord 
+refines returned coupled do forward\/reverse think get forked 
+edge generate user_test have created fail make 
+using happens working attached fix 
+thought prepend generated encoding make 
+refactor checking existed found did follow tidied applies 
+handle rectifies 
+adds Chars returns falling 
+migrating noticed written solves commit expected -RRB- check_box_tag attaching access 
+adds allowing define acquired use having have retrieved is hooks hack provide believe 
+introduced throws followed attached 
+run add required works install Running is require rb 
+seems broken returns generated fixes adds depends 
+running are run SELECT Migrating schema_migrations appears fetching found take 're be migrate fetch 
+detects use causes have object forcing determine parse is look attribute rb active_resource http verify_mode read_timeout set timeout 
+required tries load are knowing fills files wraps running 
+accessing seems calls lost is Given wrong missing Accessing works 
+do end &gt; 
+case_test are rb is makes applies following pass strengthening 
+generates makes have said fail be change generated naming test result called gives gem require put include wanted doing 
+rails handles allow submitted bubble assumes named attaches receive 
+used allow specify avoid escaping invokes tag honoring 
+routes seems broken dealing appended pointing is Loading Seems blocked appreciate identifying getting added 
+hit upgrading revealed returned turns 
+installed register serving 
+uses decide stubs install guaranteed be patched abort run 
+using vendor\/plugin\/views look rhtml tracked find_template path determined start view\/template rb add altered 
+ActiveRecord 
+fails reveals Turning debugging server make deliver passed SMTP diffing finds seems worked makes passing leads switching happens fixes do 
+trying create loaded reading interpreting raises fix needed add require defined have 
+created sets map put lib\/rails doing get destroy \/ has seams fixed escaping 
+write get find follows using is has tries call were includes include alphabetised occurs uses interrogate construct assumes do are joins exhaust happen changes trying build assume synced 
+discovered using is name find object like selected Anyway hear tried Thank 
+trying update rails seems work see 
+say allow match required define given Given expected use wish get had follows 
+includes does is including figure be intended offset determining 
+break using ie erb run tell is returns return call 
+issues takes have trying work pulled switch breaking 
+discovered calling is create using build works save leads believe receive find exist occur replicated see run fail inspecting looks fails help i.e. versus Give attached used replicate helps 
+offer encountered fix pointed is copy uppercase lowercase 
+is declares rack ~ indicates attempts load installed cause fail start rails Attempting causes using report Missing taken loaded comes rb hold deployed installing believe 
+using injected 
+find joins eather join say -RRB- have work adding code mix be support wanted specifing 
+mistaken delivered allow helpers get pass leads make align 
+Do script\/rails convert datetime Verified build 
+upgraded See using Post to_json needs pushed 
+adds using included tests passing close 
+install rails get try run installing have going 
+simplify fetches used makes fetch simplifies cover 
+force works expected list actionmailer actionpack activemodel activerecord activeresource activesupport rails erubis rack railties rspec rspec-core app a5 help \/ found 
+accepted supported fail stems leads saved fails have create solves broken 
+breaks disables each_object 
+have initialized works use get removed doing 
+
+believe occurs attempt call applied ends # using follows &gt; uses has comes limits does 
+raises differs assigned trying works expected happen raised make happened is loaded 's expecting wrote inform changed try attached 
+allows hooked 
+updating noticed work got config db \/ is rails required initialized uses auto-requires solved require separate track check 's seems return throw think go config\/application rb make 
+uses trying make has want leave do use done is 
+
+
+have raises try use made work replacing 
+generates passes use using tracing found reading appears put 's association_preload logic construct have dive need bind seeing 
+noticed added have is figure find use calls see used 
+making show takes makes introduces causes 
+responds loading missing installed is tested 
+have using CONTACT belong plan use is want end Loading set works tried seems related 
+using setting use Updated 
+is specify detect dependency have satisfies openid = installed freeze type tell satisfy looking does match found loaded 
+using written create recognized had appreciated 
+attempt load opted arise defined required messes done prepare break loaded included happens Rails called rails requires fix checking see requiring use figure write 
+script\/dbconsole supports adds using 
+discussed erb -RRB- flattening using change sync 
+writing performing ended dividing generating expected have assuming be comes result NaN 
+create migrate enter show created shows 
+love think work discussed 
+trying use image_tag Calling throws traced convert action_view join 
+found fails return Attatched fix 
+adds Quoting converted sent default_timezone use find &gt; -RRB- Article 
+means have included 
+using set override specified put supplies including believe fills 've instruct missing 
+fail back writing reading returned occurs saving loading converted override support convert know truncates causes rounding bubble introduced affect illustrates guess be change extract used include avoid defined changing ascertain is use works verified pay attached switches using verifies 
+causing requested create render GET produce 
+created load use works fails 
+forked added viewed merged 
+adding place works advertised fiveruns_tuneup fires config put configurations calls load call need rb cache gets do 
+avoid redefined warning discarding 
+are rendering passing fixes behave 
+worked Today not_found found work ignores does using attached 
+suggesting resolve have singularize See do end found class_name 
+listed 
+honored Consider test created pass handle raised find falls aborts hitting reverts happened passes 
+tried Hi c. find &gt; think assume saved does 
+goes raised 
+append look adds fixes escaping make testing gets 
+make fail raise trying read gets included asset_tag_helper_test demonstrates 
+calling has include Attached 
+
+suggests redefined allow depend routing modify feeds have does base passed rfc do need raises match verbs work pass requires Change attach 
+set setting happens is unfiltered says includes worked 
+want clarify resolved keep find 
+
+cast Creating casts Reading 
+use tried occurred lib\/tasks\/databases set exists fail used added solved apply 
+getting returns inserted column_for_attributes = fixing serialized leads 
+passed think find sort searched responds See 
+maintain master underscore worked broken 
+asked post return Doing cookies do 's called is monkeypatched module looks note seems call expected work know focussed hit see 
+building specified creating merged explained reflects accepted applied build _ 
+were are range missing broken have 
+solves Added deprecating reducing creating have removes require provided produced coupled appears requested displaying make is map connect work using seems respect return 
+happens produce ActiveRecord end needed be 
+encountered have Suppose has post belongs are create id take find think reproduce Rails 
+breaks are use has means ignored returned done is modify include be replace 
+are talk caching seems proposing support be store serialized stored deserialized read called appended prefixed avoid volunteering make agree 
+adds specify help prevent are 
+following created surprised have looks 
+work doing Calling 
+has fixed Ran submit get do believe pointing Stack pastie trace removed occupies raised assertion &lt; given &gt; = block return 
+Fix address gems unpack 
+commit introduced 
+do &gt; decided selected works contained put echo compare think assume made passed adding adds says casting share done AR specify Thank 
+commit mentioned is breaks have gives fixes using 
+uses does fixes need shows 
+does taken is submitting work maps requires passed appreciate instantiate initialised see have allows used 
+says use Seems 
+commit broken Adding cleanup_application seems fix created working want commited 
+sending receive leading believe throws returns returning begin fixing 
+has setting causes Using crash files loading is caused changing solves 
+created configured ran get memcached taking run is showing Tried putting sleeping getting wait setting searched find reading seems related running tried 
+generates uses executed concatenate adding get use happens fixes 
+loading rename 
+rails believe adds 
+described figured generated made include demonstrates fixes 
+allows specify running control created placed generating test keep 
+appears perform created Take illustrates added performs called &lt; see inserted was create join miss documentation 
+have want use get break call assume fix added defined make fall making 
+supported missing implement modified see 
+contains 
+warns makes test find deprecated set controller\/test called \/ :114 
+breaks introduced Added deprecating want allow 
+using written cached 
+
+introduced works map configured id is 
+allows specify generated want have altering applies calculate alters sorted work made expects added 
+wrote wondering working merge 
+looks ActiveRecord causes autoload requires raises 
+feels 
+adding got convert using &gt; is \/ include view\/helpers\/date mean install get 
+says reduce enabling say attached correct 
+add adding i.e. See 
+found unused seems 's documented make has generates do think copied introduced produces Using routing get parameters @ works specify produce acts tried removing break guess undocumented does give passing have pass re-introducing build form_for building attached 
+exporting stay exported 
+
+behave expected comes mangles does work calling 
+changed 
+think run involving works submitted includes expected work include occurs know Let need track 
+
+attached 
+work compares is = found 
+has recognize set blanked submitting 
+places makes templates causing Creates think keep abort Running added have construct needed 
+have create_users execute wanting add alter run are migrate = defined 
+cant rails using noticed works tried install get bundle 
+allow avoid creating do included 
+defined has specified installed fail restoring running are create referencing used think be use dump limiting set dumped 
+allowed created assigned prevented end has referenced causing caused causes do trying fail saving debug alice bob &gt; &lt; Tagged feel person_friend_pairings person_id change 
+assumes applied detailed generates fetching find defined include Consider has follows ActiveRecord end call -2.1.0 error \/ msd\/lib\/preload have expect expected occurred evaluating rb require parent_id seems result included works assuming 
+noticed looking removed resolve commenting checked using See 
+using behave expected accept produce = does run 
+posted raises routing sees defined using works given Accessing does trying used work use \/ did tested adding pass passes try add catch know start take figure are related applies describing creating declared 
+
+trying create using remove encounter run found caused called commented cause 
+going implement found defined write move included saw commit implementing 've filter_parameter_logging think moved 
+running placed Running 
+use destroy generates looks WHERE AND reviews raise got thought breaks 
+caches happens querystring forcing reload fixes ActionController do 
+Given &lt; + find returns f include = doing get SELECT FROM id SHOW WHERE 
+updated did generate insert explained deprecated found 
+require switching 
+playing trying returns Returned find_all_by_state is tracked oversee rb doing 
+is supposed exists contain makes determining 
+submitting Hi fixed fails call loaded # exists exist do report Gives go find come know Let need 
+needs require attributes work 
+getting do rb have 
+deprecated used corrects 
+hardcoded causes fail used make work know made 
+trying get is have Running returns user_id 
+have has_one creating planning need use using expected is = addressable rb 
+executed passed applied modifies apply invoked \/ 
+
+Consider subscription_plans want \/ match matches does work believed 's allowed seem suggest 
+called occurs set rendered returned causes reset render_to_string nil caused upgrading 
+seem like used produced expect trying replicate using given produce produces overwrite end expecting appears work break being hope run create assuming 
+calling proxy_found is delegated results works 
+fails reporting is 
+specifying have override cause Specifying run fix changed 
+using need use marked nodoc adds removes 
+
+fix works 
+recognized looking provided says say attached 
+deleted 
+Rails going having defaults hash\/conversions is have defaulting underscores assume replace picked test see use changed save read running are add want remove -LRB- do done find 
+access project wanting give -RRB- found doing does @ add is like do know 
+results Calling exist makes debugging clicking were coded 
+Consider work cleans evaluated render passed call called cleaned resulting defers reloading makes 
+appending be -LRB- refers returns File join exists file appended specified 
+create add = run ask get 
+have use id has generated used 
+Is help 
+tested fail work escape select generated 
+error is appear rb identifies looked quote builds changed quote_column_name invokes performs 
+text_field Adding facilitate displaying v 
+uses use crash exist wondering have attached causes check read attempting connect 
+know figured share writing uses using was started profiling try increase took taking stopped rewrote got thought used takes report mean nitpick 
+destroyed prevent 
+implementation introducing think lays like seems Assuming continue improving makes seeing extract 
+databases run submitting done trying finish having patching 
+made evaluate accept evaluated fixes passed mentioned stops starting get configured 
+state made foo work \/ rb 
+find turn have loaded using defined 
+execute running Passing flag created fixes shows adds contains passed set allow database uses disabled continues behave is demonstrates rb added fails think welcome let know do get committed 
+removes set says are make like solve be add real_content_type 
+using think have goes execute see is loads running tries dies create BLOB\/TEXT used 
+controller\/resources hyphen generate -RRB- set underscores translate 
+see Returns added have 's call do 
+merge happening Gives works tested apps prevent find bisecting 
+occurs using have find end_date \* WRONG treats write = following &gt; get is calendar_events specify checked use Date f.i. 
+
+enables loading allows have needs need developing i.e. used rake expect loaded load has write points are using had 
+do ActiveRecord get activate seems caching indicate cached enabled 
+call run assume runs is follows require WWW log agent search_form get &gt; 26th \/ core_ext using tried missing find need 
+doing complicated include noticed WHERE one_asset_id two_asset_id indexed results done looked found = find skipped avoid have query attached 
+use mongrel enabled made blocks 24\/Jul\/2008 myhost\/sid rid \/ denied match tting Attack know severity causing using GnuPG Using + 
+
+using assumes use loaded Consider most_commented is add returns commented generate JOIN id ignores yields added verify honored check fixed set IF default 
+read tried has remplaced content_tag executed fix content_tag_string 
+changed broke has_one included fixes using used have rb adds make 
+slaughter Try having See address_attributes def create save do &gt; get doing getting submitted match are Im generated missing rendered @ inspect returns 'd seems handling coding 
+assumed BY return failing pass ship 
+found breaks write use written work user using have happen 
+install &gt; tried executing Blog updating Rails 
+works fails nullify &gt; generate pressed is Rails force use starting detach listening Starting gems\/activerecord rb compile expecting 
+See Running produces 
+adds 
+call assign store is configured initialised exists 
+stream use tag play support see includes requires supported server display work indicates played NOTE show audios streamed notice filled supports get 
+passing are failing done expects behaving removes 
+
+seems see works expected Attached filter ignore misunderstood passes 
+observed modify loaded rails think had do found invoke get 
+clean make 
+expect Regard removing deleted are needs documented 
+Hi rails installing change has user1 User Character user2 : &lt; concirned situated line _ defined taken executes char make Commenting 
+do t find = 
+check run TEST ran include solves 
+added stick sets fixes allows set adding mysql change ran 
+
+script\/generate exists create uninitialized See running 
+allows return pass running is implementing have specifying create wish support allow stored returns use needing 
+found repeating setting destroy info want display responding render alert rjs flash discarding undesired needs implemented makes outlined 's changes called use discard return applying effects find evaluated pass say are included test like know Let think generated 
+found project trying find allows run based made having rb failed says start create specified spawn Help 
+using allow give have serialize Doing Date read attribute return found Digging resides n doing to_yaml yaml needs represented uses 
+testing returned played determined happening replicate puts accessed using think let know looking required help 
+added spawner use makes run 
+viewed seemed set do refer internals create add 
+happens happen stuck passed working 
+fails find checked rb points \/ look 
+Try generated work happens solves takes used using called expects included provide generate extend AdminSpace 
+rails install trying get using executing cache\/activesupport cached downloaded placed solved like 
+find fail &gt; end \/ C adapters\/sqlite app\/controllers\/groups 
+have gone using gotten say please Thank 
+fixed 
+says skip-activerecord generated appears getting removed initialized 
+found like facilitate writing patched compare look mentioned regarding included Let hear think 
+GET &gt; puts = pre 
+creating beeing adding set add NULL 
+contains 
+missing raise created needed having cached treated 
+working broke get try tend do are gives see comes think set argued supposed applied included seems have work attached 
+call is fail results highlighted note ActiveRecord appear 
+Consider is specified Ignoring used show carry like find raise 
+please have think noticed attached closed 
+rails have think assume use retrieve run fails ActiveRecord get do find ActionDispatch sitting defined 
+uses object look made 
+setting Hello uses collection specify post get allowed 
+Running create allow app passed Dug expects found want is set Adding 
+inflections Shows ves \/ raves gives 
+appears related occur defined seen are failing see expect assigned raised raising shows Below doing returns require TestFailing end 
+inserts help overflows remove associated 
+found have perform thought do work 
+have enclosed rendered causes see is end closed generated expected using rails 
+added ActiveResource passed dasherize_keys_on_encode underscored decode Hash -RRB- 
+added add rb created create see i 
+contains show involves using outputing 
+trying understand respond_with seems check called have overwrite get 
+defaults &lt; &gt; render app\/views\/blog erb broke use_full_path default set believe entails documented find enclosed restores applied 
+says added fails note cleared want argue needs reflect 
+have find vendor\/plugins start fix 
+assign fails says points 
+ActiveRecord coerce coerced 's see 
+adds tried use take be hosting takes added is expire_fragment switching done know was expire \/ @@ runs extracted have included 
+defines got 
+3.3 \/ reserved used designate treats have include work turn feature achieve needed specifying hash contain has does checks throws url match changes use issues break allowed took appears mean wanted get attempted 
+pasted upload pass works transferred 
+occurs using override called introduced Rails v2 sets run replicate 
+add used work started getting related upping DateTime 
+'s Returns do like called Relation initialized loaded fixes adding unmemoizing # gets @ records map 
+clears enables 
+changed have suspect set struggling find causes time using hang waiting arrive shuffles handled 
+backend using parsed mapped maps checked changing make copied was verify work 
+adding is supports 
+creates begins Example exists create map see broke prevents generated See \/ l\/app\/helpers support\/dependencies define const_missing rb require is interpreting seeing treating breaks happens generate called use working happen like contribute attempt come do 
+have want make works Using attempts call check generated trying construct 
+installed ran running ruby did run see generate 
+is config loaded seems misk requires loads 
+produces Generating using appears want create file 
+
+builds apply merged includes describing durations use return handled Change are \* used becomes cleaned were called 
+is want developing remigrate started creating create run migrate require Copying pasting begin having renaming selecting puts allows copy paste included migrations fixing 
+uses needs changed use 
+adds fails indicated added supported accessed is provide add needed 
+encapsulated use needed 
+seems has locating mailer\/vendor\/tmail requires creates sets blows support\/dependencies uninitialized Note is installed nick require &gt; 
+visit use store represent is asked shown showed throw generated scaffolding needs shift time_select match 
+
+says specification attached 
+find noticed get super_exception_notifier use follows seems calling identified Digging commit remove used orphaned collapsed intended work is covering broken looking need know deprecated be putting does Is missing 
+worked upgraded using left find join get working remove need insert alias seems add work needs 
+refers contains allows work Given \/ used 
+be nested created 
+ignored uses provided apply included 
+described gives add roll fixes 
+stumbled used send using works seems sends specify uses find unknown ... put 
+understand remove working demand accessed store allow configure is have suggest release 
+depends requiring breaks try require 
+have access use blame make stored takes returns given set call works look new_record true write_new_record return reload inserts said know thought file 
+adds makes 
+doing executed fixes 
+generate introduced fail used needs yield is quotes indicates quote commited attached add 
+added spec\/fixtures identify See playing doing 
+adds handling set using content_exists 
+do using find 
+generates called use us_zones attached uses stores 
+causes 's skip line_items 
+config added stops noticed have restart make take tracked 
+doing have do changed done 
+lacks \/ gems\/activeresource happens render say think applies 
+using use erb multipart\/alternative specified multipart\/mixed attempting send is need show trigger checks see set change 
+ActiveRecord include find used discards Take end looking id FROM first_name person_id BY see discarded load needed includes suggest specify allow ClassMethods has allowing splitting look SELECT attached 
+helpers use get have expect occurred evaluating rewrite 
+got translating understanding is follows call see expect get look gsubs tries find expected try use handle know work help 
+ignores given hash used build test remove Needed 
+prints feel part enabled disabled is add config turn 

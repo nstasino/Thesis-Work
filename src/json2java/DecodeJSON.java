@@ -8,10 +8,6 @@ import java.io.StringWriter;
 import org.codehaus.jackson.JsonGenerator;
 //import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
-
-//@JsonIgnoreProperties("attachments")
-
-
 /**
  * Contains core decoding using the Jackson API
  * 
@@ -19,10 +15,10 @@ import org.codehaus.jackson.JsonGenerator;
  * @version     2010.0720
  * @since       1.6
  */
-public class Decode {
+public class DecodeJSON {
 
-   private  ObjectMapper mapper = new ObjectMapper(); // call jackson objectmapper
-    private  JsonFactory jf = new JsonFactory();
+    private ObjectMapper mapper = new ObjectMapper(); // call jackson objectmapper
+    private JsonFactory jf = new JsonFactory();
 
     /**
      * Use JsonMapper to get data from JSON file
@@ -35,7 +31,7 @@ public class Decode {
      * */
     public Ticket decode(File f) throws JsonMappingException, JsonParseException, IOException {
 
-    return mapper.readValue(f, Ticket.class);
+        return mapper.readValue(f, Ticket.class);
     }
 
     /**
@@ -47,7 +43,7 @@ public class Decode {
      * @throws JsonGenerationException
      * @throws IOException
      */
-    public  String toJson(Object pojo, boolean prettyPrint)
+    public String toJson(Object pojo, boolean prettyPrint)
             throws JsonMappingException, JsonGenerationException, IOException {
 
         StringWriter sw = new StringWriter();
@@ -58,7 +54,6 @@ public class Decode {
         mapper.writeValue(jg, pojo);
         return sw.toString();
     }
-
 ///**
 //     * Obsolete functions
 //     */
@@ -105,6 +100,4 @@ public class Decode {
 //            System.out.println("No input given!");
 //        }
 //    }
-
-    
 }

@@ -88,13 +88,13 @@ public class Main {
 //        Parser p = new json2java.Parser(); //Stanford Parser Object
 
         //Set below ticketsToProcess = i.e. 1000 to run
-        int ticketsToProcess = 0;
+        int ticketsToProcess = 2;
 
         for (int i = 1; i < ticketsToProcess; i++) {//count if for tickets
             System.out.println("\n[" + i + "/" + count + "]");
             File f = new File(list[i] + "/ticket.json");
             demo.preProcessFile(f); //preprocess the file
-            Decode testDecode = new Decode();
+            DecodeJSON testDecode = new DecodeJSON();
             Ticket t = testDecode.decode(f);    //map JSON to the POJO
             demo.ArffCreator(t,true);     //get the data out of the POJO, true to enable Stanford Parser
 //            demo.ArffCreatorForVersions(t,true); //same for the new versions, true to enable Stanford Parser

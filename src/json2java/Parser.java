@@ -18,7 +18,7 @@ import org.htmlcleaner.XPatherException;
  */
 public class Parser {
 
-    LexicalizedParser lp = new LexicalizedParser("/home/nikos/NetBeansProjects/json2java/lib/stanford-parser-2010-07-09/englishPCFG.ser.gz");
+    LexicalizedParser lp = new LexicalizedParser("/home/nikos/NetBeansProjects/Thesis-Work/lib/stanford-parser-2010-07-09/englishPCFG.ser.gz");
     TreebankLanguagePack tlp = new PennTreebankLanguagePack();
     GrammaticalStructureFactory gsf = tlp.grammaticalStructureFactory();
 
@@ -27,7 +27,7 @@ public class Parser {
 
         //Strip html tags for body_html attribute
         String html = ticket.getTicket().getBody_html();
-        String text = new HTMLStrip().htmlstrip(html);
+        String text = new StripHTMLTags().stripHTMLtags(html);
 
         try // device to handle potential errors
         {
@@ -131,7 +131,7 @@ public class Parser {
 
         //Strip html tags for body_html attribute
         String html = ticket.getBody_html();
-        String text = new HTMLStrip().htmlstrip(html);
+        String text = new StripHTMLTags().stripHTMLtags(html);
 
         try // device to handle potential errors:
         {

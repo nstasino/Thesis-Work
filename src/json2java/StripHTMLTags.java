@@ -7,7 +7,7 @@ package json2java;
 import java.io.IOException;
 import org.htmlcleaner.*;
 
-public class HTMLStrip {
+public class StripHTMLTags {
 
     /**
      * Strips original_body_html attribute to formatted sentences using
@@ -18,7 +18,7 @@ public class HTMLStrip {
      * @throws IOException
      * @throws XPatherException
      */
-    public String htmlstrip(String html) throws IOException, XPatherException {
+    public String stripHTMLtags(String html) throws IOException, XPatherException {
 
         // create an instance of HtmlCleaner
         HtmlCleaner cleaner = new HtmlCleaner();

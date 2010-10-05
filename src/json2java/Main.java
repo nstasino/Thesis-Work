@@ -96,8 +96,8 @@ public class Main {
             demo.preProcessFile(f); //preprocess the file
             Decode testDecode = new Decode();
             Ticket t = testDecode.decode(f);    //map JSON to the POJO
-            demo.printToArff(t,true);     //get the data out of the POJO, true to enable Stanford Parser
-//            demo.printVersionsToArff(t,true); //same for the new versions, true to enable Stanford Parser
+            demo.ArffCreator(t,true);     //get the data out of the POJO, true to enable Stanford Parser
+//            demo.ArffCreatorForVersions(t,true); //same for the new versions, true to enable Stanford Parser
 
 
         }

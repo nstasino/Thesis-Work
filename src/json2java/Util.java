@@ -37,37 +37,37 @@ public class Util {
      * @throws XPatherException 
      * 
      */
-    public void printToArff(Ticket t, Boolean b) throws IOException, XPatherException {
+    public void ArffCreator(Ticket t, Boolean b) throws IOException, XPatherException {
 
         t.getTicket().setVersionId(-1); //Denotes original version of the ticket
 
         appendToArff("" + t.getTicket().getAssigned_user_id(), "test");
-//            appendToArff(" ,'" + removeCh(t.getTicket().getAttachments()) + "'", "test");
+//            appendToArff(" ,'" + removeAnnoyingChars(t.getTicket().getAttachments()) + "'", "test");
         appendToArff("," + t.getTicket().getAttachments_count(), "test");
-        appendToArff(",'" + removeCh(t.getTicket().getBody()) + "'", "test");
-        appendToArff(",'" + removeCh(t.getTicket().getBody_html()) + "'", "test");
+        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getBody()) + "'", "test");
+        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getBody_html()) + "'", "test");
         appendToArff("," + t.getTicket().isClosed(), "test");
         appendToArff(",'" + t.getTicket().getCreated_at() + "'", "test");
         appendToArff("," + t.getTicket().getCreator_id(), "test");
-        appendToArff(",'" + removeCh(t.getTicket().getCreator_name()) + "'", "test");
-        appendToArff(",'" + removeCh(t.getTicket().getLatest_body()) + "'", "test");
-        appendToArff("," + removeCh(t.getTicket().getMilestone_due_on()), "test");
+        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getCreator_name()) + "'", "test");
+        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getLatest_body()) + "'", "test");
+        appendToArff("," + removeAnnoyingChars(t.getTicket().getMilestone_due_on()), "test");
         appendToArff("," + t.getTicket().getMilestone_id(), "test");
-        appendToArff(",'" + removeCh(t.getTicket().getMilestone_title()) + "'", "test");
+        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getMilestone_title()) + "'", "test");
         appendToArff("," + t.getTicket().getNumber(), "test");
-        appendToArff(",'" + removeCh(t.getTicket().getOriginal_body()) + "'", "test");
-        appendToArff(",'" + removeCh(t.getTicket().getOriginal_body_html()) + "'", "test");
-        appendToArff(",'" + removeCh(t.getTicket().getPermalink()) + "'", "test");
+        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getOriginal_body()) + "'", "test");
+        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getOriginal_body_html()) + "'", "test");
+        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getPermalink()) + "'", "test");
         appendToArff("," + t.getTicket().getPriority(), "test");
         appendToArff("," + t.getTicket().getProject_id(), "test");
-        appendToArff(",'" + removeCh(t.getTicket().getRaw_data()) + "'", "test");
-        appendToArff(",'" + removeCh(t.getTicket().getState()) + "'", "test");
-        appendToArff(",'" + removeCh(t.getTicket().getTag()) + "'", "test");
-        appendToArff(",'" + removeCh(t.getTicket().getTitle()) + "'", "test");
+        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getRaw_data()) + "'", "test");
+        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getState()) + "'", "test");
+        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getTag()) + "'", "test");
+        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getTitle()) + "'", "test");
         appendToArff("," + t.getTicket().getUpdated_at(), "test");
-        appendToArff(",'" + removeCh(t.getTicket().getUrl()) + "'", "test");
+        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getUrl()) + "'", "test");
         appendToArff("," + t.getTicket().getUser_id(), "test");
-        appendToArff(",'" + removeCh(t.getTicket().getUser_name()) + "'", "test");
+        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getUser_name()) + "'", "test");
         appendToArff("," + t.getTicket().getVersionId() + "", "test");
 
         if (b == true) {
@@ -98,7 +98,7 @@ public class Util {
      * @throws XPatherException
      *
      */
-    public void printVersionsToArff(Ticket t, Boolean b) throws IOException, XPatherException {
+    public void ArffCreatorForVersions(Ticket t, Boolean b) throws IOException, XPatherException {
 
 
         int versionsNumber = t.getTicket().getVersions().size();
@@ -108,32 +108,32 @@ public class Util {
             t.getTicket().getVersions().get(i).setVersionId(i);
 
             appendToArff("" + t.getTicket().getVersions().get(i).getAssigned_user_id(), "test");
-//            appendToArff(" ,'" + removeCh(t.getTicket().getAttachments()) + "'", "test");
+//            appendToArff(" ,'" + removeAnnoyingChars(t.getTicket().getAttachments()) + "'", "test");
             appendToArff("," + t.getTicket().getVersions().get(i).getAttachments_count(), "test");
-            appendToArff(",'" + removeCh(t.getTicket().getVersions().get(i).getBody()) + "'", "test");
-            appendToArff(",'" + removeCh(t.getTicket().getVersions().get(i).getBody_html()) + "'", "test");
+            appendToArff(",'" + removeAnnoyingChars(t.getTicket().getVersions().get(i).getBody()) + "'", "test");
+            appendToArff(",'" + removeAnnoyingChars(t.getTicket().getVersions().get(i).getBody_html()) + "'", "test");
             appendToArff("," + t.getTicket().getVersions().get(i).isClosed(), "test");
             appendToArff(",'" + t.getTicket().getVersions().get(i).getCreated_at() + "'", "test");
             appendToArff("," + t.getTicket().getVersions().get(i).getCreator_id(), "test");
-            appendToArff(",'" + removeCh(t.getTicket().getVersions().get(i).getCreator_name()) + "'", "test");
-            appendToArff(",'" + removeCh(t.getTicket().getVersions().get(i).getLatest_body()) + "'", "test");
-            appendToArff("," + removeCh(t.getTicket().getVersions().get(i).getMilestone_due_on()), "test");
+            appendToArff(",'" + removeAnnoyingChars(t.getTicket().getVersions().get(i).getCreator_name()) + "'", "test");
+            appendToArff(",'" + removeAnnoyingChars(t.getTicket().getVersions().get(i).getLatest_body()) + "'", "test");
+            appendToArff("," + removeAnnoyingChars(t.getTicket().getVersions().get(i).getMilestone_due_on()), "test");
             appendToArff("," + t.getTicket().getVersions().get(i).getMilestone_id(), "test");
-            appendToArff(",'" + removeCh(t.getTicket().getVersions().get(i).getMilestone_title()) + "'", "test");
+            appendToArff(",'" + removeAnnoyingChars(t.getTicket().getVersions().get(i).getMilestone_title()) + "'", "test");
             appendToArff("," + t.getTicket().getVersions().get(i).getNumber(), "test");
-            appendToArff(",'" + removeCh(t.getTicket().getVersions().get(i).getOriginal_body()) + "'", "test");
-            appendToArff(",'" + removeCh(t.getTicket().getVersions().get(i).getOriginal_body_html()) + "'", "test");
-            appendToArff(",'" + removeCh(t.getTicket().getVersions().get(i).getPermalink()) + "'", "test");
+            appendToArff(",'" + removeAnnoyingChars(t.getTicket().getVersions().get(i).getOriginal_body()) + "'", "test");
+            appendToArff(",'" + removeAnnoyingChars(t.getTicket().getVersions().get(i).getOriginal_body_html()) + "'", "test");
+            appendToArff(",'" + removeAnnoyingChars(t.getTicket().getVersions().get(i).getPermalink()) + "'", "test");
             appendToArff("," + t.getTicket().getVersions().get(i).getPriority(), "test");
             appendToArff("," + t.getTicket().getVersions().get(i).getProject_id(), "test");
-            appendToArff(",'" + removeCh(t.getTicket().getVersions().get(i).getRaw_data()) + "'", "test");
-            appendToArff(",'" + removeCh(t.getTicket().getVersions().get(i).getState()) + "'", "test");
-            appendToArff(",'" + removeCh(t.getTicket().getVersions().get(i).getTag()) + "'", "test");
-            appendToArff(",'" + removeCh(t.getTicket().getVersions().get(i).getTitle()) + "'", "test");
+            appendToArff(",'" + removeAnnoyingChars(t.getTicket().getVersions().get(i).getRaw_data()) + "'", "test");
+            appendToArff(",'" + removeAnnoyingChars(t.getTicket().getVersions().get(i).getState()) + "'", "test");
+            appendToArff(",'" + removeAnnoyingChars(t.getTicket().getVersions().get(i).getTag()) + "'", "test");
+            appendToArff(",'" + removeAnnoyingChars(t.getTicket().getVersions().get(i).getTitle()) + "'", "test");
             appendToArff("," + t.getTicket().getVersions().get(i).getUpdated_at(), "test");
-            appendToArff(",'" + removeCh(t.getTicket().getVersions().get(i).getUrl()) + "'", "test");
+            appendToArff(",'" + removeAnnoyingChars(t.getTicket().getVersions().get(i).getUrl()) + "'", "test");
             appendToArff("," + t.getTicket().getVersions().get(i).getUser_id(), "test");
-            appendToArff(",'" + removeCh(t.getTicket().getVersions().get(i).getUser_name()) + "'", "test");
+            appendToArff(",'" + removeAnnoyingChars(t.getTicket().getVersions().get(i).getUser_name()) + "'", "test");
             appendToArff("," + t.getTicket().getVersions().get(i).getVersionId() + "", "test");
 
             //Do the Stanford Parsing for each version
@@ -295,7 +295,7 @@ public class Util {
      * @param str
      * @return the same
      */
-    public String removeCh(String str) {
+    public String removeAnnoyingChars(String str) {
         if (str != null) {
             str = str.replaceAll("(\r\n|\r|\n|\n\r)", "");           //Clear Paragraph escape sequences
             str = str.replaceAll("'", "");  //Clear apostrophes

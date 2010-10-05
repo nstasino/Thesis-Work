@@ -18,7 +18,7 @@ import org.htmlcleaner.XPatherException;
  */
 public class Parser {
 
-    LexicalizedParser lp = new LexicalizedParser("/home/nikos/NetBeansProjects/json2java/stanford-parser-2010-07-09/englishPCFG.ser.gz");
+    LexicalizedParser lp = new LexicalizedParser("/home/nikos/NetBeansProjects/json2java/lib/stanford-parser-2010-07-09/englishPCFG.ser.gz");
     TreebankLanguagePack tlp = new PennTreebankLanguagePack();
     GrammaticalStructureFactory gsf = tlp.grammaticalStructureFactory();
 

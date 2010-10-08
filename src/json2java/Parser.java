@@ -96,8 +96,8 @@ public class Parser {
                     }
 
                     //Getting the relationships
-                    System.out.print("\t<<" + x.reln().getLongName() + ">>\t");
-                    System.out.println("\tDependent: " + x.dep().value() + " " + x.dep().label().tag());
+                    //System.out.print("\t<<" + x.reln().getLongName() + ">>\t");
+                    //System.out.println("\tDependent: " + x.dep().value() + " " + x.dep().label().tag());
 
                 }
 

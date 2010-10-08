@@ -49,10 +49,8 @@ public class Parser {
             lp.setOptionFlags(new String[]{"-maxLength", "150", "-retainTmpSubcategories"});//Maximum length allowed for a sentence
             //to get Stanford Parsed
 
-            DocumentPreprocessor dp = new DocumentPreprocessor(tlp.getTokenizerFactory());
-
             StringReader sr = new StringReader(text);
-            List<List<? extends HasWord>> sentences = dp.getSentencesFromText(sr);
+            List<List<? extends HasWord>> sentences = new DocumentPreprocessor(tlp.getTokenizerFactory()).getSentencesFromText(sr);
 
             ArrayList nouns = new ArrayList();
             ArrayList verbs = new ArrayList();
@@ -98,8 +96,8 @@ public class Parser {
                     }
 
                     //Getting the relationships
-//                    System.outNoun.print("\t<<" + x.reln().getLongName() + ">>\t");
-//                    System.outNoun.println("\tDependent: " + x.dep().value() + " " + x.dep().label().tag());
+                    System.out.print("\t<<" + x.reln().getLongName() + ">>\t");
+                    System.out.println("\tDependent: " + x.dep().value() + " " + x.dep().label().tag());
 
                 }
 
@@ -140,16 +138,16 @@ public class Parser {
 
             BufferedWriter outNoun = null;
             outNoun = new BufferedWriter(new FileWriter("possibleNounKeywords.txt", true));
-            outNoun.append(Integer.toString(ticket.getNumber()));
-            outNoun.append(",");
-            outNoun.append(Integer.toString(ticket.getVersionId()));
-            outNoun.append(",");
+//            outNoun.append(Integer.toString(ticket.getNumber()));
+//            outNoun.append(",");
+//            outNoun.append(Integer.toString(ticket.getVersionId()));
+//            outNoun.append(",");
 
             BufferedWriter outVerb = null;
             outVerb = new BufferedWriter(new FileWriter("possibleVerbKeywords.txt", true));
-            outVerb.append(Integer.toString(ticket.getNumber()));
-            outVerb.append(",");
-            outVerb.append(Integer.toString(ticket.getVersionId()));
+//            outVerb.append(Integer.toString(ticket.getNumber()));
+//            outVerb.append(",");
+//            outVerb.append(Integer.toString(ticket.getVersionId()));
             outVerb.append(",");
             lp.setOptionFlags(new String[]{"-maxLength", "150", "-retainTmpSubcategories"});
 
@@ -230,31 +228,4 @@ public class Parser {
         }
     }
 
-    /**
-     * Packer Class for nouns, verbs 
-     * 
-     * @param <ArrayList> 
-     * 
-     * @author      Nikos Stasinopoulos <nstasinopoulos@gmail.com>
-     * @version     2010.2509
-     * @since       1.6
-     */
-    public class Pair<ArrayList> {
-
-        public ArrayList nouns;
-        public ArrayList verbs;
-
-        public Pair(ArrayList nouns, ArrayList verbs) {
-            this.nouns = nouns;
-            this.verbs = verbs;
-        }
-
-        public ArrayList getNouns() {
-            return nouns;
-        }
-
-        public ArrayList getVerbs() {
-            return verbs;
-        }
-    }
 }

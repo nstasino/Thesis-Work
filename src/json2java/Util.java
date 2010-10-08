@@ -2,7 +2,7 @@ package json2java;
 
 import java.io.*;
 //import java.util.*;
-import json2java.Parser.Pair;
+import json2java.Pair;
 import org.htmlcleaner.XPatherException;
 
 /**

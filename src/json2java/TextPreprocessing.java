@@ -107,8 +107,8 @@ public class TextPreprocessing {
         }
     }
 
-    public static boolean checkMinMaxLength(String value, int min, int max) {
-        if ((value.length() <= max) && (value.length() >= min)) {
+    public static boolean checkMinMaxLength(String value, int minLength, int maxLength) {
+        if ((value.length() <= maxLength) && (value.length() >= minLength)) {
             return true;
         } else {
             return false;

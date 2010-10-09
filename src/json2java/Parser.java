@@ -7,9 +7,11 @@ import edu.stanford.nlp.process.*;
 //import edu.stanford.nlp.objectbank.TokenizerFactory;
 import edu.stanford.nlp.parser.lexparser.LexicalizedParser;
 import edu.stanford.nlp.ling.HasWord;
+import edu.stanford.nlp.ling.Word;
 import org.htmlcleaner.XPatherException;
 
 import json2java.TextPreprocessing;
+import edu.stanford.nlp.process.Morphology;
 
 /**
  * A class representing nouns ticket Nouns for data binding purposes
@@ -23,6 +25,7 @@ public class Parser {
     LexicalizedParser lp = new LexicalizedParser("/home/nikos/NetBeansProjects/Thesis-Work/lib/stanford-parser-2010-07-09/englishPCFG.ser.gz");
     TreebankLanguagePack tlp = new PennTreebankLanguagePack();
     GrammaticalStructureFactory gsf = tlp.grammaticalStructureFactory();
+    Morphology stemmer = new Morphology();
 
     public Pair parse(Ticket ticket) throws IOException, XPatherException {
 
@@ -83,43 +86,30 @@ public class Parser {
                         System.out.println("\tDependent: " + x.dep().value() + " " + x.dep().label().tag());
 //                    }
 
-                    //populate nouns list
-                        
-                        if(TextPreprocessing.isDesiredMember(x.gov().value(), "NN")
-                                && TextPreprocessing.isUnique(nouns, x.gov().label().tag()) //find unique nouns
-                                && TextPreprocessing.checkMinMaxLength(x.gov().value(), 3, 20)) {//drop long nouns
-
+                        //populate nouns list
+                        if(wordChecker(x.gov().label().tag(), "NN", nouns, x.gov().value(), 3, 20)) {
                             listPopulator(nouns, x.gov().value(), outNoun);
                         }
-
-                        if(TextPreprocessing.isDesiredMember(x.dep().label().tag(), "NN")
-                                && TextPreprocessing.isUnique(nouns, x.dep().value()) //find unique nouns
-                                && TextPreprocessing.checkMinMaxLength(x.dep().value(), 3, 20)) {//drop long nouns
-
+                        if(wordChecker(x.dep().label().tag(), "NN", nouns, x.gov().value(), 3, 20)) {
                             listPopulator(nouns, x.dep().value(), outNoun);
                         }
 
-                  //populate verbs list
-
-                        if(TextPreprocessing.isDesiredMember(x.gov().label().tag(), "VB")
-                                && TextPreprocessing.isUnique(verbs, x.gov().value()) //find unique verbs
-                                && TextPreprocessing.checkMinMaxLength(x.gov().value(), 3, 20)) {//drop long verbs
-
+                        //populate verbs list
+                        if(wordChecker(x.gov().label().tag(), "VB", verbs, x.gov().value(), 3, 20)) {
                             listPopulator(verbs, x.gov().value(), outVerb);
                         }
 
-                        if(TextPreprocessing.isDesiredMember(x.dep().label().tag(), "VB")
-                                && TextPreprocessing.isUnique(verbs, x.dep().value()) //find unique verbs
-                                && TextPreprocessing.checkMinMaxLength(x.dep().value(), 3, 20)) {//drop long verbs
-
+                        if(wordChecker(x.dep().label().tag(), "VB", verbs, x.gov().value(), 3, 20)) {
                             listPopulator(verbs, x.dep().value(), outVerb);
                         }
+
                     }
                 }
             }
             keywordVector.add(nouns);
-            keywordVector.add(verbs); 
+            keywordVector.add(verbs);
             System.out.println("\n*********\n" + keywordVector);
+
             outNoun.newLine();
             outNoun.flush();
             outNoun.close();
@@ -135,16 +125,23 @@ public class Parser {
         }
     }
 
+    public boolean wordChecker(String tag, String typeAbbreviation, ArrayList members, String value, int minLength, int maxLength) {
+        if (TextPreprocessing.isDesiredMember(tag, typeAbbreviation)
+                && TextPreprocessing.isUnique(members, value)
+                && TextPreprocessing.checkMinMaxLength(value, minLength, maxLength)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public void listPopulator(ArrayList members, String word, BufferedWriter outNoun) throws IOException { //populate nouns list
-                    word = word.toLowerCase();
-                    members.add(word);
-                    outNoun.append(word + " ");
-    
+//                    word = word.toLowerCase();
+        word = stemmer.stem(word);
+        members.add(word);
+        outNoun.append(word + " ");
+
     }
-    
-
-
 
     public Pair parseVer(Ticket ticket) throws IOException, XPatherException {
 

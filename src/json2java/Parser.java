@@ -105,14 +105,14 @@ public class Parser {
                                 && TextPreprocessing.isUnique(verbs, x.gov().value()) //find unique verbs
                                 && TextPreprocessing.checkMinMaxLength(x.gov().value(), 3, 20)) {//drop long verbs
 
-                            listPopulator(verbs, x.gov().value(), outNoun);
+                            listPopulator(verbs, x.gov().value(), outVerb);
                         }
 
                         if(TextPreprocessing.isDesiredMember(x.dep().label().tag(), "VB")
                                 && TextPreprocessing.isUnique(verbs, x.dep().value()) //find unique verbs
                                 && TextPreprocessing.checkMinMaxLength(x.dep().value(), 3, 20)) {//drop long verbs
 
-                            listPopulator(verbs, x.dep().value(), outNoun);
+                            listPopulator(verbs, x.dep().value(), outVerb);
                         }
                     }
                 }
@@ -137,7 +137,7 @@ public class Parser {
 
 
     public void listPopulator(ArrayList members, String word, BufferedWriter outNoun) throws IOException { //populate nouns list
-                    word =word.toLowerCase();
+                    word = word.toLowerCase();
                     members.add(word);
                     outNoun.append(word + " ");
     

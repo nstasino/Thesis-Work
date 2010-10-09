@@ -2,7 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package json2java;
 
 import java.io.BufferedReader;
@@ -13,6 +12,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
+import java.util.*;
+
 
 /**
  *
@@ -20,9 +21,9 @@ import java.io.Writer;
  * @version     Oct 5, 2010
  * @since       1.6
  */
-public class TextPreProcessing {
+public class TextPreprocessing {
 
-    public TextPreProcessing() {
+    public TextPreprocessing() {
     }
 
     public File preProcessFile(File f) throws IOException {
@@ -79,6 +80,38 @@ public class TextPreProcessing {
             return str;
         } else {
             return str;
+        }
+    }
+
+    public static boolean isDesiredRelation(String str) {
+        if (str.contains("subject") || str.contains("object")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static boolean isDesiredMember(String str, String memberType) {
+        if (str.contains(memberType)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static boolean isUnique(ArrayList members, String value) {
+        if (members.contains(value)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public static boolean checkMinMaxLength(String value, int min, int max) {
+        if ((value.length() <= max) && (value.length() >= min)) {
+            return true;
+        } else {
+            return false;
         }
     }
 

@@ -13,7 +13,7 @@ import org.htmlcleaner.XPatherException;
  * @version     2010.0720
  * @since       1.6
  */
-public class Util extends TextPreProcessing {
+public class Util extends TextPreprocessing {
 
     Parser p = new Parser(); //Stanford Parser Object
 

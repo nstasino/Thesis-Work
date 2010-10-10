@@ -82,8 +82,8 @@ public class Main {
         demo.createHeader();  //append the Header to .arff
 
         //Flush txt files
-        new FileWriter("possibleNounKeywords", false);
-        new FileWriter("possibleVerbKeywords", false);
+        new FileWriter("possibleNounKeywords.txt", false);
+        new FileWriter("possibleVerbKeywords.txt", false);
 
 //        Parser p = new json2java.Parser(); //Stanford Parser Object
 

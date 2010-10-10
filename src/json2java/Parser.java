@@ -84,23 +84,22 @@ public class Parser {
                         System.out.print("Governor: " + x.gov().value() + " " + x.gov().label().tag());
                         System.out.print("\t<<" + x.reln().getLongName() + ">>\t");
                         System.out.println("\tDependent: " + x.dep().value() + " " + x.dep().label().tag());
-//                    }
 
                         //populate nouns list
-                        if(wordChecker(x.gov().label().tag(), "NN", nouns, x.gov().value(), 3, 20)) {
-                            listPopulator(nouns, x.gov().value(), outNoun);
+                        if(wordChecker(x.gov().label().tag(), "NN", nouns, stemmer.stem(x.gov().value()), 3, 20)) {
+                            listPopulator(nouns, stemmer.stem(x.gov().value()),x.gov().label().tag(), outNoun);
                         }
-                        if(wordChecker(x.dep().label().tag(), "NN", nouns, x.gov().value(), 3, 20)) {
-                            listPopulator(nouns, x.dep().value(), outNoun);
+                        if(wordChecker(x.dep().label().tag(), "NN", nouns,stemmer.stem(x.dep().value()), 3, 20)) {
+                            listPopulator(nouns,stemmer.stem(x.dep().value()),x.dep().label().tag(), outNoun);
                         }
 
                         //populate verbs list
-                        if(wordChecker(x.gov().label().tag(), "VB", verbs, x.gov().value(), 3, 20)) {
-                            listPopulator(verbs, x.gov().value(), outVerb);
+                        if(wordChecker(x.gov().label().tag(), "VB", verbs,stemmer.stem(x.gov().value()), 3, 20)) {
+                            listPopulator(verbs,stemmer.stem(x.gov().value()), x.gov().label().tag(), outVerb);
                         }
 
-                        if(wordChecker(x.dep().label().tag(), "VB", verbs, x.gov().value(), 3, 20)) {
-                            listPopulator(verbs, x.dep().value(), outVerb);
+                        if(wordChecker(x.dep().label().tag(), "VB", verbs, stemmer.stem(x.dep().value()), 3, 20)) {
+                            listPopulator(verbs, stemmer.stem(x.dep().value()), x.dep().label().tag(), outVerb);
                         }
 
                     }
@@ -131,13 +130,15 @@ public class Parser {
                 && TextPreprocessing.checkMinMaxLength(value, minLength, maxLength)) {
             return true;
         } else {
+
+            System.out.println(TextPreprocessing.isUnique(members, value)+"\t"+value +"\t"+tag);
+
             return false;
         }
     }
 
-    public void listPopulator(ArrayList members, String word, BufferedWriter outNoun) throws IOException { //populate nouns list
+    public void listPopulator(ArrayList members, String word, String tag, BufferedWriter outNoun) throws IOException { //populate nouns list
 //                    word = word.toLowerCase();
-        word = stemmer.stem(word);
         members.add(word);
         outNoun.append(word + " ");
 

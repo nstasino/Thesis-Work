@@ -99,8 +99,9 @@ public class Main {
             demo.ArffCreator(t,true);     //get the data out of the POJO, true to enable Stanford Parser
 //            demo.ArffCreatorForVersions(t,true); //same for the new versions, true to enable Stanford Parser
             }
+double x = new Google().NGD("ταβλετr", "ipad");
 
-System.out.println(new Google().NGD("pearl", "jam"));
+System.out.println(x);
     }
 }
 //214 problem with diffable attributes - delete ticket from data

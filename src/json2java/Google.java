@@ -7,29 +7,32 @@ import java.net.URLConnection;
 import java.net.URLEncoder;
 //import java.lang.Math;
 
-//import org.json.JSONArray;      // JSON library from http://www.json.org/java/
+//import org.json.JSONException;      // JSON library from http://www.json.org/java/
 import org.json.JSONObject;
 
 public class Google {
 
     public double NGD(String term1, String term2) {
-        Long M = 8058044651L;
+        Long M = 10000000000L; //8058044651L
         double freqx = logResults(term1);
         double freqy = logResults(term2);
         String xy = term1.concat("+").concat(term2);
         double freqxy = logResults(xy);
+        if (freqx == Double.NEGATIVE_INFINITY || freqy == Double.NEGATIVE_INFINITY) {
+            return 100000;
+        } else {
+            double num = Math.max(freqx, freqy) - freqxy;
+            double den = Math.log10(M) - Math.min(freqx, freqy);
 
-        double num = Math.max(freqx, freqy) - freqxy;
-        double den = Math.log10(M) - Math.min(freqx, freqy);
-
-        double formula = num / den;
-        return formula;
+            double formula = num / den;
+            return formula;
+        }
     }
 
     // // Put your website here
 // private final String HTTP_REFERER = "http://www.example.com/";
     public double logResults(String term) {
-//        System.out.println(term + "\t" + Math.log10(makeQuery(term)));
+        System.out.println(term + "\t" + Math.log10(makeQuery(term)));
         return Math.log10(makeQuery(term));
 
     }
@@ -56,12 +59,18 @@ public class Google {
             String response = builder.toString();
             JSONObject json = new JSONObject(response);
 
-            long results = Long.valueOf(json.getJSONObject("responseData").getJSONObject("cursor").getString("estimatedResultCount"));
-            return results;
+            if (json.getJSONObject("responseData").getJSONObject("cursor").has("estimatedResultCount")) {
+                long results = Long.valueOf(json.getJSONObject("responseData").getJSONObject("cursor").getString("estimatedResultCount"));
+                return results;
+            } else {
+                long results = 0;
+                return results;
+            }
         } catch (Exception e) {
             System.err.println("Something went wrong...");
             e.printStackTrace();
-            return (long) -1;
+            long results = -1;
+            return results;
         }
     }
 }

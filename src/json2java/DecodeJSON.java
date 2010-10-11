@@ -1,10 +1,11 @@
 package json2java;
 
-import org.codehaus.jackson.*;
-import org.codehaus.jackson.map.*;
 import java.io.IOException;
 import java.io.File;
 import java.io.StringWriter;
+
+import org.codehaus.jackson.*;
+import org.codehaus.jackson.map.*;
 import org.codehaus.jackson.JsonGenerator;
 //import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 

@@ -71,12 +71,22 @@ public class TextPreprocessing {
 
     public String removeAnnoyingChars(String str) {
         if (str != null) {
-            str = str.replaceAll("(\r\n|\r|\n|\n\r)", ""); //Clear Paragraph escape sequences
-            str = str.replaceAll("'", ""); //Clear apostrophes
-            str = str.replaceAll(",", ""); //Clear commas
-            str = str.replaceAll("@", ""); //Clear @'s (optional)
-            str = str.replaceAll("$", ""); //Clear $'s (optional)
+            str = str.replaceAll("(\r\n|\r|\n|\n\r)", " "); //Clear Paragraph escape sequences
+            str = str.replaceAll("'", " "); //Clear apostrophes
+            str = str.replaceAll(",", " "); //Clear commas
+            str = str.replaceAll("@", " "); //Clear @'s (optional)
+            str = str.replaceAll("$", " "); //Clear $'s (optional)
             str = str.replaceAll("\\\\", "**&**"); //Clear special character backslash 4 \'s due to regexp format
+            str = str.replaceAll("&amp;","&");			//change &amp to &
+		str = str.replaceAll("&lt","<");			//change &lt; to <
+		str = str.replaceAll("&gt",">");			//change &gt; to >
+//		str = str.replaceAll("<[^<>]*>"," ");		//drop anything in <>
+		str = str.replaceAll("&#\\d+;"," ");			//change &#[digits]; to space
+		str = str.replaceAll("&quot;"," ");			//change &quot; to space
+//		str = str.replaceAll("http://[^ ]+ "," ");	//drop urls
+		str = str.replaceAll("-"," ");				//drop non-alphanumeric characters
+//		str = str.replaceAll("[^0-9a-zA-Z ]"," "); 	//drop non-alphanumeric characters
+//		text = text.replaceAll("\\s+"," ");      		//condense spaces
             return str;
         } else {
             return str;

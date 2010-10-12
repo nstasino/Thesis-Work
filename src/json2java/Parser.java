@@ -7,7 +7,6 @@ import edu.stanford.nlp.process.*;
 //import edu.stanford.nlp.objectbank.TokenizerFactory;
 import edu.stanford.nlp.parser.lexparser.LexicalizedParser;
 import edu.stanford.nlp.ling.HasWord;
-import edu.stanford.nlp.ling.Word;
 import org.htmlcleaner.XPatherException;
 
 import json2java.TextPreprocessing;
@@ -26,6 +25,7 @@ public class Parser {
     TreebankLanguagePack tlp = new PennTreebankLanguagePack();
     GrammaticalStructureFactory gsf = tlp.grammaticalStructureFactory();
     Morphology stemmer = new Morphology();
+    TextPreprocessing tp = new TextPreprocessing();
 
     public Pair parse(Ticket ticket) throws IOException, XPatherException {
 
@@ -33,6 +33,7 @@ public class Parser {
         //Strip html tags for body_html attribute
         String html = ticket.getTicket().getBody_html();
         String text = new StripHTMLTags().stripHTMLtags(html);
+        text = tp.removeAnnoyingChars(text);
 
         try // device to handle potential errors
         {
@@ -45,13 +46,8 @@ public class Parser {
 //            outNoun.append(Integer.toString(ticket.getTicket().getVersionId()));
 //            outNoun.append(",");
 
-            BufferedWriter outVerb = null;
-            outVerb = new BufferedWriter(new FileWriter("possibleVerbKeywords.txt", true));
-//            outVerb.append(Integer.toString(ticket.getTicket().getNumber()));
-//            outVerb.append(",");
-//            outVerb.append(Integer.toString(ticket.getTicket().getVersionId()));
-//            outVerb.append(",");
-            lp.setOptionFlags(new String[]{"-maxLength", "150", "-retainTmpSubcategories"});//Maximum length allowed for a sentence
+
+            lp.setOptionFlags(new String[]{"-maxLength", "200", "-retainTmpSubcategories"});//Maximum length allowed for a sentence
             //to get Stanford Parsed
 
             StringReader sr = new StringReader(text);
@@ -59,17 +55,10 @@ public class Parser {
 
             ArrayList nouns = new ArrayList();
             ArrayList verbs = new ArrayList();
-            ArrayList keywordVector = new ArrayList();
 
             for (List<? extends HasWord> sentence : sentences) {
-                // print original sentence:
-//                System.out.print("\n\n\n\nORIGINAL:\n");
-//                for (int k = 0; k < sentence.size(); k++) {
-//                    System.out.print(sentence.get(k).word() + " ");
-//                }
-//                System.out.println("\n\n");
+               
                 Tree parse = lp.apply(sentence);
-
                 GrammaticalStructure gs = gsf.newGrammaticalStructure(parse);
                 Collection tdl = gs.typedDependenciesCCprocessed(true);
 
@@ -81,45 +70,42 @@ public class Parser {
                     //limits relations to desired  i.e. Subj/Obj
                     if (TextPreprocessing.isDesiredRelation(x.reln().getLongName())) {
 
-                        System.out.print("Governor: " + x.gov().value() + " " + x.gov().label().tag());
-                        System.out.print("\t<<" + x.reln().getLongName() + ">>\t");
-                        System.out.println("\tDependent: " + x.dep().value() + " " + x.dep().label().tag());
+//                        System.out.print("Governor: " + x.gov().value() + " " + x.gov().label().tag());
+//                        System.out.print("\t<<" + x.reln().getLongName() + ">>\t");
+//                        System.out.println("\tDependent: " + x.dep().value() + " " + x.dep().label().tag());
 
                         //populate nouns list
-                        if(wordChecker(x.gov().label().tag(), "NN", nouns, stemmer.stem(x.gov().value()), 3, 20)) {
-                            listPopulator(nouns, stemmer.stem(x.gov().value()),x.gov().label().tag(), outNoun);
+                        if (wordChecker(x.gov().label().tag(), "NN", nouns, stemmer.stem(x.gov().value()), 3, 20)) {
+                            listPopulator(nouns, stemmer.stem(x.gov().value()), x.gov().label().tag(), outNoun);
                         }
-                        if(wordChecker(x.dep().label().tag(), "NN", nouns,stemmer.stem(x.dep().value()), 3, 20)) {
-                            listPopulator(nouns,stemmer.stem(x.dep().value()),x.dep().label().tag(), outNoun);
+                        if (wordChecker(x.dep().label().tag(), "NN", nouns, stemmer.stem(x.dep().value()), 3, 20)) {
+                            listPopulator(nouns, stemmer.stem(x.dep().value()), x.dep().label().tag(), outNoun);
                         }
 
                         //populate verbs list
-                        if(wordChecker(x.gov().label().tag(), "VB", nouns,stemmer.stem(x.gov().value()), 3, 20)) {
-                            listPopulator(nouns,stemmer.stem(x.gov().value()), x.gov().label().tag(), outNoun);
+                        if (wordChecker(x.gov().label().tag(), "VB", nouns, stemmer.stem(x.gov().value()), 3, 20)) {
+                            listPopulator(nouns, stemmer.stem(x.gov().value()), x.gov().label().tag(), outNoun);
                         }
 
-                        if(wordChecker(x.dep().label().tag(), "VB", nouns, stemmer.stem(x.dep().value()), 3, 20)) {
+                        if (wordChecker(x.dep().label().tag(), "VB", nouns, stemmer.stem(x.dep().value()), 3, 20)) {
                             listPopulator(nouns, stemmer.stem(x.dep().value()), x.dep().label().tag(), outNoun);
                         }
 
                     }
                 }
             }
-            keywordVector.add(nouns);
-            keywordVector.add(verbs);
+
             System.out.println("\n*********\n" + nouns);
 
             outNoun.newLine();
             outNoun.flush();
             outNoun.close();
-            outVerb.newLine();
-            outVerb.flush();
-            outVerb.close();
+//          
 
             return new Pair(nouns, verbs);
 
         } catch (Exception e) { // catch error if any
-            System.err.println("ERROR: " + e.getMessage()); // print error message
+            System.err.println("ERROR in Parser: " + e.getMessage()); // print error message
             return null;
         }
     }

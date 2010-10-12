@@ -1,11 +1,9 @@
 package json2java;
 
-
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import java.io.*;
 import org.htmlcleaner.XPatherException;
-
 
 /**
  * @author      Nikos Stasinopoulos <nstasinopoulos@gmail.com>
@@ -66,32 +64,40 @@ public class Main {
         System.out.println("Finished Scanning dir : " + directoryName);
         System.out.println("Tickets count : " + count);
 
-       //Create .ARFF
+        //Create .ARFF
         Util demo = new Util(); //create class instance
         demo.createHeader();  //append the Header to .arff
 
-        //Flush txt files
-        new FileWriter("possibleNounKeywords.txt", false);
-        new FileWriter("possibleVerbKeywords.txt", false);
+
 
 //        Parser p = new json2java.Parser(); //Stanford Parser Object
 
         //Set below ticketsToProcess = i.e. 1000 to run
-        int ticketsToProcess = 3;
+        int ticketsToProcess = 20;
 
-        for (int i = 1; i < ticketsToProcess + 1; i++) {//count if for tickets
-            System.out.println("\n[" + i + "/" + count + "]");
-            File f = new File(list[i] + "/ticket.json");
-            demo.preProcessFile(f); //preprocess the file
-            DecodeJSON testDecode = new DecodeJSON();
-            Ticket t = testDecode.decode(f);    //map JSON to the POJO
-            demo.ArffCreator(t,true);     //get the data out of the POJO, true to enable Stanford Parser
-//            demo.ArffCreatorForVersions(t,true); //same for the new versions, true to enable Stanford Parser
-            }
+//        //Initialize txt files
+//        BufferedWriter init = null;
+//        init = new BufferedWriter(new FileWriter("possibleNounKeywords.txt", false));
+//        init.append(Integer.toString(ticketsToProcess) + "\n");
+//        init.close();
+////        new FileWriter("possibleVerbKeywords.txt", false);
+//
+//        for (int i = 1; i < ticketsToProcess + 1; i++) {//count if for tickets
+//            System.out.println("\n[" + i + "/" + count + "]");
+//            File f = new File(list[i] + "/ticket.json");
+//            demo.preProcessFile(f); //preprocess the file
+//            DecodeJSON Decoder = new DecodeJSON();
+//            Ticket t = Decoder.decode(f);    //map JSON to the POJO
+//            demo.ArffCreator(t, true);     //get the data out of the POJO, true to enable Stanford Parser
+////            demo.ArffCreatorForVersions(t,true); //same for the new versions, true to enable Stanford Parser
+//        }
 
-        double x = new Google().NGD("stack run base logger set migration line fail place seem switch", "portability");
 
-System.out.println(x);
+TagEstimator tagger = new TagEstimator();
+tagger.runLDA(3, "/home/nikos/NetBeansProjects/Thesis-Work/");
+
+//        double x = new Google().NGD("stack run base logger set migration line fail place seem switch", "portability");
+//System.out.println(x);
     }
 }
 //214 problem with diffable attributes - delete ticket from data

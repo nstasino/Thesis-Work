@@ -51,7 +51,6 @@ public class Util extends TextPreprocessing {
             //Stanford Parse untagged text and write to Possible{Nouns,Verbs}.txt
             Pair pair = p.parse(t);
 
-//           System.out.println(-1);
             appendToArff(",'" + pair.nouns.toString() + "'", "test");
 //                           System.out.println( pair.getNouns() );
 //            appendToArff(",'" + pair.verbs.toString() + "'\n", "test");
@@ -83,9 +82,9 @@ public class Util extends TextPreprocessing {
         appendToArff(",'" + removeAnnoyingChars(t.getTicket().getTag()) + "'", "test");
         appendToArff(",'" + removeAnnoyingChars(t.getTicket().getTitle()) + "'", "test");
         appendToArff("," + t.getTicket().getUpdated_at(), "test");
-        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getUrl()) + "'", "test");
+        appendToArff(",'" + (t.getTicket().getUrl()) + "'", "test");
         appendToArff("," + t.getTicket().getUser_id(), "test");
-        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getUser_name()) + "'", "test");
+        appendToArff(",'" + (t.getTicket().getUser_name()) + "'", "test");
         appendToArff("," + t.getTicket().getVersionId() + "\n", "test");
 
 

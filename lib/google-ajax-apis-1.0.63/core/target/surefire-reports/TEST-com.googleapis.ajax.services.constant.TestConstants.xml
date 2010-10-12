@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="0.047" errors="2" skipped="0" tests="2" name="com.googleapis.ajax.services.constant.TestConstants">
+  <properties>
+    <property name="java.vendor" value="Sun Microsystems Inc."/>
+    <property name="localRepository" value="C:\Documents and Settings\nmukhtar\.m2\repository"/>
+    <property name="env.VS90COMNTOOLS" value="C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\Tools\"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
+    <property name="env.PROMPT" value="$P$G"/>
+    <property name="os.name" value="Windows 2003"/>
+    <property name="env.FP_NO_HOST_CHECK" value="NO"/>
+    <property name="sun.boot.class.path" value="C:\Program Files (x86)\Java\jdk1.6.0_03\jre\lib\resources.jar;C:\Program Files (x86)\Java\jdk1.6.0_03\jre\lib\rt.jar;C:\Program Files (x86)\Java\jdk1.6.0_03\jre\lib\sunrsasign.jar;C:\Program Files (x86)\Java\jdk1.6.0_03\jre\lib\jsse.jar;C:\Program Files (x86)\Java\jdk1.6.0_03\jre\lib\jce.jar;C:\Program Files (x86)\Java\jdk1.6.0_03\jre\lib\charsets.jar;C:\Program Files (x86)\Java\jdk1.6.0_03\jre\classes"/>
+    <property name="env.COMPUTERNAME" value="NABEEL64"/>
+    <property name="env.CommonProgramW6432" value="C:\Program Files\Common Files"/>
+    <property name="env.ALLUSERSPROFILE" value="C:\Documents and Settings\All Users"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="java.runtime.version" value="1.6.0_03-b05"/>
+    <property name="env.HOMEPATH" value="\Documents and Settings\nmukhtar"/>
+    <property name="env.DISPLAY" value=":9999"/>
+    <property name="user.name" value="nmukhtar"/>
+    <property name="user.language" value="en"/>
+    <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.6.0_03\jre\bin"/>
+    <property name="java.version" value="1.6.0_03"/>
+    <property name="env.PROCESSOR_IDENTIFIER" value="EM64T Family 6 Model 23 Stepping 6, GenuineIntel"/>
+    <property name="user.timezone" value=""/>
+    <property name="env.CLIENTNAME" value="Console"/>
+    <property name="env.TEMP" value="C:\DOCUME~1\nmukhtar\LOCALS~1\Temp"/>
+    <property name="sun.arch.data.model" value="32"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files (x86)\Java\jdk1.6.0_03\jre\lib\endorsed"/>
+    <property name="env.PROCESSOR_ARCHITEW6432" value="AMD64"/>
+    <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
+    <property name="env.HOMEDRIVE" value="C:"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="50.0"/>
+    <property name="user.country" value="US"/>
+    <property name="java.home" value="C:\Program Files (x86)\Java\jdk1.6.0_03\jre"/>
+    <property name="env.APPDATA" value="C:\Documents and Settings\nmukhtar\Application Data"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="env.ComSpec" value="C:\WINDOWS\system32\cmd.exe"/>
+    <property name="env.OS" value="Windows_NT"/>
+    <property name="env.CommonProgramFiles" value="C:\Program Files (x86)\Common Files"/>
+    <property name="os.version" value="5.2"/>
+    <property name="env.ProgramW6432" value="C:\Program Files"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.version" value="1.6.0_03-b05"/>
+    <property name="env.USERPROFILE" value="C:\Documents and Settings\nmukhtar"/>
+    <property name="user.variant" value=""/>
+    <property name="env.JAVA_HOME" value="C:\Program Files (x86)\Java\jdk1.6.0_03"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="env.TMP" value="C:\DOCUME~1\nmukhtar\LOCALS~1\Temp"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="user.home" value="C:\Documents and Settings\nmukhtar"/>
+    <property name="env.SESSIONNAME" value="Console"/>
+    <property name="env.ProgramFiles(x86)" value="C:\Program Files (x86)"/>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="env.M2_HOME" value="C:\apache-maven-2.1.0"/>
+    <property name="env.NUMBER_OF_PROCESSORS" value="2"/>
+    <property name="java.library.path" value="C:\Program Files (x86)\Java\jdk1.6.0_03\bin;.;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\app\nmukhtar\product\11.1.0\db_1\bin;C:\Python25\;C:\Perl\site\bin;C:\Perl\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\WINDOWS\system32\WindowsPowerShell\v1.0;C:\apache-ant-1.7.0\bin;C:\Program Files (x86)\Java\jdk1.6.0_03\bin;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;C:\Program Files\TortoiseSVN\bin;C:\apache-maven-2.1.0\bin;C:\Program Files (x86)\VisualSVN\bin;c:\cygwin\bin;c:\cygwin\usr\bin;C:\Program Files\TortoiseGit\bin;C:\cygwin\usr\local\bin;C:\Program Files\TortoiseHg;C:\Program Files (x86)\CVSNT\;C:\php;C:\Program Files (x86)\Google\google_appengine\;C:\Program Files (x86)\Git\bin"/>
+    <property name="java.vendor.url" value="http://java.sun.com/"/>
+    <property name="env.USERDNSDOMAIN" value="CSQUAREONLINE.LOCAL"/>
+    <property name="java.vm.vendor" value="Sun Microsystems Inc."/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="java.class.path" value="/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/aspectjrt-1.5.3.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/commons-cli-1.0.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/doxia-sink-api-1.0-alpha-9.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/jsch-0.1.27.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/jtidy-4aug2000r7-dev.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/maven-artifact-3.0-SNAPSHOT.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/maven-core-2.1-SNAPSHOT.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/maven-embedder-2.1-SNAPSHOT.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/maven-lifecycle-2.1-SNAPSHOT.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/maven-model-2.1-SNAPSHOT.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/maven-plugin-api-2.1-SNAPSHOT.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/maven-profile-2.1-SNAPSHOT.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/maven-project-2.1-SNAPSHOT.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/maven-reporting-api-2.1-SNAPSHOT.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/maven-toolchain-2.1-SNAPSHOT.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/maven-workspace-2.1-SNAPSHOT.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/plexus-classworlds-1.2-alpha-12.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/plexus-container-default-1.0-alpha-44.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/plexus-interactivity-api-1.0-alpha-6.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/plexus-interpolation-1.0-SNAPSHOT.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/plexus-utils-1.5.1.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/wagon-file-1.0-beta-2.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/wagon-http-lightweight-1.0-beta-2.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/wagon-http-shared-1.0-beta-2.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/wagon-provider-api-1.0-beta-2.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/wagon-ssh-1.0-beta-2.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/wagon-ssh-common-1.0-beta-2.jar;/E:/eclipse/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/wagon-ssh-external-1.0-beta-2.jar"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="env.LOGONSERVER" value="\\CC-PDC"/>
+    <property name="env.windir" value="C:\WINDOWS"/>
+    <property name="java.vm.specification.version" value="1.0"/>
+    <property name="env.PROCESSOR_ARCHITECTURE" value="x86"/>
+    <property name="sun.os.patch.level" value="Service Pack 2"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="env.HOME" value="C:\Documents and Settings\nmukhtar"/>
+    <property name="env.ProgramFiles" value="C:\Program Files (x86)"/>
+    <property name="env.ANT_HOME" value="C:\apache-ant-1.7.0"/>
+    <property name="surefire.test.class.path" value="E:\workspace\opensource\google-search-java-sdk\core\target\test-classes;E:\workspace\opensource\google-search-java-sdk\core\target\classes;C:\Documents and Settings\nmukhtar\.m2\repository\com\google\code\gson\gson\1.4\gson-1.4.jar;E:\workspace\opensource\google-search-java-sdk\schema\target\googleapis-ajax-schema-0.1.jar;C:\Documents and Settings\nmukhtar\.m2\repository\junit\junit\4.5\junit-4.5.jar;"/>
+    <property name="java.io.tmpdir" value="C:\DOCUME~1\nmukhtar\LOCALS~1\Temp\"/>
+    <property name="env.PROCESSOR_REVISION" value="1706"/>
+    <property name="env.CommonProgramFiles(x86)" value="C:\Program Files (x86)\Common Files"/>
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi"/>
+    <property name="env.SystemRoot" value="C:\WINDOWS"/>
+    <property name="env.GIT_SSH" value="C:\Program Files\TortoiseGit\bin\TortoisePLink.exe"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="os.arch" value="x86"/>
+    <property name="java.ext.dirs" value="C:\Program Files (x86)\Java\jdk1.6.0_03\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="env.SVN_SSH" value="&quot;C:\\Program Files\\TortoiseGit\\bin\\TortoisePLink.exe&quot;"/>
+    <property name="user.dir" value="E:\workspace\opensource\google-search-java-sdk\core"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) Client VM"/>
+    <property name="env.PATHEXT" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.py;.pyw;.PSC1"/>
+    <property name="env.Path" value="D:\app\nmukhtar\product\11.1.0\db_1\bin;C:\Python25\;C:\Perl\site\bin;C:\Perl\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\WINDOWS\system32\WindowsPowerShell\v1.0;C:\apache-ant-1.7.0\bin;C:\Program Files (x86)\Java\jdk1.6.0_03\bin;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;C:\Program Files\TortoiseSVN\bin;C:\apache-maven-2.1.0\bin;C:\Program Files (x86)\VisualSVN\bin;c:\cygwin\bin;c:\cygwin\usr\bin;C:\Program Files\TortoiseGit\bin;C:\cygwin\usr\local\bin;C:\Program Files\TortoiseHg;C:\Program Files (x86)\CVSNT\;C:\php;C:\Program Files (x86)\Google\google_appengine\;C:\Program Files (x86)\Git\bin"/>
+    <property name="basedir" value="E:\workspace\opensource\google-search-java-sdk\core"/>
+    <property name="maven.mode.standalone" value="true"/>
+    <property name="env.USERNAME" value="nmukhtar"/>
+    <property name="env.SystemDrive" value="C:"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="env.USERDOMAIN" value="CC"/>
+    <property name="java.specification.version" value="1.6"/>
+    <property name="env.PROCESSOR_LEVEL" value="6"/>
+    <property name="env.SSH_ASKPASS" value="C:\WINDOWS\SshAskPass.exe"/>
+  </properties>
+  <testcase time="0" classname="com.googleapis.ajax.services.constant.TestConstants" name="initializationError">
+    <error message="Test class should have exactly one public constructor" type="java.lang.Exception">java.lang.Exception: Test class should have exactly one public constructor
+	at org.junit.runners.BlockJUnit4ClassRunner.validateOnlyOneConstructor(BlockJUnit4ClassRunner.java:123)
+	at org.junit.runners.BlockJUnit4ClassRunner.validateConstructor(BlockJUnit4ClassRunner.java:116)
+	at org.junit.runners.BlockJUnit4ClassRunner.collectInitializationErrors(BlockJUnit4ClassRunner.java:111)
+	at org.junit.runners.ParentRunner.validate(ParentRunner.java:253)
+	at org.junit.runners.ParentRunner.&lt;init&gt;(ParentRunner.java:55)
+	at org.junit.runners.BlockJUnit4ClassRunner.&lt;init&gt;(BlockJUnit4ClassRunner.java:56)
+	at org.junit.internal.builders.JUnit4Builder.runnerForClass(JUnit4Builder.java:13)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:57)
+	at org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:29)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:57)
+	at org.junit.internal.requests.ClassRequest.getRunner(ClassRequest.java:24)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.&lt;init&gt;(JUnit4TestSet.java:45)
+	at org.apache.maven.surefire.junit4.JUnit4DirectoryTestSuite.createTestSet(JUnit4DirectoryTestSuite.java:56)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.locateTestSets(AbstractDirectoryTestSuite.java:96)
+	at org.apache.maven.surefire.Surefire.createSuiteFromDefinition(Surefire.java:209)
+	at org.apache.maven.surefire.Surefire.run(Surefire.java:156)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:338)
+	at org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:997)
+</error>
+  </testcase>
+  <testcase time="0" classname="com.googleapis.ajax.services.constant.TestConstants" name="initializationError">
+    <error message="No runnable methods" type="java.lang.Exception">java.lang.Exception: No runnable methods
+	at org.junit.runners.BlockJUnit4ClassRunner.validateInstanceMethods(BlockJUnit4ClassRunner.java:154)
+	at org.junit.runners.BlockJUnit4ClassRunner.collectInitializationErrors(BlockJUnit4ClassRunner.java:112)
+	at org.junit.runners.ParentRunner.validate(ParentRunner.java:253)
+	at org.junit.runners.ParentRunner.&lt;init&gt;(ParentRunner.java:55)
+	at org.junit.runners.BlockJUnit4ClassRunner.&lt;init&gt;(BlockJUnit4ClassRunner.java:56)
+	at org.junit.internal.builders.JUnit4Builder.runnerForClass(JUnit4Builder.java:13)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:57)
+	at org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:29)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:57)
+	at org.junit.internal.requests.ClassRequest.getRunner(ClassRequest.java:24)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.&lt;init&gt;(JUnit4TestSet.java:45)
+	at org.apache.maven.surefire.junit4.JUnit4DirectoryTestSuite.createTestSet(JUnit4DirectoryTestSuite.java:56)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.locateTestSets(AbstractDirectoryTestSuite.java:96)
+	at org.apache.maven.surefire.Surefire.createSuiteFromDefinition(Surefire.java:209)
+	at org.apache.maven.surefire.Surefire.run(Surefire.java:156)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:338)
+	at org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:997)
+</error>
+  </testcase>
+</testsuite>

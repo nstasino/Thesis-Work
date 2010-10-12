@@ -13,12 +13,12 @@ import org.json.JSONObject;
 public class Google {
 
     public double NGD(String term1, String term2) {
-        Long M = 10000000000L; //8058044651L
+        Long M = 10000000000L; //8058044651L (2007)
         double freqx = logResults(term1);
         double freqy = logResults(term2);
         String xy = term1.concat("+").concat(term2);
         double freqxy = logResults(xy);
-        if (freqx == Double.NEGATIVE_INFINITY || freqy == Double.NEGATIVE_INFINITY) {
+        if (freqx == Double.NEGATIVE_INFINITY || freqy == Double.NEGATIVE_INFINITY) { //deal with zero results = infinite logarithms
             return 100000;
         } else {
             double num = Math.max(freqx, freqy) - freqxy;
@@ -29,10 +29,8 @@ public class Google {
         }
     }
 
-    // // Put your website here
-// private final String HTTP_REFERER = "http://www.example.com/";
     public double logResults(String term) {
-        System.out.println(term + "\t" + Math.log10(makeQuery(term)));
+        System.out.println(term + "\t" + Math.log10(makeQuery(term))); //show results with log10 value
         return Math.log10(makeQuery(term));
 
     }

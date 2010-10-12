@@ -6,17 +6,6 @@ import org.codehaus.jackson.map.JsonMappingException;
 import java.io.*;
 import org.htmlcleaner.XPatherException;
 
-//unused imports
-//import java.io.File;
-//import java.io.IOException;
-//import java.io.FilenameFilter;
-//import java.io.FileFilter;
-//import org.json.simple.*;
-//import java.io.IOException;
-//import java.util.ArrayList;
-//import json2java.Ticket.Versions;
-//import org.json.simple.parser.*;
-//import java.lang.String;
 
 /**
  * @author      Nikos Stasinopoulos <nstasinopoulos@gmail.com>
@@ -88,9 +77,9 @@ public class Main {
 //        Parser p = new json2java.Parser(); //Stanford Parser Object
 
         //Set below ticketsToProcess = i.e. 1000 to run
-        int ticketsToProcess = 2;
+        int ticketsToProcess = 3;
 
-        for (int i = 1; i < ticketsToProcess; i++) {//count if for tickets
+        for (int i = 1; i < ticketsToProcess + 1; i++) {//count if for tickets
             System.out.println("\n[" + i + "/" + count + "]");
             File f = new File(list[i] + "/ticket.json");
             demo.preProcessFile(f); //preprocess the file
@@ -99,7 +88,8 @@ public class Main {
             demo.ArffCreator(t,true);     //get the data out of the POJO, true to enable Stanford Parser
 //            demo.ArffCreatorForVersions(t,true); //same for the new versions, true to enable Stanford Parser
             }
-double x = new Google().NGD("ταβλετr", "ipad");
+
+        double x = new Google().NGD("stack run base logger set migration line fail place seem switch", "portability");
 
 System.out.println(x);
     }

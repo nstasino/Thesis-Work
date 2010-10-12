@@ -94,12 +94,12 @@ public class Parser {
                         }
 
                         //populate verbs list
-                        if(wordChecker(x.gov().label().tag(), "VB", verbs,stemmer.stem(x.gov().value()), 3, 20)) {
-                            listPopulator(verbs,stemmer.stem(x.gov().value()), x.gov().label().tag(), outVerb);
+                        if(wordChecker(x.gov().label().tag(), "VB", nouns,stemmer.stem(x.gov().value()), 3, 20)) {
+                            listPopulator(nouns,stemmer.stem(x.gov().value()), x.gov().label().tag(), outNoun);
                         }
 
-                        if(wordChecker(x.dep().label().tag(), "VB", verbs, stemmer.stem(x.dep().value()), 3, 20)) {
-                            listPopulator(verbs, stemmer.stem(x.dep().value()), x.dep().label().tag(), outVerb);
+                        if(wordChecker(x.dep().label().tag(), "VB", nouns, stemmer.stem(x.dep().value()), 3, 20)) {
+                            listPopulator(nouns, stemmer.stem(x.dep().value()), x.dep().label().tag(), outNoun);
                         }
 
                     }
@@ -107,7 +107,7 @@ public class Parser {
             }
             keywordVector.add(nouns);
             keywordVector.add(verbs);
-            System.out.println("\n*********\n" + keywordVector);
+            System.out.println("\n*********\n" + nouns);
 
             outNoun.newLine();
             outNoun.flush();
@@ -131,7 +131,7 @@ public class Parser {
             return true;
         } else {
 
-            System.out.println(TextPreprocessing.isUnique(members, value)+"\t"+value +"\t"+tag);
+//            System.out.println(TextPreprocessing.isUnique(members, value)+"\t"+value +"\t"+tag);
 
             return false;
         }

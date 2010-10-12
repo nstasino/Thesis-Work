@@ -44,19 +44,37 @@ public class Util extends TextPreprocessing {
         appendToArff("" + t.getTicket().getAssigned_user_id(), "test");
 //            appendToArff(" ,'" + removeAnnoyingChars(t.getTicket().getAttachments()) + "'", "test");
         appendToArff("," + t.getTicket().getAttachments_count(), "test");
-        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getBody()) + "'", "test");
-        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getBody_html()) + "'", "test");
+//        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getBody()) + "'", "test");
+
+
+         if (b == true) {
+            //Stanford Parse untagged text and write to Possible{Nouns,Verbs}.txt
+            Pair pair = p.parse(t);
+
+//           System.out.println(-1);
+            appendToArff(",'" + pair.nouns.toString() + "'", "test");
+//                           System.out.println( pair.getNouns() );
+//            appendToArff(",'" + pair.verbs.toString() + "'\n", "test");
+//           System.out.println(p.parse(t).nouns.toString());
+
+        } else {
+            Pair pair = p.parse(t);
+            appendToArff(",'" + "'", "test");
+        }
+//        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getBody_html()) + "'", "test");
+
+
         appendToArff("," + t.getTicket().isClosed(), "test");
         appendToArff(",'" + t.getTicket().getCreated_at() + "'", "test");
         appendToArff("," + t.getTicket().getCreator_id(), "test");
         appendToArff(",'" + removeAnnoyingChars(t.getTicket().getCreator_name()) + "'", "test");
-        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getLatest_body()) + "'", "test");
+//        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getLatest_body()) + "'", "test");
         appendToArff("," + removeAnnoyingChars(t.getTicket().getMilestone_due_on()), "test");
         appendToArff("," + t.getTicket().getMilestone_id(), "test");
         appendToArff(",'" + removeAnnoyingChars(t.getTicket().getMilestone_title()) + "'", "test");
         appendToArff("," + t.getTicket().getNumber(), "test");
-        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getOriginal_body()) + "'", "test");
-        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getOriginal_body_html()) + "'", "test");
+//        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getOriginal_body()) + "'", "test");
+//        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getOriginal_body_html()) + "'", "test");
         appendToArff(",'" + removeAnnoyingChars(t.getTicket().getPermalink()) + "'", "test");
         appendToArff("," + t.getTicket().getPriority(), "test");
         appendToArff("," + t.getTicket().getProject_id(), "test");
@@ -68,18 +86,10 @@ public class Util extends TextPreprocessing {
         appendToArff(",'" + removeAnnoyingChars(t.getTicket().getUrl()) + "'", "test");
         appendToArff("," + t.getTicket().getUser_id(), "test");
         appendToArff(",'" + removeAnnoyingChars(t.getTicket().getUser_name()) + "'", "test");
-        appendToArff("," + t.getTicket().getVersionId() + "", "test");
+        appendToArff("," + t.getTicket().getVersionId() + "\n", "test");
 
-        if (b == true) {
-            //Stanford Parse untagged text and write to Possible{Nouns,Verbs}.txt
-            Pair pair = p.parse(t);
-//           System.out.println(-1);
-            appendToArff(",'" + pair.nouns.toString() + "'", "test");
-//                           System.out.println( pair.getNouns() );
-            appendToArff(",'" + pair.verbs.toString() + "'\n", "test");
-//           System.out.println(p.parse(t).nouns.toString());
 
-        }
+
 
 
 //            String pojoAsString = Decode.toJson(t, true);
@@ -192,13 +202,38 @@ public class Util extends TextPreprocessing {
                 + "%\n";
 
         String header_relation = "@RELATION tickets\n\n";
-        String header_with_attributes = "@ATTRIBUTE assigned_user_id NUMERIC\n"
-                //                +"@ATTRIBUTE attachments string\n"+""
-                + "@ATTRIBUTE attachments_count NUMERIC\n@ATTRIBUTE body string\n@ATTRIBUTE body_html string\n@ATTRIBUTE closed {true, false }\n@ATTRIBUTE created_at date\n@ATTRIBUTE creator_id NUMERIC\n"
-                + "@ATTRIBUTE creator_name string\n@ATTRIBUTE latest_body string\n@ATTRIBUTE milestone_due_on string\n@ATTRIBUTE milestone_id NUMERIC\n@ATTRIBUTE milestone_title string\n@ATTRIBUTE number NUMERIC\n"
-                + "@ATTRIBUTE original_body string\n@ATTRIBUTE original_body_html string\n@ATTRIBUTE permalink string\n@ATTRIBUTE priority NUMERIC\n@ATTRIBUTE project_id NUMERIC\n"
-                + "@ATTRIBUTE raw_data string\n@ATTRIBUTE state string\n@ATTRIBUTE tag string\n@ATTRIBUTE title string\n@ATTRIBUTE updated_at date\n@ATTRIBUTE url string\n@ATTRIBUTE user_id NUMERIC\n@ATTRIBUTE user_name string\n"
-                + "@ATTRIBUTE versionId NUMERIC\n" + "@ATTRIBUTE nouns string\n" + "@ATTRIBUTE verbs string\n\n\n";
+        String header_with_attributes =
+                "@ATTRIBUTE assigned_user_id NUMERIC\n"
+//                + "@ATTRIBUTE attachments string\n" + ""
+                + "@ATTRIBUTE attachments_count NUMERIC\n"
+//                + "@ATTRIBUTE body string\n"
+                + "@ATTRIBUTE body_html string\n"
+                + "@ATTRIBUTE closed {true, false}\n"
+                + "@ATTRIBUTE created_at date\n"
+                + "@ATTRIBUTE creator_id NUMERIC\n"
+                + "@ATTRIBUTE creator_name string\n"
+//                + "@ATTRIBUTE latest_body string\n"
+                + "@ATTRIBUTE milestone_due_on string\n"
+                + "@ATTRIBUTE milestone_id NUMERIC\n"
+                + "@ATTRIBUTE milestone_title string\n"
+                + "@ATTRIBUTE number NUMERIC\n"
+//                + "@ATTRIBUTE original_body string\n"
+//                + "@ATTRIBUTE original_body_html string\n"
+                + "@ATTRIBUTE permalink string\n"
+                + "@ATTRIBUTE priority NUMERIC\n"
+                + "@ATTRIBUTE project_id NUMERIC\n"
+                + "@ATTRIBUTE raw_data string\n"
+                + "@ATTRIBUTE state string\n"
+                + "@ATTRIBUTE tag string\n"
+                + "@ATTRIBUTE title string\n"
+                + "@ATTRIBUTE updated_at date\n"
+                + "@ATTRIBUTE url string\n"
+                + "@ATTRIBUTE user_id NUMERIC\n"
+                + "@ATTRIBUTE user_name string\n"
+                + "@ATTRIBUTE versionId NUMERIC\n"
+//                + "@ATTRIBUTE nouns string\n"
+//                + "@ATTRIBUTE verbs string\n\n\n"
+                ;
 
         String header_data = "@DATA\n";
 //        String header3 = "@ATTRIBUTE assigned-user-id NUMERIC\n@ATTRIBUTE attachments-count NUMERIC\n@ATTRIBUTE closed {true, false }\n@ATTRIBUTE created-at date\n@ATTRIBUTE creator-id NUMERIC\n@ATTRIBUTE milestone-due-on date\n@ATTRIBUTE milestone-id NUMERIC\n@ATTRIBUTE number NUMERIC\n@ATTRIBUTE permalink string\n@ATTRIBUTE priority NUMERIC\n@ATTRIBUTE project-id NUMERIC\n@ATTRIBUTE raw-data string\n"

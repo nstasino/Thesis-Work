@@ -9,7 +9,7 @@ import edu.stanford.nlp.parser.lexparser.LexicalizedParser;
 import edu.stanford.nlp.ling.HasWord;
 import org.htmlcleaner.XPatherException;
 
-import json2java.TextPreprocessing;
+import json2java.TextPreprocessor;
 import edu.stanford.nlp.process.Morphology;
 
 /**
@@ -19,20 +19,20 @@ import edu.stanford.nlp.process.Morphology;
  * @version     2010.0820
  * @since       1.6
  */
-public class Parser {
+public class NLParser {
 
     LexicalizedParser lp = new LexicalizedParser("/home/nikos/NetBeansProjects/Thesis-Work/lib/stanford-parser-2010-07-09/englishPCFG.ser.gz");
     TreebankLanguagePack tlp = new PennTreebankLanguagePack();
     GrammaticalStructureFactory gsf = tlp.grammaticalStructureFactory();
     Morphology stemmer = new Morphology();
-    TextPreprocessing tp = new TextPreprocessing();
+    TextPreprocessor tp = new TextPreprocessor();
 
-    public Pair parse(Ticket ticket) throws IOException, XPatherException {
+    public Pair parse(Ticket ticket, int sentenceMaxLength) throws IOException, XPatherException {
 
 
         //Strip html tags for body_html attribute
         String html = ticket.getTicket().getBody_html();
-        String text = new StripHTMLTags().stripHTMLtags(html);
+        String text = new HTMLStripper().stripHTMLtags(html);
         text = tp.removeAnnoyingChars(text);
 
         try // device to handle potential errors
@@ -40,14 +40,14 @@ public class Parser {
 //            System.out.println("\n\n\nSTART\n\n\n"); // print START
 
             BufferedWriter outNoun = null;
-            outNoun = new BufferedWriter(new FileWriter("possibleNounKeywords.txt", true));
+            outNoun = new BufferedWriter(new FileWriter("keywords.txt", true));
 //            outNoun.append(Integer.toString(ticket.getTicket().getNumber()));
 //            outNoun.append(",");
 //            outNoun.append(Integer.toString(ticket.getTicket().getVersionId()));
 //            outNoun.append(",");
 
 
-            lp.setOptionFlags(new String[]{"-maxLength", "200", "-retainTmpSubcategories"});//Maximum length allowed for a sentence
+            lp.setOptionFlags(new String[]{"-maxLength", Integer.toString(sentenceMaxLength), "-retainTmpSubcategories"});//Maximum length allowed for a sentence
             //to get Stanford Parsed
 
             StringReader sr = new StringReader(text);
@@ -68,7 +68,7 @@ public class Parser {
 
                     //Getting the relationships
                     //limits relations to desired  i.e. Subj/Obj
-                    if (TextPreprocessing.isDesiredRelation(x.reln().getLongName())) {
+                    if (TextPreprocessor.isDesiredRelation(x.reln().getLongName())) {
 
 //                        System.out.print("Governor: " + x.gov().value() + " " + x.gov().label().tag());
 //                        System.out.print("\t<<" + x.reln().getLongName() + ">>\t");
@@ -94,8 +94,8 @@ public class Parser {
                     }
                 }
             }
-
-            System.out.println("\n*********\n" + nouns);
+            System.out.println(ticket.getTicket().getNumber());
+            System.out.println("\n" + nouns+"\n");
 
             outNoun.newLine();
             outNoun.flush();
@@ -111,13 +111,13 @@ public class Parser {
     }
 
     public boolean wordChecker(String tag, String typeAbbreviation, ArrayList members, String value, int minLength, int maxLength) {
-        if (TextPreprocessing.isDesiredMember(tag, typeAbbreviation)
-                && TextPreprocessing.isUnique(members, value)
-                && TextPreprocessing.checkMinMaxLength(value, minLength, maxLength)) {
+        if (TextPreprocessor.isDesiredMember(tag, typeAbbreviation)
+                && TextPreprocessor.isUnique(members, value)
+                && TextPreprocessor.checkMinMaxLength(value, minLength, maxLength)) {
             return true;
         } else {
 
-//            System.out.println(TextPreprocessing.isUnique(members, value)+"\t"+value +"\t"+tag);
+//            System.out.println(TextPreprocessor.isUnique(members, value)+"\t"+value +"\t"+tag);
 
             return false;
         }
@@ -135,7 +135,7 @@ public class Parser {
 
         //Strip html tags for body_html attribute
         String html = ticket.getBody_html();
-        String text = new StripHTMLTags().stripHTMLtags(html);
+        String text = new HTMLStripper().stripHTMLtags(html);
 
         try // device to handle potential errors:
         {
@@ -143,7 +143,7 @@ public class Parser {
 
 
             BufferedWriter outNoun = null;
-            outNoun = new BufferedWriter(new FileWriter("possibleNounKeywords.txt", true));
+            outNoun = new BufferedWriter(new FileWriter("keywords.txt", true));
 //            outNoun.append(Integer.toString(ticket.getNumber()));
 //            outNoun.append(",");
 //            outNoun.append(Integer.toString(ticket.getVersionId()));

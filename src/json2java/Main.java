@@ -3,6 +3,8 @@ package json2java;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import java.io.*;
+import java.util.Scanner;
+
 import org.htmlcleaner.XPatherException;
 
 /**
@@ -11,37 +13,6 @@ import org.htmlcleaner.XPatherException;
  * @since       1.6
  */
 public class Main {
-
-    static int count = 0;
-    static String[] list = new String[5000];
-
-    /**
-     * Method to traverse through all Directories
-     *
-     * @param dir
-     *
-     */
-    public static void visitAllDirsAndFiles(File dir) {
-
-        if (dir.isDirectory()) {
-
-            File[] files = dir.listFiles();
-            for (int i = 0; i < files.length; i++) {
-                String fileName = files[i].getName();
-
-                if (fileName.equals("ticket.json")) {
-//                    System.out.println("----"); //eye-candy delimiter
-//                    System.out.println(count);
-                    String path = dir.getAbsolutePath();
-                    list[count] = path;
-                    count++;
-                }
-
-                visitAllDirsAndFiles(new File(dir, fileName)); //recursive call
-            }
-        }
-
-    }
 
     /**
      * Main. Set ticketsToProcess = i.e. 1000 to run
@@ -55,49 +26,46 @@ public class Main {
      */
     public static void main(String[] args) throws JsonMappingException, JsonParseException, IOException, XPatherException {
 
-
-        //Scan directory for tickets
-        String directoryName = "Data/tickets/"; // set to current directory
-        System.out.println("Scanning dir : " + directoryName);
-        File dir = new File(directoryName);
-        visitAllDirsAndFiles(dir);
-        System.out.println("Finished Scanning dir : " + directoryName);
-        System.out.println("Tickets count : " + count);
-
-        //Create .ARFF
-        Util demo = new Util(); //create class instance
-        demo.createHeader();  //append the Header to .arff
+        FunctionCallers f = new FunctionCallers();
+        //Directory Scanner Call
+        f.dirScanner();
 
 
+        int flag = 3;
 
-//        Parser p = new json2java.Parser(); //Stanford Parser Object
+        switch (flag) {
+            case 1:
+                System.out.println("Performing Natural Language Processing on data\n\n");
+                //NLP Module Call
+                f.runNLP(25);
+                break;
+            case 2:
+                System.out.println("Perfoming Latent Dirichlet Allocation on data\n\n");
+                //LDA module Call
+                f.TopicFinder(2);
+                break;
+            case 3:
+                System.out.println("Calculating Normalized Google Distance\n\n");
+                new NGDCalculator().readFile();
+//                double x = new NGDCalculator().NGD("ruby stack run base logger set migration line fail place seem switch", "portability");
+//                System.out.println(x);
+                break;
+            default:
+                break;
+        }
 
-        //Set below ticketsToProcess = i.e. 1000 to run
-        int ticketsToProcess = 20;
-
-//        //Initialize txt files
-//        BufferedWriter init = null;
-//        init = new BufferedWriter(new FileWriter("possibleNounKeywords.txt", false));
-//        init.append(Integer.toString(ticketsToProcess) + "\n");
-//        init.close();
-////        new FileWriter("possibleVerbKeywords.txt", false);
-//
-//        for (int i = 1; i < ticketsToProcess + 1; i++) {//count if for tickets
-//            System.out.println("\n[" + i + "/" + count + "]");
-//            File f = new File(list[i] + "/ticket.json");
-//            demo.preProcessFile(f); //preprocess the file
-//            DecodeJSON Decoder = new DecodeJSON();
-//            Ticket t = Decoder.decode(f);    //map JSON to the POJO
-//            demo.ArffCreator(t, true);     //get the data out of the POJO, true to enable Stanford Parser
-////            demo.ArffCreatorForVersions(t,true); //same for the new versions, true to enable Stanford Parser
-//        }
 
 
-TagEstimator tagger = new TagEstimator();
-tagger.runLDA(3, "/home/nikos/NetBeansProjects/Thesis-Work/");
+//        //Create .ARFF
+//        ArffCreator demo = new ArffCreator(); //create class instance
+//        demo.createHeader();  //append the Header to .arff
 
-//        double x = new Google().NGD("stack run base logger set migration line fail place seem switch", "portability");
-//System.out.println(x);
+
+
+
+
+
+
     }
 }
 //214 problem with diffable attributes - delete ticket from data

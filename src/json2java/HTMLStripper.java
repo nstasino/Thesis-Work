@@ -7,7 +7,7 @@ package json2java;
 import java.io.IOException;
 import org.htmlcleaner.*;
 
-public class StripHTMLTags {
+public class HTMLStripper {
 
     /**
      * Strips original_body_html attribute to formatted sentences using

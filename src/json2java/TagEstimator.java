@@ -22,7 +22,7 @@ public class TagEstimator {
 	 */
 	public void runLDA(int nTopics,String directory) {
 
-		System.out.println("Starting LDA for discovering " + nTopics + " topics in "  + directory + "possibleNounKeywords.txt");
+		System.out.println("Starting LDA for discovering " + nTopics + " topics in "  + directory + "keywords.txt");
 		LDACmdOption option = new LDACmdOption();
 		option.est = true;
 
@@ -34,7 +34,7 @@ public class TagEstimator {
 		option.savestep = 500;
 		option.dir = directory;
 		option.twords = 20;
-		option.dfile =  "possibleNounKeywords.txt";//"C:/LDA/data/newdocs100000.dat";
+		option.dfile =  "keywords.txt";//"C:/LDA/data/newdocs100000.dat";
 
 		System.out.println("Gibbs LDA Parameters:");
 		System.out.println("alpha:\t" + option.alpha);

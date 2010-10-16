@@ -21,12 +21,46 @@ import java.util.*;
  * @version     Oct 5, 2010
  * @since       1.6
  */
-public class TextPreprocessing {
+public class TextPreprocessor {
 
-    public TextPreprocessing() {
+    public TextPreprocessor() {
     }
 
-    public File preProcessFile(File f) throws IOException {
+
+    static int count = 0;
+    static String[] list = new String[5000];
+
+    /**
+     * Method to traverse through all Directories
+     *
+     * @param dir
+     *
+     */
+    public static void visitAllDirsAndFiles(File dir) {
+
+        if (dir.isDirectory()) {
+
+            File[] files = dir.listFiles();
+            for (int i = 0; i < files.length; i++) {
+                String fileName = files[i].getName();
+
+                if (fileName.equals("ticket.json")) {
+//                    System.out.println("----"); //eye-candy delimiter
+//                    System.out.println(count);
+                    String path = dir.getAbsolutePath();
+                    list[count] = path;
+
+                    count++;
+                }
+
+                visitAllDirsAndFiles(new File(dir, fileName)); //recursive call
+            }
+        }
+
+    }
+
+
+    public static File preProcessFile(File f) throws IOException {
         StringBuilder contents = new StringBuilder();
         try {
             BufferedReader input = new BufferedReader(new FileReader(f));

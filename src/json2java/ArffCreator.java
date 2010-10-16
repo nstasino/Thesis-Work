@@ -13,14 +13,14 @@ import org.htmlcleaner.XPatherException;
  * @version     2010.0720
  * @since       1.6
  */
-public class Util extends TextPreprocessing {
+public class ArffCreator extends TextPreprocessor {
 
-    Parser p = new Parser(); //Stanford Parser Object
+    NLParser p = new NLParser(); //Stanford NLParser Object
 
     /**
      * Inserts a standard header using the appendHeader() function
      *
-     * @see json2java.Util#appendHeader(java.lang.String)
+     * @see json2java.ArffCreator#appendHeader(java.lang.String)
      */
     public void createHeader() {
 
@@ -49,7 +49,7 @@ public class Util extends TextPreprocessing {
 
          if (b == true) {
             //Stanford Parse untagged text and write to Possible{Nouns,Verbs}.txt
-            Pair pair = p.parse(t);
+            Pair pair = p.parse(t,200);
 
             appendToArff(",'" + pair.nouns.toString() + "'", "test");
 //                           System.out.println( pair.getNouns() );
@@ -57,7 +57,7 @@ public class Util extends TextPreprocessing {
 //           System.out.println(p.parse(t).nouns.toString());
 
         } else {
-            Pair pair = p.parse(t);
+            Pair pair = p.parse(t,200);
             appendToArff(",'" + "'", "test");
         }
 //        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getBody_html()) + "'", "test");
@@ -189,7 +189,7 @@ public class Util extends TextPreprocessing {
     /**
      * Append Standard Header
      *
-     * @see json2java.Util#createHeader()
+     * @see json2java.ArffCreator#createHeader()
      * @param filename
      */
     protected void appendHeader(String filename) {

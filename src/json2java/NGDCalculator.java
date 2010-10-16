@@ -14,7 +14,7 @@ import org.json.JSONObject;
 public class NGDCalculator {
 
     public double NGD(String term1, String term2) {
-        Long M = 10000000000L; //8058044651L (2007)
+        Long M = 10000000000L; //802080446201L (2007)
         double freqx = logResults(term1);
         double freqy = logResults(term2);
         String xy = term1.concat("+").concat(term2);
@@ -75,8 +75,10 @@ public class NGDCalculator {
 
     public void readFile() {
         BufferedReader topicWordsBr = null;
+        BufferedReader test = null;
         try {
             String sCurrentLine;
+//            String tline;
             String[] words = null;
             double[] probabilities = null;
             File file = new File("model-final.twords");
@@ -84,29 +86,36 @@ public class NGDCalculator {
                 return;
             }
             topicWordsBr = new BufferedReader(new FileReader(file));
+//            test = new BufferedReader(new FileReader(file));
+//            int lines = 0;
+//            while ( (tline = test.readLine()) != null) {
+//                while (! tline.startsWith("\t") )
+//                        lines++;
+//            }
+//            System.out.println(lines);
+
 
             int topicCounter = -1;
             int wordCounter = 0;
-
             while ((sCurrentLine = topicWordsBr.readLine()) != null) {
                 String line = sCurrentLine;
 
                 if (!line.startsWith("\t") && topicCounter == -1) {
-                   words = new String[5];
-                    probabilities = new double[5];
+                    words = new String[20];
+                    probabilities = new double[20];
                     topicCounter++;
                 } else if (!line.startsWith("\t")) {
 
-                    Topic topic = new Topic(5);
-                    for (int i = 0; i < 5; i++) {
+                    Topic topic = new Topic(20);
+                    for (int i = 0; i < 20; i++) {
                         topic.addKeyword(words[i], probabilities[i]);
                     }
                     TopicList.addTopic(topic);
-                    words = new String[EventsMain.wordsInTopic];
-                    probabilities = new double[EventsMain.wordsInTopic];
+                    words = new String[20];
+                    probabilities = new double[20];
                     topicCounter++;
                     wordCounter = 0;
-                } else if (wordCounter < EventsMain.wordsInTopic) {
+                } else if (wordCounter < 20) {
                     line = line.trim();
                     words[wordCounter] = line.split(" ")[0].trim();
                     probabilities[wordCounter] = Double.parseDouble(line.split(" ")[1].trim());
@@ -115,17 +124,13 @@ public class NGDCalculator {
             }
             //Add last topic:
 
-            Topic topic = new Topic(5);
-            for (int i = 0; i < EventsMain.wordsInTopic; i++) {
+            Topic topic = new Topic(20);
+            for (int i = 0; i < 20; i++) {
                 topic.addKeyword(words[i], probabilities[i]);
             }
             TopicList.addTopic(topic);
-
-
-
-
-
-
+            Keyword kw = TopicList.getTopic(1).getWordTopics().get(19);
+            System.out.println("Topic List: " + kw.getWord() +" "+ kw.getProbability());
 
 
 

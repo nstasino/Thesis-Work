@@ -16,15 +16,8 @@ import java.util.HashMap;
 public class TopicList {
 
     private static ArrayList<Topic> topics = new ArrayList<Topic>();
-    private static HashMap<String[], Topic> topicsHash = new HashMap<String[], Topic>();
+    private static HashMap<String[], NGDTopicScore> topicScore = new HashMap<String[], NGDTopicScore>();
 
-    public static HashMap<String[], Topic> getTopicsHash() {
-        return topicsHash;
-    }
-
-    public static void setTopicsHash(HashMap<String[], Topic> topicsHash) {
-        TopicList.topicsHash = topicsHash;
-    }
 
     //Adder/Caller
     public static void addTopic(Topic topic) {
@@ -39,4 +32,14 @@ public class TopicList {
     public static ArrayList<Topic> getTopics() {
         return topics;
     }
+
+    public static HashMap<String[], NGDTopicScore> getTopicScore() {
+        return topicScore;
+    }
+
+    public static void setTopicScore(HashMap<String[], NGDTopicScore> topicScore) {
+        TopicList.topicScore = topicScore;
+    }
+
+ 
 }

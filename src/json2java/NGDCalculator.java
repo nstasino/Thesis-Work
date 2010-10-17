@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
+import java.util.*;
 //import java.lang.Math;
 
 //import org.json.JSONException;      // JSON library from http://www.json.org/java/
@@ -13,7 +14,111 @@ import org.json.JSONObject;
 
 public class NGDCalculator {
 
-    
+   public void SQMDecider(String userAddedWord, String[] listedTopics) {
+        double score;
+        for (Topic t : TopicList.getTopics()) {
+            double tempScore;
+            score =1;
+            System.out.println(t.getTopWords());
+            for (String s : listedTopics) {
+                tempScore = NGD(t.getTopWords().concat(" ").concat(userAddedWord), s);
+                NGDTopicScore topicScore = new NGDTopicScore();
+//                System.out.print(s);
+//                System.out.println(score);
+
+                topicScore.setScore(tempScore);
+                TopicList.getTopicScore().put(listedTopics, topicScore);
+//                System.out.print(TopicList.getTopicScore().values().iterator().next().getScore()+"\t\n");
+//                System.out.println(TopicList.getTopicScore().keySet().iterator().next()[1]);
+
+                if (tempScore < score && tempScore > 0){
+                t.setTopSQMScore(tempScore);
+                t.setTopSQM(s);
+                score = tempScore;
+                }
+
+            }
+            System.out.println("Top Results\t" + t.getTopSQM() + "\t" + t.getTopSQMScore());
+
+//// to hold the result
+//        HashMap map = new LinkedHashMap();
+//
+//
+//        List myMapKeys = new ArrayList(TopicList.getTopicScore().keySet());
+//        List myMapValues = new ArrayList(TopicList.getTopicScore().values());
+//        TreeSet sortedSet = new TreeSet(myMapValues);
+//        Object[] sortedArray = sortedSet.toArray();
+//        int size = sortedArray.length;
+//
+//        for (int i = 0; i < size; i++) {
+//            map.put(myMapKeys.get(myMapValues.indexOf(sortedArray[i])),
+//                    sortedArray[i]);
+//        }
+//
+//
+//        Set ref = map.keySet();
+//        Iterator it = ref.iterator();
+//
+//        while (it.hasNext()) {
+//
+//            System.out.println( ( (String[])(it.next()) )[0] );
+//        }
+
+}
+    }
+   public void BugTypeDecider(String userAddedWord, String[] listedTopics) {
+        double score;
+        for (Topic t : TopicList.getTopics()) {
+            double tempScore;
+            score =1;
+            System.out.println(t.getTopWords());
+            for (String s : listedTopics) {
+                tempScore = NGD(t.getTopWords().concat(" ").concat(userAddedWord), s);
+                NGDTopicScore topicScore = new NGDTopicScore();
+//                System.out.print(s);
+//                System.out.println(score);
+
+                topicScore.setScore(tempScore);
+                TopicList.getTopicScore().put(listedTopics, topicScore);
+//                System.out.print(TopicList.getTopicScore().values().iterator().next().getScore()+"\t");
+//                System.out.println(TopicList.getTopicScore().keySet().iterator().next()[1]);
+
+                if (tempScore < score && tempScore > 0){
+                t.setTopTopicScore(tempScore);
+                t.setTopTopic(s);
+                score = tempScore;
+                }
+
+            }
+            System.out.println("Top Results\t" + t.getTopTopic() + "\t" + t.getTopTopicScore());
+
+//// to hold the result
+//        HashMap map = new LinkedHashMap();
+//
+//
+//        List myMapKeys = new ArrayList(TopicList.getTopicScore().keySet());
+//        List myMapValues = new ArrayList(TopicList.getTopicScore().values());
+//        TreeSet sortedSet = new TreeSet(myMapValues);
+//        Object[] sortedArray = sortedSet.toArray();
+//        int size = sortedArray.length;
+//
+//        for (int i = 0; i < size; i++) {
+//            map.put(myMapKeys.get(myMapValues.indexOf(sortedArray[i])),
+//                    sortedArray[i]);
+//        }
+//
+//
+//        Set ref = map.keySet();
+//        Iterator it = ref.iterator();
+//
+//        while (it.hasNext()) {
+//
+//            System.out.println( ( (String[])(it.next()) )[0] );
+//        }
+
+}
+    }
+
     public double NGD(String term1, String term2) {
         Long M = 10000000000L; //802080446201L (2007)
         double freqx = logResults(term1);
@@ -40,6 +145,8 @@ public class NGDCalculator {
 
             URL url = new URL("http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=" + query);
             URLConnection connection = url.openConnection();
+            connection.addRequestProperty("Referer", "http://stasino.com");
+
 
             // Get the JSON response
             String line;
@@ -69,7 +176,7 @@ public class NGDCalculator {
     }
 
     public double logResults(String term) {
-        System.out.println(term + "\t" + Math.log10(makeQuery(term))); //show results with log10 value
+//        System.out.println(term + "\t" + Math.log10(makeQuery(term))); //show results with log10 value
         return Math.log10(makeQuery(term));
 
     }
@@ -160,16 +267,19 @@ public class NGDCalculator {
 
         for (int ti = 0; ti < TopicList.getTopics().size(); ti++) {
             wordVector = "";
-            System.out.println("\nTopic: " + ti);
+//            System.out.println("\nTopic: " + ti);
             for (int i = 0; i < numberOfWordsToSelect; i++) {
                 Keyword kw = TopicList.getTopic(ti).getWordTopics().get(i);
                 if (kw.getProbability() >= minProbability) {
-                    System.out.println("\t" + kw.getWord() + " " + kw.getProbability());
+//                    System.out.println("\t" + kw.getWord() + " " + kw.getProbability());
                     wordVector = wordVector.concat(kw.getWord()).concat(" ");
                 }
             }
-            System.out.println(wordVector);
+//            System.out.println(wordVector);
+            TopicList.getTopic(ti).setTopWords(wordVector);
+//            System.out.println(TopicList.getTopic(ti).getTopWords());
         }
+
         return wordVector;
 
     }
@@ -211,15 +321,15 @@ public class NGDCalculator {
         }
     }
 
-    public void BugListPopulator() {
+    public String[] BugListPopulator(String filename) {
         BufferedReader br = null;
+        String[] bugs = new String[determineLinesNumberofFile(filename)];
 
         try {
             String sCurrentLine;
-            String[] bugs = new String[determineLinesNumberofFile("buglist.txt")];
-            File f = new File("buglist.txt");
+            File f = new File(filename);
             if (!f.exists()) {
-                return;
+                return bugs;
             }
             br = new BufferedReader(new FileReader(f));
             int lineIndex = 0;
@@ -232,7 +342,7 @@ public class NGDCalculator {
 //                System.out.println(line);
             }
 //            System.out.println("Bugs read " + bugs[15]);
-
+            return bugs;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             System.err.println(e.getMessage());
@@ -249,6 +359,10 @@ public class NGDCalculator {
                 e.printStackTrace();
                 System.err.println(e.getMessage());
             }
+//            String[] bugs = new String[determineLinesNumberofFile("buglist.txt")];
+
+            return bugs;
+
         }
 
     }

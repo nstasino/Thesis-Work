@@ -15,6 +15,11 @@ import java.util.ArrayList;
 public class Topic {
 
     private ArrayList<Keyword> words;
+    private String topWords;
+    private String topBugType;
+    private double topBugTypeScore;
+    private String topSQM;
+    private double topSQMScore;
     private ArrayList<String> NGDCalculatedTopics;
     private int topicNumber;
     private int numberOfWords;
@@ -26,6 +31,14 @@ public class Topic {
 
         this.topicNumber = topicNumber;
         this.numberOfWords = numberOfWords;
+    }
+
+    public String getTopWords() {
+        return topWords;
+    }
+
+    public void setTopWords(String topWords) {
+        this.topWords = topWords;
     }
 
     public boolean addKeyword(String word, double probability) {
@@ -76,5 +89,37 @@ public class Topic {
 
     public int getNumberOfWords() {
         return numberOfWords;
+    }
+
+    public String getTopTopic() {
+        return topBugType;
+    }
+
+    public void setTopTopic(String topTopic) {
+        this.topBugType = topTopic;
+    }
+
+    public double getTopTopicScore() {
+        return topBugTypeScore;
+    }
+
+    public void setTopTopicScore(double topTopicScore) {
+        this.topBugTypeScore = topTopicScore;
+    }
+
+    public String getTopSQM() {
+        return topSQM;
+    }
+
+    public void setTopSQM(String topSQM) {
+        this.topSQM = topSQM;
+    }
+
+    public double getTopSQMScore() {
+        return topSQMScore;
+    }
+
+    public void setTopSQMScore(double topSQMScore) {
+        this.topSQMScore = topSQMScore;
     }
 }

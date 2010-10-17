@@ -1,0 +1,31 @@
+Functionality
+Interoperability
+Security
+Functionality Compliance
+Reliability
+Maturity
+Fault Tolerance
+Recoverability
+Reliability Compliance
+Usability
+Understandability
+Learnability
+Operability
+Attractiveness
+Usability Compliance
+Efficiency
+Time Behaviour
+Resource Utilisation
+Efficiency Compliance
+Maintainability
+Analyzability
+Changeability
+Stability
+Testability
+Maintainability Compliance
+Portability
+Adaptability
+Installability
+Co-Existence
+Replaceability
+Portability Compliance

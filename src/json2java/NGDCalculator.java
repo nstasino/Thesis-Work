@@ -13,6 +13,7 @@ import org.json.JSONObject;
 
 public class NGDCalculator {
 
+    
     public double NGD(String term1, String term2) {
         Long M = 10000000000L; //802080446201L (2007)
         double freqx = logResults(term1);
@@ -78,7 +79,6 @@ public class NGDCalculator {
         BufferedReader test = null;
         try {
             String sCurrentLine;
-//            String tline;
             String[] words = null;
             double[] probabilities = null;
             File file = new File("model-final.twords");
@@ -86,14 +86,6 @@ public class NGDCalculator {
                 return;
             }
             topicWordsBr = new BufferedReader(new FileReader(file));
-//            test = new BufferedReader(new FileReader(file));
-//            int lines = 0;
-//            while ( (tline = test.readLine()) != null) {
-//                while (! tline.startsWith("\t") )
-//                        lines++;
-//            }
-//            System.out.println(lines);
-
 
             int topicCounter = -1;
             int wordCounter = 0;
@@ -129,11 +121,9 @@ public class NGDCalculator {
                 topic.addKeyword(words[i], probabilities[i]);
             }
             TopicList.addTopic(topic);
-            Keyword kw = TopicList.getTopic(1).getWordTopics().get(19);
-            System.out.println("Topic List: " + kw.getWord() +" "+ kw.getProbability());
-
-
-
+            ///////////
+//            wordSelector(5, 0.0);
+            ///////////
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             System.err.println(e.getMessage());
@@ -150,6 +140,116 @@ public class NGDCalculator {
                 e.printStackTrace();
                 System.err.println(e.getMessage());
             }
+
         }
+    }
+
+    public String wordSelector(int numberOfWordsToSelect, double minProbability) {
+
+        String wordVector = "";
+
+        if (minProbability < 0 || minProbability > 1) {
+            minProbability = 0;
+            System.out.println("Minimum Probability must be between 0 and 1 -> Setting it to 0");
+        }
+        if (numberOfWordsToSelect < 0 || numberOfWordsToSelect > 20) {
+            numberOfWordsToSelect = 20;
+            System.out.println("Number of Words must be between 0 and 20 -> Setting it to 0");
+        }
+
+
+        for (int ti = 0; ti < TopicList.getTopics().size(); ti++) {
+            wordVector = "";
+            System.out.println("\nTopic: " + ti);
+            for (int i = 0; i < numberOfWordsToSelect; i++) {
+                Keyword kw = TopicList.getTopic(ti).getWordTopics().get(i);
+                if (kw.getProbability() >= minProbability) {
+                    System.out.println("\t" + kw.getWord() + " " + kw.getProbability());
+                    wordVector = wordVector.concat(kw.getWord()).concat(" ");
+                }
+            }
+            System.out.println(wordVector);
+        }
+        return wordVector;
+
+    }
+
+    public int determineLinesNumberofFile(String filename) {
+        int lines = 0;
+        BufferedReader br = null;
+        try {
+            String sCurrentLine;
+            File file = new File(filename);
+            if (!file.exists()) {
+                return lines;
+            }
+            br = new BufferedReader(new FileReader(file));
+//            lines = -1;
+            while ((sCurrentLine = br.readLine()) != null) {
+                lines++;
+            }
+            return lines;
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.err.println(e.getMessage());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                if (br != null) {
+                    br.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.err.println(e.getMessage());
+            }
+
+            return lines;
+        }
+    }
+
+    public void BugListPopulator() {
+        BufferedReader br = null;
+
+        try {
+            String sCurrentLine;
+            String[] bugs = new String[determineLinesNumberofFile("buglist.txt")];
+            File f = new File("buglist.txt");
+            if (!f.exists()) {
+                return;
+            }
+            br = new BufferedReader(new FileReader(f));
+            int lineIndex = 0;
+            while ((sCurrentLine = br.readLine()) != null) {
+                String line = sCurrentLine;
+
+                line = line.trim();
+                bugs[lineIndex] = line;
+                lineIndex++;
+//                System.out.println(line);
+            }
+//            System.out.println("Bugs read " + bugs[15]);
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.err.println(e.getMessage());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                if (br != null) {
+                    br.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.err.println(e.getMessage());
+            }
+        }
+
     }
 }

@@ -46,7 +46,10 @@ public class Main {
                 break;
             case 3:
                 System.out.println("Calculating Normalized Google Distance\n\n");
-                new NGDCalculator().readFile();
+//                new NGDCalculator().readFile();
+//                new NGDCalculator().wordSelector(5, 0.0);
+ new NGDCalculator().BugListPopulator();
+// System.out.println(new NGDCalculator().determineLinesNumberofFile("buglist.txt"));
 //                double x = new NGDCalculator().NGD("ruby stack run base logger set migration line fail place seem switch", "portability");
 //                System.out.println(x);
                 break;

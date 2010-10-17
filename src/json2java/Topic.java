@@ -15,14 +15,14 @@ import java.util.ArrayList;
 public class Topic {
 
     private ArrayList<Keyword> words;
-    private ArrayList<String> similarNGDTopicsHashes;
+    private ArrayList<String> NGDCalculatedTopics;
     private int topicNumber;
     private int numberOfWords;
 
     public Topic(int numberOfWords) {
 
         words = new ArrayList<Keyword>();
-        similarNGDTopicsHashes = new ArrayList<String>();
+        NGDCalculatedTopics = new ArrayList<String>();
 
         this.topicNumber = topicNumber;
         this.numberOfWords = numberOfWords;
@@ -62,8 +62,8 @@ public class Topic {
     }
 
     public boolean addSimilarNDGTopicHash(String topicHash) {
-        if (!similarNGDTopicsHashes.contains(topicHash)) {
-            similarNGDTopicsHashes.add(topicHash);
+        if (!NGDCalculatedTopics.contains(topicHash)) {
+            NGDCalculatedTopics.add(topicHash);
             return true;
         } else {
             return false;
@@ -71,7 +71,7 @@ public class Topic {
     }
 
     public ArrayList<String> getNGDSimilarTopicsHashes() {
-        return similarNGDTopicsHashes;
+        return NGDCalculatedTopics;
     }
 
     public int getNumberOfWords() {

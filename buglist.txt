@@ -1,0 +1,16 @@
+Divide by zero
+Infinite loops
+Arithmetic overflow 
+Arithmetic underflow
+Exceeding array bounds
+Uninitialized variable
+Access violation
+Memory leak 
+Handle leak
+Stack overflow 
+Stack underflow
+Buffer overflow
+Deadlock
+Off by one error
+Race hazard
+Loss of precision in type conversion

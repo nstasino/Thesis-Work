@@ -6,7 +6,7 @@
 package json2java;
 
     /**
-     * Packer Class for nouns, verbs
+     * Packer Class for keywords, verbs
      *
      * @param <ArrayList>
      *
@@ -17,16 +17,16 @@ package json2java;
 
     public class Pair<ArrayList> {
 
-        public ArrayList nouns;
+        public ArrayList keywords;
         public ArrayList verbs;
 
         public Pair(ArrayList nouns, ArrayList verbs) {
-            this.nouns = nouns;
+            this.keywords = nouns;
             this.verbs = verbs;
         }
 
         public ArrayList getNouns() {
-            return nouns;
+            return keywords;
         }
 
         public ArrayList getVerbs() {

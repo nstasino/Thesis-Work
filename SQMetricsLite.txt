@@ -1,3 +1,5 @@
+Suitability 
+Accuracy
 Interoperability
 Security
 Functionality Compliance

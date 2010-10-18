@@ -105,8 +105,20 @@ public class NLParser {
             return new Pair(nouns, verbs);
 
         } catch (Exception e) { // catch error if any
-            System.err.println("ERROR in Parser: " + e.getMessage()); // print error message
+            System.err.println("ERROR in Parser: " + e.getMessage() );
+            e.printStackTrace();// print error message
+//            ArrayList nouns = new ArrayList();
+//            ArrayList verbs = new ArrayList();
+//            nouns.add("empty");
+//            nouns.add("empty");
+            BufferedWriter outNoun = null;
+            outNoun = new BufferedWriter(new FileWriter("keywords.txt", true));
+//            outNoun.append("nnuull");
+            outNoun.append("\n");//Add empty Line
+            outNoun.flush();
+            outNoun.close();
             return null;
+
         }
     }
 

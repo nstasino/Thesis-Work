@@ -35,7 +35,8 @@ public class FunctionCallers {
             TextPreprocessor.preProcessFile(f); //preprocess the file
             DecodeJSON Decoder = new DecodeJSON();
             Ticket t = Decoder.decode(f);    //map JSON to the POJO
-            Pair pair = p.parse(t, 200);
+//            System.out.println(t.getTicket().getNumber());
+            Pair pair = p.parse(t, 100);
 
 //            demo.ArffCreator(t, true);     //get the data out of the POJO, true to enable Stanford Parser
 //            demo.ArffCreatorForVersions(t,true); //same for the new versions, true to enable Stanford Parser
@@ -43,9 +44,52 @@ public class FunctionCallers {
 
     }
 
-    public void TopicFinder(int nTopics) {
+    public void LDAAnalysis(int nTopics) {
         TagEstimator tagger = new TagEstimator();
         tagger.runLDA(nTopics, "/home/nikos/NetBeansProjects/Thesis-Work/");
+//        tagger.LDAThetaReader(2);
+
+    }
+
+    public void NGDCalculate(int numOfWordsSelect, double minimumProbability, String userWord, int nTopics) throws IOException {
+        NGDCalculator n = new NGDCalculator();
+        n.readFile();
+        String wordvector = n.wordSelector(numOfWordsSelect, minimumProbability);
+//               for (String s : n.BugListPopulator()){System.out.println(s);}
+        String[] x1 = n.BugTypeDecider(" ".concat(userWord), n.BugListPopulator("buglist.txt"));
+        int[] x2 = n.thetaDecider(n.thetaParser("model-final.theta", nTopics));//which bugtype do they belong to?
+//        System.out.println(x1[0]);
+        for (int i = 0; i < x2.length; i++) {
+            System.out.println(x2[i]);
+        }
+
+
+
+//        n.SQMDecider(" ".concat(userWord), n.BugListPopulator("SQMetrics.txt"));
+    }
+
+    public void createArff(int nTickets, int nTopics, int numOfWordsSelect, double minimumProbability, String userWord) throws IOException, XPatherException {
+        runNLP(nTickets);
+        LDAAnalysis(nTopics);
+        NGDCalculator n = new NGDCalculator();
+        n.readFile();
+        String wordvector = n.wordSelector(numOfWordsSelect, minimumProbability);
+//               for (String s : n.BugListPopulator()){System.out.println(s);}
+        n.BugTypeDecider(" ".concat(userWord), n.BugListPopulator("buglist.txt"));
+        n.SQMDecider(" ".concat(userWord), n.BugListPopulator("SQMetrics.txt"));
+
+
+        for (int i = 1; i < nTickets + 1; i++) {//count if for tickets
+            System.out.println("\n[" + i + "/" + TextPreprocessor.count + "]");
+            File f = new File(TextPreprocessor.list[i] + "/ticket.json");
+            TextPreprocessor.preProcessFile(f); //preprocess the file
+            DecodeJSON Decoder = new DecodeJSON();
+            Ticket t = Decoder.decode(f);    //map JSON to the POJO
+//            Pair pair = p.parse(t, 200);
+
+//            demo.ArffCreator(t, true);     //get the data out of the POJO, true to enable Stanford Parser
+//            demo.ArffCreatorForVersions(t,true); //same for the new versions, true to enable Stanford Parser
+        }
     }
 
     public void dirScanner() {  //Scan directory for tickets

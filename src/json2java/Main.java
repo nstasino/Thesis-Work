@@ -37,27 +37,23 @@ public class Main {
             case 1:
                 System.out.println("Performing Natural Language Processing on data\n\n");
                 //NLP Module Call
-                f.runNLP(25);
+                f.runNLP(50);
                 break;
             case 2:
                 System.out.println("Perfoming Latent Dirichlet Allocation on data\n\n");
                 //LDA module Call
-                f.TopicFinder(2);
+                f.LDAAnalysis(4);
                 break;
             case 3:
-                System.out.println("Calculating Normalized Google Distance\n\n");
-                NGDCalculator n = new NGDCalculator();
-                n.readFile();
-                n.wordSelector(5, 0.0);
-//               for (String s : n.BugListPopulator()){System.out.println(s);}
-//                n.BugTypeDecider("", n.BugListPopulator("buglist.txt"));
-                n.SQMDecider("", n.BugListPopulator("SQMetrics.txt"));
-// new NGDCalculator().BugListPopulator();
-// System.out.println(new NGDCalculator().determineLinesNumberofFile("buglist.txt"));
-//                double x = new NGDCalculator().NGD("ruby stack run base logger set migration line fail place seem switch", "portability");
-//                System.out.println(x);
+                System.out.println("Calculating Normalized Google Distance and Assigning Tags\n\n");
+                f.NGDCalculate(5, 0.0, "",4);
                 break;
             default:
+                System.out.println("Creating .arff file for WEKA Import...Please Wait");
+//        //                f.createArff(25, 2, 5, 0.0, "");
+                f.NGDCalculate(5, 0.0, "",4);
+
+
                 break;
         }
 

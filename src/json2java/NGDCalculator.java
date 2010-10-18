@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
-import java.util.*;
+import java.util.Arrays;
 //import java.lang.Math;
 
 //import org.json.JSONException;      // JSON library from http://www.json.org/java/
@@ -14,14 +14,14 @@ import org.json.JSONObject;
 
 public class NGDCalculator {
 
-   public void SQMDecider(String userAddedWord, String[] listedTopics) {
+    public void SQMDecider(String userAddedWord, String[] listedTopics) {
         double score;
-        for (Topic t : TopicList.getTopics()) {
+        for (Topic currentTopic : TopicList.getTopics()) {
             double tempScore;
-            score =1;
-            System.out.println(t.getTopWords());
+            score = 1;
+            System.out.println(currentTopic.getTopWords());
             for (String s : listedTopics) {
-                tempScore = NGD(t.getTopWords().concat(" ").concat(userAddedWord), s);
+                tempScore = NGD(currentTopic.getTopWords().concat(" ").concat(userAddedWord), s);
                 NGDTopicScore topicScore = new NGDTopicScore();
 //                System.out.print(s);
 //                System.out.println(score);
@@ -31,49 +31,31 @@ public class NGDCalculator {
 //                System.out.print(TopicList.getTopicScore().values().iterator().next().getScore()+"\t\n");
 //                System.out.println(TopicList.getTopicScore().keySet().iterator().next()[1]);
 
-                if (tempScore < score && tempScore > 0){
-                t.setTopSQMScore(tempScore);
-                t.setTopSQM(s);
-                score = tempScore;
+                if (tempScore < score && tempScore > 0) {
+                    currentTopic.setTopSQMScore(tempScore);
+                    currentTopic.setTopSQM(s);
+                    score = tempScore;
                 }
 
             }
-            System.out.println("Top Results\t" + t.getTopSQM() + "\t" + t.getTopSQMScore());
+            System.out.println("Top Results\t" + currentTopic.getTopSQM() + "\t" + currentTopic.getTopSQMScore());
 
-//// to hold the result
-//        HashMap map = new LinkedHashMap();
-//
-//
-//        List myMapKeys = new ArrayList(TopicList.getTopicScore().keySet());
-//        List myMapValues = new ArrayList(TopicList.getTopicScore().values());
-//        TreeSet sortedSet = new TreeSet(myMapValues);
-//        Object[] sortedArray = sortedSet.toArray();
-//        int size = sortedArray.length;
-//
-//        for (int i = 0; i < size; i++) {
-//            map.put(myMapKeys.get(myMapValues.indexOf(sortedArray[i])),
-//                    sortedArray[i]);
-//        }
-//
-//
-//        Set ref = map.keySet();
-//        Iterator it = ref.iterator();
-//
-//        while (it.hasNext()) {
-//
-//            System.out.println( ( (String[])(it.next()) )[0] );
-//        }
 
-}
+        }
     }
-   public void BugTypeDecider(String userAddedWord, String[] listedTopics) {
+
+    public String[] BugTypeDecider(String userAddedWord, String[] listedTopics) throws IOException {
+        new FileWriter("BugTopicsAssigned.txt", false);
+        String[] topTopicsList = new String[TopicList.getTopics().size()];
+        int topTopicsCounter = 0;
+
         double score;
-        for (Topic t : TopicList.getTopics()) {
+        for (Topic currentTopic : TopicList.getTopics()) {
             double tempScore;
-            score =1;
-            System.out.println(t.getTopWords());
+            score = 1;
+            System.out.println(currentTopic.getTopWords());
             for (String s : listedTopics) {
-                tempScore = NGD(t.getTopWords().concat(" ").concat(userAddedWord), s);
+                tempScore = NGD(currentTopic.getTopWords().concat(" ").concat(userAddedWord), s);
                 NGDTopicScore topicScore = new NGDTopicScore();
 //                System.out.print(s);
 //                System.out.println(score);
@@ -83,40 +65,22 @@ public class NGDCalculator {
 //                System.out.print(TopicList.getTopicScore().values().iterator().next().getScore()+"\t");
 //                System.out.println(TopicList.getTopicScore().keySet().iterator().next()[1]);
 
-                if (tempScore < score && tempScore > 0){
-                t.setTopTopicScore(tempScore);
-                t.setTopTopic(s);
-                score = tempScore;
+                if (tempScore < score && tempScore > 0) {
+                    currentTopic.setTopTopicScore(tempScore);
+                    currentTopic.setTopTopic(s);
+                    score = tempScore;
                 }
 
             }
-            System.out.println("Top Results\t" + t.getTopTopic() + "\t" + t.getTopTopicScore());
-
-//// to hold the result
-//        HashMap map = new LinkedHashMap();
-//
-//
-//        List myMapKeys = new ArrayList(TopicList.getTopicScore().keySet());
-//        List myMapValues = new ArrayList(TopicList.getTopicScore().values());
-//        TreeSet sortedSet = new TreeSet(myMapValues);
-//        Object[] sortedArray = sortedSet.toArray();
-//        int size = sortedArray.length;
-//
-//        for (int i = 0; i < size; i++) {
-//            map.put(myMapKeys.get(myMapValues.indexOf(sortedArray[i])),
-//                    sortedArray[i]);
-//        }
-//
-//
-//        Set ref = map.keySet();
-//        Iterator it = ref.iterator();
-//
-//        while (it.hasNext()) {
-//
-//            System.out.println( ( (String[])(it.next()) )[0] );
-//        }
-
-}
+            System.out.println("Top Results\t" + currentTopic.getTopTopic() + "\t" + currentTopic.getTopTopicScore());
+            topTopicsList[topTopicsCounter] = currentTopic.getTopTopic();
+            topTopicsCounter++;
+            BufferedWriter bW = null;
+            bW = new BufferedWriter(new FileWriter("BugTopicsAssigned.txt", true));
+            bW.append(currentTopic.getTopTopic() + "\t" + Double.toString(currentTopic.getTopTopicScore()) + "\n");
+            bW.close();
+        }
+        return topTopicsList;
     }
 
     public double NGD(String term1, String term2) {
@@ -366,4 +330,70 @@ public class NGDCalculator {
         }
 
     }
+
+    public int[] thetaDecider(double[][] thetas) {
+        int[] selectedTopicIndex = new int[thetas.length];
+        for (int i = 0; i < (thetas.length); i++) {
+            selectedTopicIndex[i] = max(thetas[i]);
+//            System.out.println(selectedTopicIndex);
+        }
+        return selectedTopicIndex;
+
+    }
+
+    public double[][] thetaParser(String filename, int nTopics) {
+        BufferedReader br = null;
+        double[][] thetas = new double[determineLinesNumberofFile(filename)][nTopics];
+
+        try {
+            String sCurrentLine;
+            File f = new File(filename);
+            if (!f.exists()) {
+                return thetas;
+            }
+            br = new BufferedReader(new FileReader(f));
+            int lineIndex = 0;
+            while ((sCurrentLine = br.readLine()) != null) {
+                String line = sCurrentLine;
+                for (int i = 0; i < nTopics; i++) {
+                    thetas[lineIndex][i] = Double.parseDouble(line.split(" ")[i].trim());
+                }
+                lineIndex++;
+            }
+            return thetas;
+//            System.out.println("Bugs read " + bugs[15]);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.err.println(e.getMessage());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                if (br != null) {
+                    br.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.err.println(e.getMessage());
+            }
+//            String[] bugs = new String[determineLinesNumberofFile("buglist.txt")];
+            return thetas;
+
+        }
+    }
+
+    //===================================================== max
+    public int max(double[] t) {
+        double maximum = t[0];   // start with the first value
+        int index = 0;
+        for (int i = 1; i < t.length; i++) {
+            if (t[i] > maximum) {
+                maximum = t[i];   // new maximum
+                index = i;
+            }
+        }
+        return index;
+    }//end method max
 }

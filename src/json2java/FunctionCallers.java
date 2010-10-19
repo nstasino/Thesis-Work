@@ -51,21 +51,23 @@ public class FunctionCallers {
 
     }
 
-    public void NGDCalculate(int numOfWordsSelect, double minimumProbability, String userWord, int nTopics) throws IOException {
+    public void NGDCalculate(int numOfWordsSelect, double minimumProbability, String userWord, int nTopics, String INPUTBugTypeFilename, String OUTPUTBugTypeFilename, String INPUTSQMetricFilename, String OUTPUTSQMetricFilename) throws IOException {
         NGDCalculator n = new NGDCalculator();
         n.readFile();
         String wordvector = n.wordSelector(numOfWordsSelect, minimumProbability);
-//               for (String s : n.BugListPopulator()){System.out.println(s);}
-        String[] x1 = n.BugTypeDecider(" ".concat(userWord), n.BugListPopulator("buglist.txt"));
-        int[] x2 = n.thetaDecider(n.thetaParser("model-final.theta", nTopics));//which bugtype do they belong to?
-//        System.out.println(x1[0]);
-        for (int i = 0; i < x2.length; i++) {
-            System.out.println(x2[i]);
-        }
+        String[] xBug = n.BugTypeDecider(" ".concat(userWord), n.BugListPopulator(INPUTBugTypeFilename), OUTPUTBugTypeFilename);
 
+        int[] xBugDecide = n.thetaDecider(n.thetaParser("model-final.theta", nTopics));//which bugtype do they belong to?
+//        for (int i = 0; i < xBugDecide.length; i++) {
+//            System.out.println(xBug[xBugDecide[i]]);
+//        }
 
+       String[] xMetric = n.SQMDecider(" ".concat(userWord), n.BugListPopulator(INPUTSQMetricFilename),OUTPUTSQMetricFilename);
+        int[] xMetricDecide = n.thetaDecider(n.thetaParser("model-final.theta", nTopics));//which bugtype do they belong to?
+//        for (int i = 0; i < xMetricDecide.length; i++) {
+//            System.out.println(xMetric[xMetricDecide[i]]);
+//        }
 
-//        n.SQMDecider(" ".concat(userWord), n.BugListPopulator("SQMetrics.txt"));
     }
 
     public void createArff(int nTickets, int nTopics, int numOfWordsSelect, double minimumProbability, String userWord) throws IOException, XPatherException {
@@ -75,8 +77,7 @@ public class FunctionCallers {
         n.readFile();
         String wordvector = n.wordSelector(numOfWordsSelect, minimumProbability);
 //               for (String s : n.BugListPopulator()){System.out.println(s);}
-        n.BugTypeDecider(" ".concat(userWord), n.BugListPopulator("buglist.txt"));
-        n.SQMDecider(" ".concat(userWord), n.BugListPopulator("SQMetrics.txt"));
+        n.BugTypeDecider(" ".concat(userWord), n.BugListPopulator("buglist.txt"),"BugTypesAssigned.txt");
 
 
         for (int i = 1; i < nTickets + 1; i++) {//count if for tickets

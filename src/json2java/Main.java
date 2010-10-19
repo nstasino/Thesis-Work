@@ -46,12 +46,12 @@ public class Main {
                 break;
             case 3:
                 System.out.println("Calculating Normalized Google Distance and Assigning Tags\n\n");
-                f.NGDCalculate(5, 0.0, "",4);
+                f.NGDCalculate(5, 0.0, "", 4 , "buglist.txt", "BugTopicsAssigned.txt", "SQMetrics.txt","SQMAssigned.txt");
                 break;
             default:
                 System.out.println("Creating .arff file for WEKA Import...Please Wait");
 //        //                f.createArff(25, 2, 5, 0.0, "");
-                f.NGDCalculate(5, 0.0, "",4);
+//                f.NGDCalculate(5, 0.0, "",4);
 
 
                 break;

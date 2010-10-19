@@ -14,7 +14,17 @@ import org.json.JSONObject;
 
 public class NGDCalculator {
 
-    public void SQMDecider(String userAddedWord, String[] listedTopics) {
+    public String[] SQMDecider(String userAddedWord, String[] listedTopics, String outputFilename) throws IOException {
+
+        if (outputFilename.isEmpty() || outputFilename.equals("")) {
+            outputFilename = "SQMAssigned.txt";
+            System.out.println("Storing output to default: SQMAssigned.txt");
+        }
+
+        new FileWriter(outputFilename, false);
+        String[] topTopicsList = new String[TopicList.getTopics().size()];
+        int topTopicsCounter = 0;
+
         double score;
         for (Topic currentTopic : TopicList.getTopics()) {
             double tempScore;
@@ -25,27 +35,36 @@ public class NGDCalculator {
                 NGDTopicScore topicScore = new NGDTopicScore();
 //                System.out.print(s);
 //                System.out.println(score);
-
                 topicScore.setScore(tempScore);
                 TopicList.getTopicScore().put(listedTopics, topicScore);
 //                System.out.print(TopicList.getTopicScore().values().iterator().next().getScore()+"\t\n");
 //                System.out.println(TopicList.getTopicScore().keySet().iterator().next()[1]);
-
                 if (tempScore < score && tempScore > 0) {
                     currentTopic.setTopSQMScore(tempScore);
                     currentTopic.setTopSQM(s);
                     score = tempScore;
                 }
-
             }
             System.out.println("Top Results\t" + currentTopic.getTopSQM() + "\t" + currentTopic.getTopSQMScore());
-
-
+            topTopicsList[topTopicsCounter] = currentTopic.getTopSQM();
+            topTopicsCounter++;
+            BufferedWriter bW = null;
+            bW = new BufferedWriter(new FileWriter(outputFilename, true));
+            bW.append(currentTopic.getTopSQM() + "\t" + Double.toString(currentTopic.getTopSQMScore()) + "\n");
+            bW.close();
         }
+        return topTopicsList;
     }
 
-    public String[] BugTypeDecider(String userAddedWord, String[] listedTopics) throws IOException {
-        new FileWriter("BugTopicsAssigned.txt", false);
+
+    public String[] BugTypeDecider(String userAddedWord, String[] listedTopics, String outputFilename) throws IOException {
+
+        if (outputFilename.isEmpty() || outputFilename.equals("")) {
+            outputFilename = "BugTypesAssigned.txt";
+            System.out.println("Storing output to default: BugTypesAssigned.txt");
+        }
+
+        new FileWriter(outputFilename, false);
         String[] topTopicsList = new String[TopicList.getTopics().size()];
         int topTopicsCounter = 0;
 
@@ -76,7 +95,7 @@ public class NGDCalculator {
             topTopicsList[topTopicsCounter] = currentTopic.getTopTopic();
             topTopicsCounter++;
             BufferedWriter bW = null;
-            bW = new BufferedWriter(new FileWriter("BugTopicsAssigned.txt", true));
+            bW = new BufferedWriter(new FileWriter(outputFilename, true));
             bW.append(currentTopic.getTopTopic() + "\t" + Double.toString(currentTopic.getTopTopicScore()) + "\n");
             bW.close();
         }

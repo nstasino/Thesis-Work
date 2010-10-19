@@ -29,7 +29,7 @@ public class NGDCalculator {
         for (Topic currentTopic : TopicList.getTopics()) {
             double tempScore;
             score = 1;
-            System.out.println(currentTopic.getTopWords());
+            System.out.println(currentTopic.getTopWords() + userAddedWord);
             for (String s : listedTopics) {
                 tempScore = NGD(currentTopic.getTopWords().concat(" ").concat(userAddedWord), s);
                 NGDTopicScore topicScore = new NGDTopicScore();
@@ -45,7 +45,7 @@ public class NGDCalculator {
                     score = tempScore;
                 }
             }
-            System.out.println("Top Results\t" + currentTopic.getTopSQM() + "\t" + currentTopic.getTopSQMScore());
+            System.out.println("Top Result\t" + currentTopic.getTopSQM() + "\t" + currentTopic.getTopSQMScore());
             topTopicsList[topTopicsCounter] = currentTopic.getTopSQM();
             topTopicsCounter++;
             BufferedWriter bW = null;
@@ -72,7 +72,7 @@ public class NGDCalculator {
         for (Topic currentTopic : TopicList.getTopics()) {
             double tempScore;
             score = 1;
-            System.out.println(currentTopic.getTopWords());
+            System.out.println(currentTopic.getTopWords() + userAddedWord);
             for (String s : listedTopics) {
                 tempScore = NGD(currentTopic.getTopWords().concat(" ").concat(userAddedWord), s);
                 NGDTopicScore topicScore = new NGDTopicScore();
@@ -91,7 +91,7 @@ public class NGDCalculator {
                 }
 
             }
-            System.out.println("Top Results\t" + currentTopic.getTopTopic() + "\t" + currentTopic.getTopTopicScore());
+            System.out.println("Top Result\t" + currentTopic.getTopTopic() + "\t" + currentTopic.getTopTopicScore());
             topTopicsList[topTopicsCounter] = currentTopic.getTopTopic();
             topTopicsCounter++;
             BufferedWriter bW = null;

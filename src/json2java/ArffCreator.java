@@ -15,8 +15,7 @@ import org.htmlcleaner.XPatherException;
  */
 public class ArffCreator extends TextPreprocessor {
 
-    NLParser p = new NLParser(); //Stanford NLParser Object
-
+//    NLParser p = new NLParser(); //Stanford NLParser Object
     /**
      * Inserts a standard header using the appendHeader() function
      *
@@ -24,7 +23,72 @@ public class ArffCreator extends TextPreprocessor {
      */
     public void createHeader() {
 
-        appendHeader("data");
+        appendHeader("data2");
+    }
+
+    /**
+     * Get values of the mapped JSON properties and write them to the .arff file
+     * !! Call only for the original version of the ticket (described with versionId= -i )
+     *
+     * @param t Ticket object
+     * @param b
+     * @throws IOException
+     * @throws XPatherException
+     *
+     */
+    public void ArffCreator(Ticket t) throws IOException, XPatherException {
+
+        t.getTicket().setVersionId(-1); //Denotes original version of the ticket
+
+        appendToArff("" + t.getTicket().getNumber(), "data");
+        appendToArff("," + t.getTicket().getAssigned_user_id(), "data");
+//            appendToArff(" ,'" + removeAnnoyingChars(t.getTicket().getAttachments()) + "'", "data");
+        appendToArff("," + t.getTicket().getAttachments_count(), "data");
+//        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getBody()) + "'", "data");
+//        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getBody_html()) + "'", "data");
+        appendToArff("," + t.getTicket().isClosed(), "data");
+        appendToArff(",'" + t.getTicket().getCreated_at() + "'", "data");
+        appendToArff("," + t.getTicket().getCreator_id(), "data");
+        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getCreator_name()) + "'", "data");
+//        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getLadata_body()) + "'", "data");
+        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getMilestone_due_on()) + "'", "data");
+        appendToArff("," + t.getTicket().getMilestone_id(), "data");
+        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getMilestone_title()) + "'", "data");
+//        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getOriginal_body()) + "'", "data");
+//        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getOriginal_body_html()) + "'", "data");
+        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getPermalink()) + "'", "data");
+        appendToArff("," + t.getTicket().getPriority(), "data");
+        appendToArff("," + t.getTicket().getProject_id(), "data");
+        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getRaw_data()) + "'", "data");
+        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getState()) + "'", "data");
+        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getTag()) + "'", "data");
+        appendToArff(",'" + removeAnnoyingChars(t.getTicket().getTitle()) + "'", "data");
+        appendToArff("," + t.getTicket().getUpdated_at(), "data");
+        appendToArff(",'" + (t.getTicket().getUrl()) + "'", "data");
+        appendToArff("," + t.getTicket().getUser_id(), "data");
+        appendToArff(",'" + (t.getTicket().getUser_name()) + "'", "data");
+        appendToArff("," + t.getTicket().getVersionId() + "\n", "data");
+//        appendToArff(",'" + wordvector + "'", "data");
+//        appendToArff(",'" + TopicList.getTopics().  + "'", "data");
+
+        //Stanford Parse untagged text and write to Possible{Nouns,Verbs}.txt
+//        Pair pair = p.parse(t, 200);
+
+//        appendToArff(",'" + pair.keywords.toString() + "'", "data");
+//        System.out.println(pair.getNouns());
+//        appendToArff(",'" + pair.verbs.toString() + "'\n", "data");
+//        System.out.println(p.parse(t).keywords.toString());
+
+
+
+
+
+
+
+//            String pojoAsString = Decode.toJson(t, true);
+//           System.out.println("POJO as string:\n" + pojoAsString + "\n");
+
+
     }
 
     /**
@@ -142,16 +206,16 @@ public class ArffCreator extends TextPreprocessor {
 
             //Do the Stanford Parsing for each version
 
-            if (b == true) {  //Stanford Parse untagged text and write to Possible{Nouns,Verbs}.txt
-                Pair pair = p.parseVer(t.getTicket().getVersions().get(i));
-//                System.out.println(i + "\n***********");
-                appendToArff(",'" + pair.getNouns() + "'", "data");
-//                System.out.println(t.getTicket().getVersions().get(i).getBody_html());
-                System.out.println(pair.getNouns());
-                appendToArff(",'" + pair.getVerbs() + "'\n", "data");
-                System.out.println(pair.getVerbs());
-
-            }
+//            if (b == true) {  //Stanford Parse untagged text and write to Possible{Nouns,Verbs}.txt
+//                Pair pair = p.parseVer(t.getTicket().getVersions().get(i));
+////                System.out.println(i + "\n***********");
+//                appendToArff(",'" + pair.getNouns() + "'", "data");
+////                System.out.println(t.getTicket().getVersions().get(i).getBody_html());
+//                System.out.println(pair.getNouns());
+//                appendToArff(",'" + pair.getVerbs() + "'\n", "data");
+//                System.out.println(pair.getVerbs());
+//
+//            }
 
 
         }
@@ -252,5 +316,118 @@ public class ArffCreator extends TextPreprocessor {
             System.exit(0);
         }
 
+    }
+
+    public void enhanceArff(String filename, String outputFilename, String[] BugsPerTicket, String[] SQMPerTicket, boolean appendHeader) {
+
+        String header_meta = "% i. Title: Ruby On Rails lighthouse tickets\n" + "%\n"
+                + "%2. Sources:\n" + "%\n"
+                + "%      (a) Creator: Nikos Stasinopoulos <nstasinopoulos@gmail.com> \n"
+                + "%      (b) Donor: Rails Community\n"
+                + "%      (c) Date: April, 20i0\n"
+                + "%\n";
+
+        String header_relation = "@RELATION tickets\n\n";
+        String header_with_attributes =
+                "@ATTRIBUTE number NUMERIC\n"
+                + "@ATTRIBUTE assigned_user_id NUMERIC\n"
+                //                + "@ATTRIBUTE attachments string\n" + ""
+                + "@ATTRIBUTE attachments_count NUMERIC\n"
+                //                + "@ATTRIBUTE body string\n"
+                + "@ATTRIBUTE closed {true, false}\n"
+                + "@ATTRIBUTE created_at date\n"
+                + "@ATTRIBUTE creator_id NUMERIC\n"
+                + "@ATTRIBUTE creator_name string\n"
+                //                + "@ATTRIBUTE ladata_body string\n"
+                + "@ATTRIBUTE milestone_due_on string\n"
+                + "@ATTRIBUTE milestone_id NUMERIC\n"
+                + "@ATTRIBUTE milestone_title string\n"
+                //                + "@ATTRIBUTE original_body string\n"
+                //                + "@ATTRIBUTE original_body_html string\n"
+                + "@ATTRIBUTE permalink string\n"
+                + "@ATTRIBUTE priority NUMERIC\n"
+                + "@ATTRIBUTE project_id NUMERIC\n"
+                + "@ATTRIBUTE raw_data string\n"
+                + "@ATTRIBUTE state string\n"
+                + "@ATTRIBUTE tag string\n"
+                + "@ATTRIBUTE title string\n"
+                + "@ATTRIBUTE updated_at date\n"
+                + "@ATTRIBUTE url string\n"
+                + "@ATTRIBUTE user_id NUMERIC\n"
+                + "@ATTRIBUTE user_name string\n"
+                + "@ATTRIBUTE versionId NUMERIC\n"
+                + "@ATTRIBUTE wordvector string\n"
+                + "@ATTRIBUTE bugs string\n"
+                + "@ATTRIBUTE metrics string\n";
+
+
+        String header_data = "\n@DATA\n";
+
+        BufferedReader brArff = null;
+        BufferedReader brkeywords = null;
+        BufferedWriter bw = null;
+
+
+        try {
+            String sCurrentLine;
+            String lineKeywords;
+            File file = new File(filename);
+            if (!file.exists()) {
+                return;
+            }
+            brArff = new BufferedReader(new FileReader(file));
+            brkeywords = new BufferedReader(new FileReader("keywords.txt"));
+            bw = new BufferedWriter(new FileWriter(outputFilename, false));
+            bw = new BufferedWriter(new FileWriter(outputFilename, true));
+            brkeywords.readLine();//skip first line of keywrods.txt
+
+            bw.append(header_meta);
+            bw.append(header_relation);
+            bw.append(header_with_attributes);
+            bw.append(header_data);
+
+
+            int index = 0;
+            while ((sCurrentLine = brArff.readLine()) != null) {
+                String line = sCurrentLine;
+                if ((lineKeywords = brkeywords.readLine()) != null) {
+                    String keyWordLine = lineKeywords;
+
+                    line = line.concat(",'").concat(keyWordLine).concat("'");
+                    line = line.concat(",'").concat(BugsPerTicket[index]).concat("'");
+                    line = line.concat(",'").concat(SQMPerTicket[index]).concat("'");
+                } else {
+                    line = line.concat(",'").concat("'");
+                    line = line.concat(",'").concat(BugsPerTicket[index]).concat("'");
+                    line = line.concat(",'").concat(SQMPerTicket[index]).concat("'");
+                }
+                index++;
+//                System.out.println(line);
+                bw.append(line);
+                bw.append("\n");
+            }
+            bw.flush();
+            bw.close();
+            brArff.close();
+            brkeywords.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.err.println(e.getMessage());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                if (brArff != null) {
+                    brArff.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.err.println(e.getMessage());
+            }
+
+        }
     }
 }

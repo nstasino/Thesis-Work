@@ -1,4 +1,2 @@
-Reliability Recoverability	0.2742091146575072
-Reliability Recoverability	0.42184955563740806
-Reliability Fault Tolerance	0.050911980542952755
-Efficiency Resource Utilisation	0.01973963371536349
+Functionality Accuracy	0.0116910959165093
+Reliability Fault Tolerance	0.0738817417759005

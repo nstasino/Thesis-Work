@@ -5,6 +5,7 @@ import org.codehaus.jackson.map.JsonMappingException;
 import java.io.*;
 import java.util.Scanner;
 
+
 import org.htmlcleaner.XPatherException;
 
 /**
@@ -31,28 +32,34 @@ public class Main {
         f.dirScanner();
 
 
-        int flag = 3;
+        int flag = 0;
 
         switch (flag) {
             case 1:
                 System.out.println("Performing Natural Language Processing on data\n\n");
                 //NLP Module Call
-                f.runNLP(50);
+                f.runNLP(10);
                 break;
             case 2:
                 System.out.println("Perfoming Latent Dirichlet Allocation on data\n\n");
                 //LDA module Call
-                f.LDAAnalysis(4);
+                f.LDAAnalysis(2, 0.5, 0.1); //(int numberOfTopics
                 break;
             case 3:
                 System.out.println("Calculating Normalized Google Distance and Assigning Tags\n\n");
-                f.NGDCalculate(5, 0.0, "", 4 , "buglist.txt", "BugTopicsAssigned.txt", "SQMetrics.txt","SQMAssigned.txt");
+                //(int numberOfWordsToKeep, double minimumWordProbability, String userWords -space separated-, int numberOfTopics,
+                //String categories I/O files for classification)
+                f.NGDCalculate(5, 0.0, "ruby", 2, "buglist.txt", "BugTypesAssigned.txt", "SQMetrics.txt", "SQMAssigned.txt");
                 break;
             default:
                 System.out.println("Creating .arff file for WEKA Import...Please Wait");
-//        //                f.createArff(25, 2, 5, 0.0, "");
-//                f.NGDCalculate(5, 0.0, "",4);
-
+                //NLP Module Call
+                f.runNLP(10);
+                //LDA module Call
+                f.LDAAnalysis(2, 0.5, 0.1); //(int numberOfTopics
+                //(int numberOfWordsToKeep, double minimumWordProbability, String userWords -space separated-, int numberOfTopics,
+                //String categories I/O files for classification)
+                f.NGDCalculate(5, 0.0, "ruby", 2, "buglist.txt", "BugTypesAssigned.txt", "SQMetrics.txt", "SQMAssigned.txt");
 
                 break;
         }
@@ -62,9 +69,6 @@ public class Main {
 //        //Create .ARFF
 //        ArffCreator demo = new ArffCreator(); //create class instance
 //        demo.createHeader();  //append the Header to .arff
-
-
-
 
 
 

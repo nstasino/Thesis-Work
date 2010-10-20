@@ -56,7 +56,6 @@ public class NGDCalculator {
         return topTopicsList;
     }
 
-
     public String[] BugTypeDecider(String userAddedWord, String[] listedTopics, String outputFilename) throws IOException {
 
         if (outputFilename.isEmpty() || outputFilename.equals("")) {
@@ -201,7 +200,6 @@ public class NGDCalculator {
                     line = line.trim();
                     words[wordCounter] = line.split(" ")[0].trim();
 //                    System.out.println(wordCounter);
-//                    System.out.println(line);
                     probabilities[wordCounter] = Double.parseDouble(line.split(" ")[1].trim());
                     wordCounter++;
                 }

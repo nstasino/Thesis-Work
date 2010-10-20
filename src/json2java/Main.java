@@ -38,7 +38,7 @@ public class Main {
             case 1:
                 System.out.println("Performing Natural Language Processing on data\n\n");
                 //NLP Module Call
-                f.runNLP(30);
+                f.runNLP(TextPreprocessor.count);
                 break;
             case 2:
                 System.out.println("Perfoming Latent Dirichlet Allocation on data\n\n");

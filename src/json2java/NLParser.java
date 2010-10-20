@@ -55,9 +55,11 @@ public class NLParser {
 
             ArrayList nouns = new ArrayList();
             ArrayList verbs = new ArrayList();
-
+            if (sentences.size() == 0) {
+                listPopulator(nouns, "denotesEmpty", "", outNoun);
+            }
             for (List<? extends HasWord> sentence : sentences) {
-               
+
                 Tree parse = lp.apply(sentence);
                 GrammaticalStructure gs = gsf.newGrammaticalStructure(parse);
                 Collection tdl = gs.typedDependenciesCCprocessed(true);
@@ -95,7 +97,7 @@ public class NLParser {
                 }
             }
             System.out.println(ticket.getTicket().getNumber());
-            System.out.println("\n" + nouns+"\n");
+            System.out.println("\n" + nouns + "\n");
 
             outNoun.newLine();
             outNoun.flush();
@@ -105,7 +107,7 @@ public class NLParser {
             return new Pair(nouns, verbs);
 
         } catch (Exception e) { // catch error if any
-            System.err.println("ERROR in Parser: " + e.getMessage() );
+            System.err.println("ERROR in Parser: " + e.getMessage());
             e.printStackTrace();// print error message
 //            ArrayList nouns = new ArrayList();
 //            ArrayList verbs = new ArrayList();
@@ -137,9 +139,13 @@ public class NLParser {
 
     public void listPopulator(ArrayList members, String word, String tag, BufferedWriter outNoun) throws IOException { //populate nouns list
 //                    word = word.toLowerCase();
-        members.add(word);
-        outNoun.append(word + " ");
-
+        if (!word.isEmpty() && !word.equals("")) {
+            members.add(word);
+            outNoun.append(word + " ");
+        } else {
+            members.add("denotesEmpty");
+            outNoun.append("denotesEmpty" + " ");
+        }
     }
 
     public Pair parseVer(Ticket ticket) throws IOException, XPatherException {

@@ -32,7 +32,7 @@ public class FunctionCallers {
         ArffCreator aC = new ArffCreator();
 //        aC.createHeader();  //append the Header to .arff
 
-        for (int i = 33; i < 33 + 1; i++) {//count if for tickets
+        for (int i = 1; i < ticketsToProcess + 1; i++) {//count if for tickets
             System.out.println("\n[" + i + "/" + TextPreprocessor.count + "]");
             File f = new File(TextPreprocessor.list[i] + "/ticket.json");
             TextPreprocessor.preProcessFile(f); //preprocess the file

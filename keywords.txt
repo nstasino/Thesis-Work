@@ -1,11 +1,2 @@
-10
-activerecord run base set migration line fail place logger seem switch 
-action rail check version have ruby1 meet requirement seem command require gem don want policy organisational package manage dependency rack 
-encounter bug fix realize bunch patch have test feature 
-filename have image cause throw create error alt attribute tag view\/helpers\/asset -lcb- option file 
-object convert field seconds take machine patch simplify code operation avoid result 
-need return error allow user fix method way name distinguish patch add option break set code continue work company example -lcb- 
-work ignore believe have body -rrb- line pass findelement seem traverse dom element find 
-activemodel remove space lead trail filter add class call option attribute clean patch rebase 
-session use test patch move line validate try protection get message include behavior see file fix 
-realize run template ask haven clue make something wait create patch add 
+30
+plugin use authentication mailer fail deliver email set sender mailer\/base send smtp server reply fix mail enable address add require 

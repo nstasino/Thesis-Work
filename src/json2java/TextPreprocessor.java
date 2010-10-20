@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.*;
 
-
 /**
  *
  * @author nikos
@@ -25,8 +24,6 @@ public class TextPreprocessor {
 
     public TextPreprocessor() {
     }
-
-
     static int count = 0;
     static String[] list = new String[5000];
 
@@ -58,7 +55,6 @@ public class TextPreprocessor {
         }
 
     }
-
 
     public static File preProcessFile(File f) throws IOException {
         StringBuilder contents = new StringBuilder();
@@ -111,14 +107,14 @@ public class TextPreprocessor {
             str = str.replaceAll("@", " "); //Clear @'s (optional)
             str = str.replaceAll("$", " "); //Clear $'s (optional)
             str = str.replaceAll("\\\\", "**&**"); //Clear special character backslash 4 \'s due to regexp format
-            str = str.replaceAll("&amp;","&");			//change &amp to &
-		str = str.replaceAll("&lt","<");			//change &lt; to <
-		str = str.replaceAll("&gt",">");			//change &gt; to >
+            str = str.replaceAll("&amp;", "&");			//change &amp to &
+            str = str.replaceAll("&lt", "<");			//change &lt; to <
+            str = str.replaceAll("&gt", ">");			//change &gt; to >
 //		str = str.replaceAll("<[^<>]*>"," ");		//drop anything in <>
-		str = str.replaceAll("&#\\d+;"," ");			//change &#[digits]; to space
-		str = str.replaceAll("&quot;"," ");			//change &quot; to space
+            str = str.replaceAll("&#\\d+;", " ");			//change &#[digits]; to space
+            str = str.replaceAll("&quot;", " ");			//change &quot; to space
 //		str = str.replaceAll("http://[^ ]+ "," ");	//drop urls
-		str = str.replaceAll("-"," ");				//drop non-alphanumeric characters
+            str = str.replaceAll("-", " ");				//drop non-alphanumeric characters
 //		str = str.replaceAll("[^0-9a-zA-Z ]"," "); 	//drop non-alphanumeric characters
 //		text = text.replaceAll("\\s+"," ");      		//condense spaces
             return str;
@@ -152,11 +148,14 @@ public class TextPreprocessor {
     }
 
     public static boolean checkMinMaxLength(String value, int minLength, int maxLength) {
-        if ((value.length() <= maxLength) && (value.length() >= minLength)) {
-            return true;
+        if (value!=null) {
+            if ((value.length() <= maxLength) && (value.length() >= minLength)) {
+                return true;
+            } else {
+                return false;
+            }
         } else {
             return false;
         }
     }
-
 }

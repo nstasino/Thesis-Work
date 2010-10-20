@@ -32,29 +32,29 @@ public class Main {
         f.dirScanner();
 
 
-        int flag = 0;
+        int flag = 1;
 
         switch (flag) {
             case 1:
                 System.out.println("Performing Natural Language Processing on data\n\n");
                 //NLP Module Call
-                f.runNLP(10);
+                f.runNLP(30);
                 break;
             case 2:
                 System.out.println("Perfoming Latent Dirichlet Allocation on data\n\n");
                 //LDA module Call
-                f.LDAAnalysis(2, 0.5, 0.1); //(int numberOfTopics
+                f.LDAAnalysis(5, 0.5, 0.1); //(int numberOfTopics
                 break;
             case 3:
                 System.out.println("Calculating Normalized Google Distance and Assigning Tags\n\n");
                 //(int numberOfWordsToKeep, double minimumWordProbability, String userWords -space separated-, int numberOfTopics,
                 //String categories I/O files for classification)
-                f.NGDCalculate(5, 0.0, "ruby", 2, "buglist.txt", "BugTypesAssigned.txt", "SQMetrics.txt", "SQMAssigned.txt");
+                f.NGDCalculate(5, 0.0, "ruby",5, "buglist.txt", "BugTypesAssigned.txt", "SQMetrics.txt", "SQMAssigned.txt");
                 break;
             default:
                 System.out.println("Creating .arff file for WEKA Import...Please Wait");
                 //NLP Module Call
-                f.runNLP(10);
+                f.runNLP(TextPreprocessor.count);
                 //LDA module Call
                 f.LDAAnalysis(2, 0.5, 0.1); //(int numberOfTopics
                 //(int numberOfWordsToKeep, double minimumWordProbability, String userWords -space separated-, int numberOfTopics,

@@ -200,6 +200,8 @@ public class NGDCalculator {
                 } else if (wordCounter < 20) {
                     line = line.trim();
                     words[wordCounter] = line.split(" ")[0].trim();
+//                    System.out.println(wordCounter);
+//                    System.out.println(line);
                     probabilities[wordCounter] = Double.parseDouble(line.split(" ")[1].trim());
                     wordCounter++;
                 }

@@ -38,12 +38,12 @@ public class Main {
             case 1:
                 System.out.println("Performing Natural Language Processing on data\n\n");
                 //NLP Module Call
-                f.runNLP(TextPreprocessor.count);
+                f.runNLP(50);
                 break;
             case 2:
                 System.out.println("Perfoming Latent Dirichlet Allocation on data\n\n");
                 //LDA module Call
-                f.LDAAnalysis(5, 0.5, 0.1); //(int numberOfTopics
+                f.LDAAnalysis(3, 0.5, 0.1); //(int numberOfTopics, alpha beta
                 break;
             case 3:
                 System.out.println("Calculating Normalized Google Distance and Assigning Tags\n\n");
@@ -51,17 +51,23 @@ public class Main {
                 //String categories I/O files for classification)
                 f.NGDCalculate(5, 0.0, "ruby",5, "buglist.txt", "BugTypesAssigned.txt", "SQMetrics.txt", "SQMAssigned.txt");
                 break;
+            case 4:
+                System.out.println(System.getProperty("user.dir"));
+//                        File test = new File(".");
+//                System.out.println(test.getAbsolutePath());
+//                System.out.println(test.getCanonicalPath());
+                break;
             default:
                 System.out.println("Creating .arff file for WEKA Import...Please Wait");
                 //NLP Module Call
-                f.runNLP(TextPreprocessor.count);
+                f.runNLP(50);
                 //LDA module Call
-                f.LDAAnalysis(2, 0.5, 0.1); //(int numberOfTopics
+                f.LDAAnalysis(3, 0.5, 0.1); //(int numberOfTopics
                 //(int numberOfWordsToKeep, double minimumWordProbability, String userWords -space separated-, int numberOfTopics,
                 //String categories I/O files for classification)
                 f.NGDCalculate(5, 0.0, "ruby", 2, "buglist.txt", "BugTypesAssigned.txt", "SQMetrics.txt", "SQMAssigned.txt");
-
                 break;
+
         }
 
 

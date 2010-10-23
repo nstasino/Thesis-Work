@@ -1,2 +1,3 @@
-Functionality Accuracy	0.0116910959165093
-Reliability Fault Tolerance	0.0738817417759005
+Reliability Fault Tolerance	0.10154742376353096
+Portability Co-Existence	0.08176845996362228
+Reliability Recoverability	0.1000899521811889

@@ -1,3 +1,0 @@
-Reliability Fault Tolerance	0.10154742376353096
-Portability Co-Existence	0.08176845996362228
-Reliability Recoverability	0.1000899521811889

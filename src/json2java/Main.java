@@ -38,18 +38,18 @@ public class Main {
             case 1:
                 System.out.println("Performing Natural Language Processing on data\n\n");
                 //NLP Module Call
-                f.runNLP(50);
+                f.runNLP(TextPreprocessor.count);
                 break;
             case 2:
                 System.out.println("Perfoming Latent Dirichlet Allocation on data\n\n");
                 //LDA module Call
-                f.LDAAnalysis(3, 0.5, 0.1); //(int numberOfTopics, alpha beta
+                f.LDAAnalysis(25, 0.5, 0.1); //(int numberOfTopics, alpha beta
                 break;
             case 3:
                 System.out.println("Calculating Normalized Google Distance and Assigning Tags\n\n");
                 //(int numberOfWordsToKeep, double minimumWordProbability, String userWords -space separated-, int numberOfTopics,
                 //String categories I/O files for classification)
-                f.NGDCalculate(5, 0.0, "ruby",5, "buglist.txt", "BugTypesAssigned.txt", "SQMetrics.txt", "SQMAssigned.txt");
+                f.NGDCalculate(5, 0.0, "ruby", 25, "buglist.txt", "BugTypesAssigned.txt", "SQMetrics.txt", "SQMAssigned.txt");
                 break;
             case 4:
                 System.out.println(System.getProperty("user.dir"));
@@ -62,10 +62,10 @@ public class Main {
                 //NLP Module Call
                 f.runNLP(50);
                 //LDA module Call
-                f.LDAAnalysis(3, 0.5, 0.1); //(int numberOfTopics
+                f.LDAAnalysis(8, 0.5, 0.1); //(int numberOfTopics
                 //(int numberOfWordsToKeep, double minimumWordProbability, String userWords -space separated-, int numberOfTopics,
                 //String categories I/O files for classification)
-                f.NGDCalculate(5, 0.0, "ruby", 2, "buglist.txt", "BugTypesAssigned.txt", "SQMetrics.txt", "SQMAssigned.txt");
+                f.NGDCalculate(5, 0.0, "ruby", 5, "buglist.txt", "BugTypesAssigned.txt", "SQMetrics.txt", "SQMAssigned.txt");
                 break;
 
         }

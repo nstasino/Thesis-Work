@@ -1,4 +1,5 @@
-50
+4648
+problem glob param 
 activerecord run base set migration line fail place logger seem switch 
 action rail check version have ruby1 meet requirement seem command require gem don want policy organisational package manage dependency rack 
 encounter bug fix realize bunch patch have test feature 
@@ -31,21 +32,3 @@ date blow option give test attach pass fail
 application run column represent none helper etc. work function affect rely find workaround 
 wasn reproduce have sessioncontroller use patron application server run start layout everything admin session log ruby 
 liner attach description add 
-plugin use authentication mailer fail deliver email set sender mailer\/base send smtp server reply fix mail enable address add require 
-patch add syntax create update allow call block people set status cool the test include thanks adam 
-denotesEmpty 
-strategy use localcache provide implement extend nothing upgrade stop problem klass create thread evaluate fix key class doesn match memorystore set result work fail try implementation attach file put requeststore find read 
-inside use way string return contain variable code approach believe 
-relationship allow attribute set 
-template generate track problem base generator\/commands check activerecord fix change line dependency remove 
-take model give validation assert make work code blank use revertt problem test run encounter save method ing isn case topic have add validate state anything happen revert default patch provide repair know execute reset block message record activerecord error call callback 
-serailize orderedhash retreive value initialize object get error variable hash opt\/ruby yaml\/rubytypes yaml gems\/1 adapter record\/base lib\/active gems\/activerecord record\/timestamp update record\/transactions 
-doc warn use association name find column lead model create save transaction attempt instance note persist rename problem happen 
-post blog think screencast 
-documentation use follow proceeds say client read project patch fix error 
-date add index end render name user attempt post guess 
-candidate return output key pass default fail nil fix 
-exclude provide member behavior consider attribute patch correct 
-apache support make server 
-connection consider actionrecord pick time base reset replace call activerecord use seem code have issue 
-base set logger level case concurrency lead screw temporary log change disable method module add think issue protect 

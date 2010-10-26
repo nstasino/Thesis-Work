@@ -32,7 +32,7 @@ public class FunctionCallers {
         ArffCreator aC = new ArffCreator();
 //        aC.createHeader();  //append the Header to .arff
 
-        for (int i = 1; i < ticketsToProcess + 1; i++) {//count if for tickets
+        for (int i = 0; i < ticketsToProcess; i++) {//count if for tickets
             System.out.println("\n[" + i + "/" + TextPreprocessor.count + "]");
             File f = new File(TextPreprocessor.list[i] + "/ticket.json");
             TextPreprocessor.preProcessFile(f); //preprocess the file
@@ -56,7 +56,12 @@ public class FunctionCallers {
     public void NGDCalculate(int numOfWordsSelect, double minimumProbability, String userWord, int nTopics, String INPUTBugTypeFilename, String OUTPUTBugTypeFilename, String INPUTSQMetricFilename, String OUTPUTSQMetricFilename) throws IOException {
         NGDCalculator n = new NGDCalculator();
         n.readFile();
-
+        BufferedWriter bw = null;
+        BufferedWriter bw2 = null;
+        bw = new BufferedWriter(new FileWriter("bugsperticket.txt", false));
+        bw = new BufferedWriter(new FileWriter("bugsperticket.txt", true));
+        bw2 = new BufferedWriter(new FileWriter("metricsperticket.txt", false));
+        bw2 = new BufferedWriter(new FileWriter("metricsperticket.txt", true));
         String wordvector = n.wordSelector(numOfWordsSelect, minimumProbability);
 
         String[] xBug = n.BugTypeDecider(" ".concat(userWord), n.BugListPopulator(INPUTBugTypeFilename), OUTPUTBugTypeFilename);
@@ -66,18 +71,23 @@ public class FunctionCallers {
         for (int i = 0; i < xBugDecide.length; i++) {
             BugsPerTicket[i] = xBug[xBugDecide[i]];
 //            System.out.println(BugsPerTicket[i]);
+            bw.append(BugsPerTicket[i]);
+            bw.append("\n");
 
         }
-
+        bw.close();
         String[] xMetric = n.SQMDecider(" ".concat(userWord), n.BugListPopulator(INPUTSQMetricFilename), OUTPUTSQMetricFilename);
         int[] xMetricDecide = n.thetaDecider(n.thetaParser("model-final.theta", nTopics));//which SQ Metric do they belong to?
         String[] SQMPerTicket = new String[xMetricDecide.length];
         for (int i = 0; i < xMetricDecide.length; i++) {
 //            System.out.println(xMetric[xMetricDecide[i]]);
             SQMPerTicket[i] = xMetric[xMetricDecide[i]];
+            bw2.append(SQMPerTicket[i]);
+            bw2.append("\n");
         }
+        bw2.close();
 
-        new ArffCreator().enhanceArff("data.arff","data2.arff", BugsPerTicket, SQMPerTicket, true);
+        new ArffCreator().enhanceArff("data.arff", "data2.arff", BugsPerTicket, SQMPerTicket, true);
 
     }
 

@@ -33,7 +33,7 @@ public class FunctionCallers {
 //        aC.createHeader();  //append the Header to .arff
 
         for (int i = 0; i < ticketsToProcess; i++) {//count if for tickets
-            System.out.println("\n[" + i + "/" + TextPreprocessor.count + "]");
+            System.out.println("\n[" + i + "/" + ticketsToProcess + "]");
             File f = new File(TextPreprocessor.list[i] + "/ticket.json");
             TextPreprocessor.preProcessFile(f); //preprocess the file
             DecodeJSON Decoder = new DecodeJSON();
@@ -101,8 +101,8 @@ public class FunctionCallers {
         n.BugTypeDecider(" ".concat(userWord), n.BugListPopulator("buglist.txt"), "BugTypesAssigned.txt");
 
 
-        for (int i = 1; i < nTickets + 1; i++) {//count if for tickets
-            System.out.println("\n[" + i + "/" + TextPreprocessor.count + "]");
+        for (int i = 0; i < nTickets; i++) {//count if for tickets
+            System.out.println("\n[" + i + "/" + nTickets + "]");
             File f = new File(TextPreprocessor.list[i] + "/ticket.json");
             TextPreprocessor.preProcessFile(f); //preprocess the file
             DecodeJSON Decoder = new DecodeJSON();

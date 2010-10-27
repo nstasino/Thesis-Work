@@ -267,7 +267,12 @@ public class Ticket {
     }
 
     public String getMilestone_due_on() {
-        return milestone_due_on;
+        if (milestone_due_on == null) {
+            return "?";
+        } //null values with ?
+        else {
+            return milestone_due_on;
+        }
     }
 
     public void setMilestone_due_on(String milestone_due_on) {
@@ -283,7 +288,12 @@ public class Ticket {
     }
 
     public String getMilestone_title() {
-        return milestone_title;
+        if (milestone_title == null) {
+            return "?";
+        } //null values with ?
+        else {
+            return milestone_title;
+        }
     }
 
     public void setMilestone_title(String milestone_title) {
@@ -315,7 +325,12 @@ public class Ticket {
     }
 
     public String getPermalink() {
-        return permalink;
+        if (permalink == null) {
+            return "?";
+        } //null values with ?
+        else {
+            return permalink;
+        }
     }
 
     public void setPermalink(String permalink) {
@@ -339,7 +354,12 @@ public class Ticket {
     }
 
     public String getRaw_data() {
-        return raw_data;
+        if (raw_data == null) {
+            return "?";
+        } //null values with ?
+        else {
+            return raw_data;
+        }
     }
 
     public void setRaw_data(String raw_data) {

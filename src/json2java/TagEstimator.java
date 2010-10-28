@@ -23,7 +23,7 @@ public class TagEstimator {
      * @param directory
      * @param textFile
      */
-    public void runLDA(int nTopics, String directory, double alpha, double beta) {
+    public void runLDA(int nTopics, String directory, double alpha, double beta, int niters) {
 
         System.out.println("Starting LDA for discovering " + nTopics + " topics in " + directory + "keywords.txt");
         LDACmdOption option = new LDACmdOption();
@@ -33,7 +33,7 @@ public class TagEstimator {
         option.beta = beta;
 
         option.K = nTopics;
-        option.niters = 5;
+        option.niters = niters;
         option.savestep = 500;
         option.dir = directory;
         option.twords = 20;

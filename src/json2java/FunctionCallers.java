@@ -46,10 +46,14 @@ public class FunctionCallers {
 
     }
 
-    public void LDAAnalysis(int nTopics, double alpha, double beta) {
+    public void LDAAnalysis(int nTopics, double alpha, double beta, boolean defaultAlpha, int niters) {
         TagEstimator tagger = new TagEstimator();
-        tagger.runLDA(nTopics, "/home/nikos/NetBeansProjects/Thesis-Work/", alpha, beta);
-//        tagger.LDAThetaReader(2);
+        if (defaultAlpha == false) {
+            tagger.runLDA(nTopics, "/home/nikos/NetBeansProjects/Thesis-Work/", alpha, beta, niters);
+        } else {
+            alpha = 50 / nTopics;
+            tagger.runLDA(nTopics, "/home/nikos/NetBeansProjects/Thesis-Work/", alpha, beta, niters);
+        }//        tagger.LDAThetaReader(2);
 
     }
 
@@ -63,6 +67,7 @@ public class FunctionCallers {
         bw2 = new BufferedWriter(new FileWriter("metricsperticket.txt", false));
         bw2 = new BufferedWriter(new FileWriter("metricsperticket.txt", true));
         String wordvector = n.wordSelector(numOfWordsSelect, minimumProbability);
+        System.out.println(wordvector);
 
         String[] xBug = n.BugTypeDecider(" ".concat(userWord), n.BugListPopulator(INPUTBugTypeFilename), OUTPUTBugTypeFilename);
         int[] xBugDecide = n.thetaDecider(n.thetaParser("model-final.theta", nTopics));//which bugtype do they belong to?
@@ -91,9 +96,9 @@ public class FunctionCallers {
 
     }
 
-    public void createArff(int nTickets, int nTopics, int numOfWordsSelect, double minimumProbability, String userWord, double alpha, double beta) throws IOException, XPatherException {
+    public void createArff(int nTickets, int nTopics, int numOfWordsSelect, double minimumProbability, String userWord, double alpha, double beta, int niters) throws IOException, XPatherException {
         runNLP(nTickets);
-        LDAAnalysis(nTopics, alpha, beta);
+        LDAAnalysis(nTopics, alpha, beta, true, niters);
         NGDCalculator n = new NGDCalculator();
         n.readFile();
         String wordvector = n.wordSelector(numOfWordsSelect, minimumProbability);

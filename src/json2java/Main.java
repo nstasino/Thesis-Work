@@ -32,7 +32,7 @@ public class Main {
         f.dirScanner();
 
 
-        int flag = 0;
+        int flag = 3;
 
         switch (flag) {
             case 1:
@@ -43,16 +43,17 @@ public class Main {
             case 2:
                 System.out.println("Perfoming Latent Dirichlet Allocation on data\n\n");
                 //LDA module Call
-                f.LDAAnalysis(25, 0.5, 0.1); //(int numberOfTopics, alpha beta
+                f.LDAAnalysis(3, 0.5, 0.1, true, 500); //(int numberOfTopics, alpha beta, boolean runWithDefaultAlphaValue, int niters
                 break;
             case 3:
                 System.out.println("Calculating Normalized Google Distance and Assigning Tags\n\n");
                 //(int numberOfWordsToKeep, double minimumWordProbability, String userWords -space separated-, int numberOfTopics,
                 //String categories I/O files for classification)
-                f.NGDCalculate(5, 0.0, "ruby", 25, "buglist.txt", "BugTypesAssigned.txt", "SQMetricsLite.txt", "SQMAssigned.txt");
+                f.NGDCalculate(5, 0.0, "ruby", 3, "buglist.txt", "BugTypesAssigned.txt", "SQMetricsLite.txt", "SQMAssigned.txt");
                 break;
             case 4:
-                System.out.println(System.getProperty("user.dir"));
+              new  NLPexample().parseString(150);
+//                System.out.println(System.getProperty("user.dir"));
 //                        File test = new File(".");
 //                System.out.println(test.getAbsolutePath());
 //                System.out.println(test.getCanonicalPath());
@@ -62,7 +63,7 @@ public class Main {
                 //NLP Module Call
                 f.runNLP(TextPreprocessor.count);
                 //LDA module Call
-                f.LDAAnalysis(2, 0.5, 0.1); //(int numberOfTopics
+                f.LDAAnalysis(2, 0.5, 0.1, true, 200); //(int numberOfTopics, alpha beta, boolean runWithDefaultAlphaValue, int niters
                 //(int numberOfWordsToKeep, double minimumWordProbability, String userWords -space separated-, int numberOfTopics,
                 //String categories I/O files for classification)
                 f.NGDCalculate(5, 0.0, "ruby", 2, "buglist.txt", "BugTypesAssigned.txt", "SQMetrics.txt", "SQMAssigned.txt");

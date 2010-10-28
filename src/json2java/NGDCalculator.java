@@ -250,17 +250,17 @@ public class NGDCalculator {
 
         for (int ti = 0; ti < TopicList.getTopics().size(); ti++) {
             wordVector = "";
-//            System.out.println("\nTopic: " + ti);
+            System.out.println("\nTopic: " + ti);
             for (int i = 0; i < numberOfWordsToSelect; i++) {
                 Keyword kw = TopicList.getTopic(ti).getWordTopics().get(i);
                 if (kw.getProbability() >= minProbability) {
-//                    System.out.println("\t" + kw.getWord() + " " + kw.getProbability());
+                    System.out.println("\t" + kw.getWord() + " " + kw.getProbability());
                     wordVector = wordVector.concat(kw.getWord()).concat(" ");
                 }
             }
 //            System.out.println(wordVector);
             TopicList.getTopic(ti).setTopWords(wordVector);
-//            System.out.println(TopicList.getTopic(ti).getTopWords());
+            System.out.println(TopicList.getTopic(ti).getTopWords());
         }
 
         return wordVector;

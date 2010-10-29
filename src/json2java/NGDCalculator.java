@@ -108,7 +108,7 @@ public class NGDCalculator {
         String xy = term1.concat("+").concat(term2);
         double freqxy = logResults(xy);
         if (freqx == Double.NEGATIVE_INFINITY || freqy == Double.NEGATIVE_INFINITY) { //deal with zero results = infinite logarithms
-            return 100000;
+            return 1;//return 1 by definition
         } else {
             double num = Math.max(freqx, freqy) - freqxy;
             double den = Math.log10(M) - Math.min(freqx, freqy);
@@ -250,17 +250,17 @@ public class NGDCalculator {
 
         for (int ti = 0; ti < TopicList.getTopics().size(); ti++) {
             wordVector = "";
-            System.out.println("\nTopic: " + ti);
+//            System.out.println("\nTopic: " + ti);
             for (int i = 0; i < numberOfWordsToSelect; i++) {
                 Keyword kw = TopicList.getTopic(ti).getWordTopics().get(i);
                 if (kw.getProbability() >= minProbability) {
-                    System.out.println("\t" + kw.getWord() + " " + kw.getProbability());
+//                    System.out.println("\t" + kw.getWord() + " " + kw.getProbability());
                     wordVector = wordVector.concat(kw.getWord()).concat(" ");
                 }
             }
 //            System.out.println(wordVector);
             TopicList.getTopic(ti).setTopWords(wordVector);
-            System.out.println(TopicList.getTopic(ti).getTopWords());
+//            System.out.println(TopicList.getTopic(ti).getTopWords());
         }
 
         return wordVector;

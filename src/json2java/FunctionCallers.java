@@ -47,7 +47,7 @@ public class FunctionCallers {
     }
 
     public void LDAAnalysis(int nTopics, double alpha, double beta, boolean defaultAlpha, int niters) {
-        TagEstimator tagger = new TagEstimator();
+        TopicEstimator tagger = new TopicEstimator();
         if (defaultAlpha == false) {
             tagger.runLDA(nTopics, "/home/nikos/NetBeansProjects/Thesis-Work/", alpha, beta, niters);
         } else {

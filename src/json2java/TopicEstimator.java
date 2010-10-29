@@ -15,7 +15,7 @@ import jgibblda.*;
  * @version     Oct 12, 2010
  * @since       1.6
  */
-public class TagEstimator {
+public class TopicEstimator {
 
     /**
      *

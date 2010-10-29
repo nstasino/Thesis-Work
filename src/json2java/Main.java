@@ -32,7 +32,7 @@ public class Main {
         f.dirScanner();
 
 
-        int flag = 3;
+        int flag = 1;
 
         switch (flag) {
             case 1:

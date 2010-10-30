@@ -34,7 +34,7 @@ public class TopicEstimator {
 
         option.K = nTopics;
         option.niters = niters;
-        option.savestep = 500;
+        option.savestep = 2000;
         option.dir = directory;
         option.twords = 20;
         option.dfile = "keywords.txt";//"C:/LDA/data/newdocs100000.dat";

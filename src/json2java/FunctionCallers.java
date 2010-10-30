@@ -67,7 +67,7 @@ public class FunctionCallers {
         bw2 = new BufferedWriter(new FileWriter("metricsperticket.txt", false));
         bw2 = new BufferedWriter(new FileWriter("metricsperticket.txt", true));
         String wordvector = n.wordSelector(numOfWordsSelect, minimumProbability);
-        System.out.println(wordvector);
+//        System.out.println(wordvector);
 
         String[] xBug = n.BugTypeDecider(" ".concat(userWord), n.BugListPopulator(INPUTBugTypeFilename), OUTPUTBugTypeFilename);
         int[] xBugDecide = n.thetaDecider(n.thetaParser("model-final.theta", nTopics));//which bugtype do they belong to?

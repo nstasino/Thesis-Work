@@ -10,6 +10,7 @@ import java.io.File;
 
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Remove;
+import weka.filters.unsupervised.attribute.RemoveByName;
 import weka.filters.unsupervised.attribute.NumericToNominal;
 import weka.filters.unsupervised.attribute.StringToNominal;
 import weka.filters.unsupervised.attribute.StringToWordVector;
@@ -45,6 +46,7 @@ public class WekaFiltering {
 
         removeAttributes.setInputFormat(data);
         data = Filter.useFilter(data, removeAttributes);
+
 
 //        for (int i = 0; i < data.numAttributes(); i++) {
 //            System.out.println(data.attribute(i) + " " + (i + 1));
@@ -102,11 +104,22 @@ public class WekaFiltering {
 
         strToWordVector.setInputFormat(data);
         data = Filter.useFilter(data, strToWordVector);
-//
-//        for (int i = 0; i < data.numAttributes(); i++) {
-//            System.out.println(data.attribute(i) + " " + (i + 1));
-//        }
-//        System.out.println("**********");
+
+
+
+
+         //RemoveByName - regexp
+        RemoveByName removeByNameAttributes = new RemoveByName();
+        removeByNameAttributes.setOptions(returnRemoveByNameOptions());
+
+        removeByNameAttributes.setInputFormat(data);
+        data = Filter.useFilter(data, removeByNameAttributes);
+
+
+        for (int i = 0; i < data.numAttributes(); i++) {
+            System.out.println(data.attribute(i) + " " + (i + 1));
+        }
+        System.out.println("**********");
 
         //Print Results
 //        System.out.println(data);
@@ -125,6 +138,11 @@ public class WekaFiltering {
         options = weka.core.Utils.splitOptions("-R 1,7,8,11,12,13,14,19,21,22");
         return options;
     }
+    public static String[] returnRemoveByNameOptions() throws Exception {
+        String options[];
+        options = weka.core.Utils.splitOptions("-E (wv_|title_|tag_)[a-z0-9]{1,2}");
+        return options;
+    }
 
     public static String[] returnNumerictoNominalOptions() throws Exception {
         String options[];
@@ -139,12 +157,14 @@ public class WekaFiltering {
         return options;
     }
 
+
     public static String[] wordToVectorOptions(int attributeIndex, String prefix) throws Exception {
         String[] options;
 
-        options = weka.core.Utils.splitOptions("-R " + Integer.toString(attributeIndex) + " -P " + prefix
-                + " -W 3 -prune-rate -1.0 "
-                + "-T -N 0 -stemmer weka.core.stemmers.NullStemmer -M 1 ");//good lad knows another path
+        options = weka.core.Utils.splitOptions("-R " + Integer.toString(attributeIndex) + " -P " +
+                prefix + " -W 10 -prune-rate -1.0 -T -N 0 -S -stemmer weka.core.stemmers.LovinsStemmer -M 1 ");
+//                + " -W 20 -prune-rate -1.0 "
+//                + "-T -N 0 -stemmer weka.core.stemmers.NullStemmer -M 1 ");//good lad knows another path
         return options;
     }
 }

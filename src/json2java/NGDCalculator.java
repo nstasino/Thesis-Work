@@ -200,7 +200,7 @@ public class NGDCalculator {
                     line = line.trim();
                     words[wordCounter] = line.split(" ")[0].trim();
 //                    System.out.println(wordCounter);
-                    probabilities[wordCounter] = Double.parseDouble(line.split(" ")[1].trim());
+                    probabilities[wordCounter] = Double.parseDouble(line.split(" ")[1].trim());//if error here then model_final.twords has an empty value some place
                     wordCounter++;
                 }
             }

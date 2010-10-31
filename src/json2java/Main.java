@@ -32,7 +32,7 @@ public class Main {
         f.dirScanner();
 
 
-        int flag = 1;
+        int flag = 4;
         switch (flag) {
             case 1:
                 System.out.println("Performing Natural Language Processing on data\n\n");
@@ -48,7 +48,7 @@ public class Main {
                 System.out.println("Calculating Normalized Google Distance and Assigning Tags\n\n");
                 //(int numberOfWordsToKeep, double minimumWordProbability, String userWords -space separated-, int numberOfTopics,
                 //String categories I/O files for classification)
-                f.NGDCalculate(5, 0.0, "ruby", 5, "buglist.txt", "BugTypesAssigned.txt", "SQMetricsLite.txt", "SQMAssigned.txt");
+                f.NGDCalculate(5, 0.0, " ", 5, "buglist.txt", "BugTypesAssigned.txt", "SQMetricsLite.txt", "SQMAssigned.txt");
                 break;
             case 4:
                 System.out.println("Performing Weka Filtering");
@@ -73,7 +73,7 @@ public class Main {
                 System.out.println("Calculating Normalized Google Distance and Assigning Tags\n\n");
                 //(int numberOfWordsToKeep, double minimumWordProbability, String userWords -space separated-, int numberOfTopics,
                 //String categories I/O files for classification)
-                f.NGDCalculate(5, 0.0, "ruby", 5, "buglist.txt", "BugTypesAssigned.txt", "SQMetrics.txt", "SQMAssigned.txt");//(int numberOfWordsToKeep, double minimumWordProbability, String userWords -space separated-, int numberOfTopics,
+                f.NGDCalculate(5, 0.0, " ", 5, "buglist.txt", "BugTypesAssigned.txt", "SQMetrics.txt", "SQMAssigned.txt");//(int numberOfWordsToKeep, double minimumWordProbability, String userWords -space separated-, int numberOfTopics,
 
                 System.out.println("Performing Weka Filtering");
                 new WekaFiltering().filterArff("data2.arff", "data3.arff");

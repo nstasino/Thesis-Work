@@ -3,7 +3,6 @@ package json2java;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import java.io.*;
-import java.util.Scanner;
 
 
 import org.htmlcleaner.XPatherException;
@@ -16,14 +15,18 @@ import org.htmlcleaner.XPatherException;
 public class Main {
 
     /**
-     * Main. Set ticketsToProcess = i.e. 1000 to run
-     * Returns Stanford Parser results to Possible{Nouns,Verbs}.txt if appropriate flags are set true
+     * Main Class.
+     * Run all steps (ie. 1-4) for the data folder given.
+     * Default case performs all steps in a row.
+     *
+     * Each step calls the appropriate functions from FunctionCallers.java class
      *
      * @param args
      * @throws JsonMappingException
      * @throws JsonParseException
      * @throws IOException
      * @throws XPatherException
+     * @throws Exception
      */
     public static void main(String[] args) throws JsonMappingException, JsonParseException, IOException, XPatherException, Exception {
 
@@ -35,64 +38,51 @@ public class Main {
         int flag = 4;
         switch (flag) {
             case 1:
-                System.out.println("Performing Natural Language Processing on data\n\n");
                 //NLP Module Call
+                System.out.println("Performing Natural Language Processing on data\n\n");
                 f.runNLP(TextPreprocessor.count);
                 break;
             case 2:
-                System.out.println("Perfoming Latent Dirichlet Allocation on data\n\n");
                 //LDA module Call
+                System.out.println("Perfoming Latent Dirichlet Allocation on data\n\n");
                 f.LDAAnalysis(5, 0.5, 0.1, true, 2000); //(int numberOfTopics, alpha beta, boolean runWithDefaultAlphaValue, int niters
                 break;
             case 3:
+                //NGD module Call
                 System.out.println("Calculating Normalized Google Distance and Assigning Tags\n\n");
                 //(int numberOfWordsToKeep, double minimumWordProbability, String userWords -space separated-, int numberOfTopics,
                 //String categories I/O files for classification)
                 f.NGDCalculate(5, 0.0, " ", 5, "buglist.txt", "BugTypesAssigned.txt", "SQMetricsLite.txt", "SQMAssigned.txt");
                 break;
             case 4:
+                //Final Preprocessing
                 System.out.println("Performing Weka Filtering");
                 new WekaFiltering().filterArff("data2.arff", "data3.arff");
-//                System.out.println(System.getProperty("user.dir"));
-//                File test = new File(".");
-//                System.out.println(test.getAbsolutePath());
-//                System.out.println(test.getCanonicalPath());
-//                new NLPexample().parseString(150);
+
                 break;
             default:
-                System.out.println("Creating .arff file for WEKA Import...Please Wait\n\n");
 
-//                System.out.println("Performing Natural Language Processing on data\n\n");
-                //NLP Module Call
-//                f.runNLP(TextPreprocessor.count);
+                System.out.println("Creating .arff file for WEKA Import...Please Wait\n");
+                System.out.println("Performing Natural Language Processing on data\n\n");
+//                NLP Module Call
+                f.runNLP(TextPreprocessor.count);
 
-                System.out.println("Perfoming Latent Dirichlet Allocation on data\n\n");
                 //LDA module Call
+                System.out.println("Perfoming Latent Dirichlet Allocation on data\n\n");
                 f.LDAAnalysis(5, 0.5, 0.1, true, 2000); //(int numberOfTopics, alpha beta, boolean runWithDefaultAlphaValue, int niters
 
+                //NGD module Call
                 System.out.println("Calculating Normalized Google Distance and Assigning Tags\n\n");
                 //(int numberOfWordsToKeep, double minimumWordProbability, String userWords -space separated-, int numberOfTopics,
                 //String categories I/O files for classification)
                 f.NGDCalculate(5, 0.0, " ", 5, "buglist.txt", "BugTypesAssigned.txt", "SQMetrics.txt", "SQMAssigned.txt");//(int numberOfWordsToKeep, double minimumWordProbability, String userWords -space separated-, int numberOfTopics,
 
+                //Final Preprocessing
                 System.out.println("Performing Weka Filtering");
                 new WekaFiltering().filterArff("data2.arff", "data3.arff");
                 break;
 
         }
 
-
-
-//        //Create .ARFF
-//        ArffCreator demo = new ArffCreator(); //create class instance
-//        demo.createHeader();  //append the Header to .arff
-
-
-
-
     }
 }
-//214 problem with diffable attributes - delete ticket from data
-//428 not removing \r\n
-//line 8989 15439 15441 something wrong w/ date
-

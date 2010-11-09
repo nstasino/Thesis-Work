@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package json2java;
 
 import java.io.BufferedReader;
@@ -15,6 +11,7 @@ import java.io.Writer;
 import java.util.*;
 
 /**
+ *TextPreprocessor factory
  *
  * @author nikos
  * @version     Oct 5, 2010
@@ -22,6 +19,9 @@ import java.util.*;
  */
 public class TextPreprocessor {
 
+    /**
+     *Dummy Constructor method
+     */
     public TextPreprocessor() {
     }
     static int count = 0;
@@ -30,7 +30,7 @@ public class TextPreprocessor {
     /**
      * Method to traverse through all Directories
      *
-     * @param dir
+     * @param dir Base directory to search into
      *
      */
     public static void visitAllDirsAndFiles(File dir) {
@@ -46,16 +46,23 @@ public class TextPreprocessor {
 //                    System.out.println(count);
                     String path = dir.getAbsolutePath();
                     list[count] = path;
-
                     count++;
                 }
-
                 visitAllDirsAndFiles(new File(dir, fileName)); //recursive call
             }
         }
 
     }
 
+    /**
+     * Preprocess method
+     *
+     * @param f File to preprocess
+     *
+     * @return f File after preprocessing
+     *
+     * @throws IOException
+     */
     public static File preProcessFile(File f) throws IOException {
         StringBuilder contents = new StringBuilder();
         try {
@@ -76,7 +83,6 @@ public class TextPreprocessor {
         String newContents = contents.toString().replaceAll("assigned_user\"", "assigned_user_id\"");
         newContents = newContents.replaceAll("milestone\"", "milestone_id\"");
         newContents = newContents.replaceAll("\\p{Cntrl}", "");
-        //                                newContents = newContents.replaceAll("\\\\", "*");
         if (f == null) {
             throw new IllegalArgumentException("File should not be null.");
         }
@@ -99,6 +105,13 @@ public class TextPreprocessor {
         return f;
     }
 
+    /**
+     * Remove unwanted and obnoxious chars
+     *
+     * @param str String to clean
+     *
+     * @return str A clean string
+     */
     public String removeAnnoyingChars(String str) {
         if (str != null) {
             str = str.replaceAll("(\r\n|\r|\n|\n\r)", " "); //Clear Paragraph escape sequences
@@ -123,6 +136,13 @@ public class TextPreprocessor {
         }
     }
 
+    /**
+     * Accepts only object or subject relations from Stanford Parser
+     *
+     * @param str Grammatical relation to be checked
+     *
+     * @return boolean
+     */
     public static boolean isDesiredRelation(String str) {
         if (str.contains("subject") || str.contains("object")) {
             return true;
@@ -131,6 +151,15 @@ public class TextPreprocessor {
         }
     }
 
+    /**
+     * Accepts only nouns or verbs from Stanford Parser
+     *
+     * @param str member to assess
+     *
+     * @param memberType type to base assessment
+     *
+     * @return boolean
+     */
     public static boolean isDesiredMember(String str, String memberType) {
         if (str.contains(memberType)) {
             return true;
@@ -139,6 +168,15 @@ public class TextPreprocessor {
         }
     }
 
+    /**
+     * Checks keyword (noun or verb) for uniqueness
+     *
+     * @param members Previously accepted keyword list
+     *
+     * @param value keyword to be assessed
+     *
+     * @return boolean
+     */
     public static boolean isUnique(ArrayList members, String value) {
         if (members.contains(value)) {
             return false;
@@ -147,8 +185,19 @@ public class TextPreprocessor {
         }
     }
 
+    /**
+     * Drop long or short keywords
+     *
+     * @param value keyword to be assessed
+     *
+     * @param minLength Minimum length
+     *
+     * @param maxLength Maximum length
+     *
+     * @return boolean
+     */
     public static boolean checkMinMaxLength(String value, int minLength, int maxLength) {
-        if (value!=null) {
+        if (value != null) {
             if ((value.length() <= maxLength) && (value.length() >= minLength)) {
                 return true;
             } else {

@@ -17,6 +17,7 @@ import weka.core.converters.ArffSaver;
 import weka.core.Instances;
 
 /**
+ * Class for performing a set of filtering actions on dataset
  *
  * @author Nikos Stasinopoulos <nstasinopoulos@gmail.com>
  * @version     Oct 30, 2010
@@ -24,6 +25,19 @@ import weka.core.Instances;
  */
 public class WekaFiltering {
 
+    /**
+     * Main method performing a series of WEKA filtering programmatically<br>
+     * First, it removes certain attributes<br>
+     * Secondly, it transforms from numeric to nominal and string to nominal<br>
+     * Then, it breaks wordvector attribute to nominal values, afterwards it removes those values that are matching regexp for unintelligible or small attrib. names<br>
+     * Lastly, creates different versions of the same dataset for the experiments, by changing the class attrib.<br>
+     * 
+     * @param inputFileName "data2.arff"
+     *
+     * @param outputFileName "data3.arff" and final
+     *
+     * @throws Exception
+     */
     public void filterArff(String inputFileName, String outputFileName) throws Exception {
 
         //Load Arff
@@ -176,24 +190,44 @@ data_no_metrics_no_bugs = Filter.useFilter(data_no_metrics_no_bugs, reorder);
 
     }
 
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
     public static String[] returnRemoveOptions() throws Exception {
         String options[];
         options = weka.core.Utils.splitOptions("-R 1,7,8,11,12,13,14,19,21,22");
         return options;
     }
 
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
     public static String[] returnRemoveByNameOptions() throws Exception {
         String options[];
         options = weka.core.Utils.splitOptions("-E (wv_|title_|tag_)[a-z0-9]{1,2}");
         return options;
     }
 
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
     public static String[] returnNumerictoNominalOptions() throws Exception {
         String options[];
         options = weka.core.Utils.splitOptions("-R 1,2,5,6,12");
         return options;
     }
 
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
     public static String[] returnStringtoNominalOptions() throws Exception {
         String options[];
         options = weka.core.Utils.splitOptions("-R 7,8,14,15");
@@ -201,6 +235,13 @@ data_no_metrics_no_bugs = Filter.useFilter(data_no_metrics_no_bugs, reorder);
         return options;
     }
 
+    /**
+     *
+     * @param attributeIndex
+     * @param prefix
+     * @return
+     * @throws Exception
+     */
     public static String[] wordToVectorOptions(int attributeIndex, String prefix) throws Exception {
         String[] options;
 
@@ -211,24 +252,44 @@ data_no_metrics_no_bugs = Filter.useFilter(data_no_metrics_no_bugs, reorder);
         return options;
     }
 
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
     public static String[] returnRemoveMetricsOptions() throws Exception {
         String options[];
         options = weka.core.Utils.splitOptions("-R 12");
         return options;
     }
 
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
     public static String[] returnRemoveBugsOptions() throws Exception {
         String options[];
         options = weka.core.Utils.splitOptions("-R 11");
         return options;
     }
 
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
     public static String[] returnReorderOptions() throws Exception {
         String options[];
         options = weka.core.Utils.splitOptions("-R 1-10,12-last,11");
         return options;
     }
-     public static String[] returnReorderOptionsForState() throws Exception {
+    /**
+     * 
+     * @return
+     * @throws Exception
+     */
+    public static String[] returnReorderOptionsForState() throws Exception {
         String options[];
         options = weka.core.Utils.splitOptions("-R 1-7,9-last,8");
         return options;

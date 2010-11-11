@@ -1,11 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package json2java;
 
 /**
+ * Objectify NGD Score
  *
  * @author Nikos Stasinopoulos <nstasinopoulos@gmail.com>
  * @version     Oct 17, 2010
@@ -15,10 +12,18 @@ package json2java;
 
         double score;
 
+        /**
+         * 
+         * @return
+         */
         public double getScore() {
             return score;
         }
 
+        /**
+         *
+         * @param score
+         */
         public void setScore(double score) {
             this.score = score;
         }

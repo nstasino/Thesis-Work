@@ -2,7 +2,7 @@
 package json2java;
 
 /**
- *
+ * Class describing Keyword Object, composed of  static word plus probability
  * @author Nikos Stasinopoulos <nstasinopoulos@gmail.com>
  * @version     Oct 17, 2010
  * @since       1.6

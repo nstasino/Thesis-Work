@@ -7,10 +7,9 @@ import java.io.StringWriter;
 import org.codehaus.jackson.*;
 import org.codehaus.jackson.map.*;
 import org.codehaus.jackson.JsonGenerator;
-//import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 /**
- * Contains core decoding using the Jackson API
+ * Core decoding class using the Jackson API
  * 
  * @author      Nikos Stasinopoulos <nstasinopoulos@gmail.com>
  * @version     2010.0720

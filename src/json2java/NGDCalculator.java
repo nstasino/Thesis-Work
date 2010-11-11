@@ -6,14 +6,30 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
-import java.util.Arrays;
-//import java.lang.Math;
 
 //import org.json.JSONException;      // JSON library from http://www.json.org/java/
 import org.json.JSONObject;
 
+/**
+ * Class calculating the NGD similarity metric for each topic == bag-of-words
+ *
+ * @author Nikos Stasinopoulos <nstasinopoulos@gmail.com>
+ * @version     Nov 01, 2010
+ * @since       1.6
+ */
 public class NGDCalculator {
 
+    /**
+     * Method that matches topics as bags-of-words with topic-SQM names<br>
+     * Uses NGD metric to calculate scores for every possible combination and then return top topic list
+     *
+     * @param userAddedWord Extra word added by the user to the (topic = bag of words)
+     *
+     * @param listedTopics
+     * @param outputFilename
+     * @return
+     * @throws IOException
+     */
     public String[] SQMDecider(String userAddedWord, String[] listedTopics, String outputFilename) throws IOException {
 
         if (outputFilename.isEmpty() || outputFilename.equals("")) {
@@ -56,9 +72,23 @@ public class NGDCalculator {
         return topTopicsList;
     }
 
-    public String[] BugTypeDecider(String userAddedWord, String[] listedTopics, String outputFilename) throws IOException {
+    /**
+     * Method that matches topics as bags-of-words with topic-bug names<br>
+     * Uses NGD metric to calculate scores for every possible combination and then return top topic list
+     * 
+     * @param userAddedWord Word user adds to wordvector for testing reasons. Default is null, may distort results.example "ruby"
+     * 
+     * @param bugtypesProvided All topics created by LDA as bags-of-words (string[])
+     * 
+     * @param outputFilename An output text file to save results to.
+     * 
+     * @return bug types assigned to each topic
+     * 
+     * @throws IOException
+     */
+    public String[] BugTypeDecider(String userAddedWord, String[] bugtypesProvided, String outputFilename) throws IOException {
 
-        if (outputFilename.isEmpty() || outputFilename.equals("")) {
+        if (outputFilename.isEmpty() || outputFilename.equals("")) {//sanity check, reverting to default
             outputFilename = "BugTypesAssigned.txt";
             System.out.println("Storing output to default: BugTypesAssigned.txt");
         }
@@ -68,22 +98,22 @@ public class NGDCalculator {
         int topTopicsCounter = 0;
 
         double score;
-        for (Topic currentTopic : TopicList.getTopics()) {
+        for (Topic currentTopic : TopicList.getTopics()) {//for each topic created by LDA
             double tempScore;
             score = 1;
             System.out.println(currentTopic.getTopWords() + userAddedWord);
-            for (String s : listedTopics) {
-                tempScore = NGD(currentTopic.getTopWords().concat(" ").concat(userAddedWord), s);
+            for (String s : bugtypesProvided) {//for each and every bugtype in bugtypes.txt
+                tempScore = NGD(currentTopic.getTopWords().concat(" ").concat(userAddedWord), s);//NGD calculation
                 NGDTopicScore topicScore = new NGDTopicScore();
 //                System.out.print(s);
 //                System.out.println(score);
 
-                topicScore.setScore(tempScore);
-                TopicList.getTopicScore().put(listedTopics, topicScore);
+                topicScore.setScore(tempScore);//save score in object
+                TopicList.getTopicScore().put(bugtypesProvided, topicScore);//put score in topic object as well
 //                System.out.print(TopicList.getTopicScore().values().iterator().next().getScore()+"\t");
 //                System.out.println(TopicList.getTopicScore().keySet().iterator().next()[1]);
 
-                if (tempScore < score && tempScore > 0) {
+                if (tempScore < score && tempScore > 0) {//decides on biggest score
                     currentTopic.setTopTopicScore(tempScore);
                     currentTopic.setTopTopic(s);
                     score = tempScore;
@@ -101,6 +131,15 @@ public class NGDCalculator {
         return topTopicsList;
     }
 
+    /**
+     * Calculates the NGD score for 2 string terms
+     *
+     * @param term1 First term
+     *
+     * @param term2 Second term
+     *
+     * @return Score as double
+     */
     public double NGD(String term1, String term2) {
         Long M = 10000000000L; //802080446201L (2007)
         double freqx = logResults(term1);
@@ -163,6 +202,9 @@ public class NGDCalculator {
 
     }
 
+    /**
+     * Parses model-final.twords file and populates topic list
+     */
     public void readFile() {
         BufferedReader topicWordsBr = null;
         BufferedReader test = null;
@@ -186,8 +228,8 @@ public class NGDCalculator {
                     probabilities = new double[20];
                     topicCounter++;
                 } else if (!line.startsWith("\t")) {
-
                     Topic topic = new Topic(20);
+
                     for (int i = 0; i < 20; i++) {
                         topic.addKeyword(words[i], probabilities[i]);
                     }
@@ -234,15 +276,26 @@ public class NGDCalculator {
         }
     }
 
+    /**
+     * Method for selecting most representative words for each topic<br>
+     * This can happen either by selecting a fixed number of words or by a minimum word probability or both.<br>
+     * Returns a word vector representing the topic (bag-of-words)
+     *
+     * @param numberOfWordsToSelect Specify $ of words as topic-representative
+     *
+     * @param minProbability Specify min probability
+     *
+     * @return wordvector
+     */
     public String wordSelector(int numberOfWordsToSelect, double minProbability) {
 
         String wordVector = "";
 
-        if (minProbability < 0 || minProbability > 1) {
+        if (minProbability < 0 || minProbability > 1) {//sanity check
             minProbability = 0;
             System.out.println("Minimum Probability must be between 0 and 1 -> Setting it to 0");
         }
-        if (numberOfWordsToSelect < 0 || numberOfWordsToSelect > 20) {
+        if (numberOfWordsToSelect < 0 || numberOfWordsToSelect > 20) {//sanity check
             numberOfWordsToSelect = 20;
             System.out.println("Number of Words must be between 0 and 20 -> Setting it to 0");
         }
@@ -267,6 +320,15 @@ public class NGDCalculator {
 
     }
 
+    /**
+     * Reads file and return number of lines<br>
+     * Useful for counting words in a text file
+     *
+     * @param filename File to assess
+     *
+     * @return number of line as int
+     *
+     */
     public int determineLinesNumberofFile(String filename) {
         int lines = 0;
         BufferedReader br = null;
@@ -304,6 +366,14 @@ public class NGDCalculator {
         }
     }
 
+    /**
+     * Reads buglist.txt file and return a string array containing plausible bug types
+     *
+     * @param filename buglist.txt
+     *
+     * @return Bug types names as a string array
+     *
+     */
     public String[] BugListPopulator(String filename) {
         BufferedReader br = null;
         String[] bugs = new String[determineLinesNumberofFile(filename)];
@@ -322,14 +392,12 @@ public class NGDCalculator {
                 line = line.trim();
                 bugs[lineIndex] = line;
                 lineIndex++;
-//                System.out.println(line);
             }
-//            System.out.println("Bugs read " + bugs[15]);
             return bugs;
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             System.err.println(e.getMessage());
-
         } catch (IOException e) {
             e.printStackTrace();
             System.err.println(e.getMessage());
@@ -342,14 +410,19 @@ public class NGDCalculator {
                 e.printStackTrace();
                 System.err.println(e.getMessage());
             }
-//            String[] bugs = new String[determineLinesNumberofFile("buglist.txt")];
-
             return bugs;
-
         }
-
     }
 
+    /**
+     * Decides which bug type is assigned to which topic, by finding max probability<br>
+     * Base on model_finale.theta model file
+     *
+     * @param thetas 2-dimension array with Topic - bug type probabilities
+     *
+     * @return 1-dimension array Topic-Max bugtype
+     *
+     */
     public int[] thetaDecider(double[][] thetas) {
         int[] selectedTopicIndex = new int[thetas.length];
         for (int i = 0; i < (thetas.length); i++) {
@@ -360,6 +433,16 @@ public class NGDCalculator {
 
     }
 
+    /**
+     * Populates thetas[][] 2d array topic - bugtype distribution
+     *
+     * @param filename model_final.theta
+     *
+     * @param nTopics Number of topics
+     *
+     * @return thetas[][]
+     *
+     */
     public double[][] thetaParser(String filename, int nTopics) {
         BufferedReader br = null;
         double[][] thetas = new double[determineLinesNumberofFile(filename)][nTopics];
@@ -375,12 +458,12 @@ public class NGDCalculator {
             while ((sCurrentLine = br.readLine()) != null) {
                 String line = sCurrentLine;
                 for (int i = 0; i < nTopics; i++) {
-                    thetas[lineIndex][i] = Double.parseDouble(line.split(" ")[i].trim());
+                    thetas[lineIndex][i] = Double.parseDouble(line.split(" ")[i].trim());//base function
                 }
                 lineIndex++;
             }
             return thetas;
-//            System.out.println("Bugs read " + bugs[15]);
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             System.err.println(e.getMessage());
@@ -404,13 +487,20 @@ public class NGDCalculator {
     }
 
     //===================================================== max
+    /**
+     * Auxiliary function finding INDEX of max item for a row
+     *
+     * @param t Array(row)
+     *
+     * @return index of maximum item
+     */
     public int max(double[] t) {
         double maximum = t[0];   // start with the first value
         int index = 0;
         for (int i = 1; i < t.length; i++) {
             if (t[i] > maximum) {
                 maximum = t[i];   // new maximum
-                index = i;
+                index = i;//index of maximum
             }
         }
         return index;

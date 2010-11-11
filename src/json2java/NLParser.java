@@ -75,7 +75,7 @@ public class NLParser {
             //initialize arrays
             ArrayList nouns = new ArrayList();
             ArrayList verbs = new ArrayList();
-            if (sentences.size() == 0) {
+            if (sentences.isEmpty()) {
                 listPopulator(nouns, "denotesEmpty", "", outNoun);//handle empty descriptions
             }
             //reads sentence by sentence

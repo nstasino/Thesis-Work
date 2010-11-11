@@ -1,27 +1,30 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package json2java;
 
 import java.io.*;
 
-import org.htmlcleaner.XPatherException;
 import jgibblda.*;
 
 /*
  *
- * @author nikos
+ * @author Nikos Stasinopoulos <nstasinopoulos@gmail.com>
  * @version     Oct 12, 2010
  * @since       1.6
  */
 public class TopicEstimator {
 
     /**
+     *Class for running LDA and creating topics out of tickets
      *
-     * @param nTopics
-     * @param directory
-     * @param textFile
+     * @param nTopics Number of topics to be calculated by LDA
+     *
+     * @param directory Locations of keywords.txt file
+     *
+     * @param alpha Alpha hyper-parameter
+     * 
+     * @param beta Bet hyper-parameter
+     *
+     * @param niters Number of iterations for the model creator
      */
     public void runLDA(int nTopics, String directory, double alpha, double beta, int niters) {
 
@@ -37,7 +40,7 @@ public class TopicEstimator {
         option.savestep = 2000;
         option.dir = directory;
         option.twords = 20;
-        option.dfile = "keywords.txt";//"C:/LDA/data/newdocs100000.dat";
+        option.dfile = "keywords.txt";
 
         System.out.println("Gibbs LDA Parameters:");
         System.out.println("alpha:\t" + option.alpha);
@@ -82,6 +85,13 @@ public class TopicEstimator {
         }
     }
 
+    /**
+     * Returns a ticket (document) <--> topic matrix containing probabilities
+     *
+     * @param nTopics Number of topics calculated by LDA
+     *
+     * @return topicDistribution double[][] matrix with ticket-topic probabilities
+     */
     public double[][] LDAThetaReader(int nTopics) {
         BufferedReader br = null;
         double[][] topicDistribution = new double[new NGDCalculator().determineLinesNumberofFile("model-final.theta")][nTopics];
@@ -96,17 +106,17 @@ public class TopicEstimator {
             int lineIndex = 0;
             while ((sCurrentLine = br.readLine()) != null) {
                 String line = sCurrentLine;
-
                 line = line.trim();
+
                 for (int i = 0; i < nTopics; i++) {
-                    topicDistribution[lineIndex][i] = Double.parseDouble(line.split(" ")[i].trim());
+                    topicDistribution[lineIndex][i] = Double.parseDouble(line.split(" ")[i].trim());//parse theta and convert to double
                 }
                 lineIndex++;
             }
 
-            for (int jj = 0; jj < topicDistribution.length; jj++) {
-                System.out.println(topicDistribution[jj][0] + "\t" + topicDistribution[jj][1]);
-            }
+//            for (int jj = 0; jj < topicDistribution.length; jj++) {
+//                System.out.println(topicDistribution[jj][0] + "\t" + topicDistribution[jj][1]);
+//            }
 
             return topicDistribution;
 
@@ -132,6 +142,12 @@ public class TopicEstimator {
 
         }
     }
+
+    /**
+     *Deprecated.<br>Compares probabilities and return most probable topic for each ticket
+     *
+     * @param topicDistribution Theta distribution matrix
+     */
     public void topicLDADecider(double[][] topicDistribution){
 
         for (int jj = 0; jj < topicDistribution.length; jj++) {

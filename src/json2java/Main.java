@@ -35,7 +35,7 @@ public class Main {
         f.dirScanner();
 
 
-        int flag = 4;
+        int flag = 2;
         switch (flag) {
             case 1:
                 //NLP Module Call
@@ -58,7 +58,6 @@ public class Main {
                 //Final Preprocessing
                 System.out.println("Performing Weka Filtering");
                 new WekaFiltering().filterArff("data2.arff", "data3.arff");
-
                 break;
             default:
 

@@ -72,7 +72,7 @@ public class FunctionCallers {
      *
      */
     public void LDAAnalysis(int nTopics, double alpha, double beta, boolean defaultAlpha, int niters) {
-        TopicEstimator tagger = new TopicEstimator();
+        TopicEstimator tagger = new TopicEstimator(); //Topic Estimator Factory
         if (defaultAlpha == false) {
             tagger.runLDA(nTopics, "/home/nikos/NetBeansProjects/Thesis-Work/", alpha, beta, niters);
         } else {
@@ -139,15 +139,26 @@ public class FunctionCallers {
     }
 
     /**
+     *Deprecated.<br>
+     * Creates an .arff file for weka DM. <br>
+     * Pretty much incorporates all of the functionality of the project
      *
-     * @param nTickets
-     * @param nTopics
-     * @param numOfWordsSelect
-     * @param minimumProbability
-     * @param userWord
-     * @param alpha
-     * @param beta
-     * @param niters
+     * @param nTickets Number of tickets (max 4648)
+     *
+     * @param nTopics # of topics by LDA
+     *
+     * @param numOfWordsSelect # of words comprising a topic
+     *
+     * @param minimumProbability min prob. for a word to formulate a topic vector
+     *
+     * @param userWord User added word
+     *
+     * @param alpha Hyper-parameter alpha
+     *
+     * @param beta Hyper-parameter beta
+     *
+     * @param niters # of iteration for LDA
+     * 
      * @throws IOException
      * @throws XPatherException
      */
@@ -175,7 +186,8 @@ public class FunctionCallers {
     }
 
     /**
-     *
+     *Scan Data directory for files
+     *<br>The very first method of this project!
      */
     public void dirScanner() {  //Scan directory for tickets
 
